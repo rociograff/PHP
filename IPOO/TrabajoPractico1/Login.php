@@ -1,152 +1,76 @@
 <?php
-/*class Login {
+class Login
+{
 
-    //Atributos
     private $nombreUsuario;
     private $contrasenia;
-    private $frase;
-    private $arregloConstrasenias;
+    private $fraseAyuda;
+    private $arregloContras;
     private $indiceArreglo;
 
-    //Constructor
-    public function __construct($usuario, $contra, $frase) {
-        $this -> nombreUsuario = $usuario;
-        $this -> contrasenia = $contra;
-        $this -> frase = $frase;
-        $this -> arregloContrasenias = [4];
-        $this -> indiceArreglo = 0;
-        $this -> arregloContrasenias[$this -> indiceArreglo] = $this -> contrasenia;
-        $this -> indice++;
+    public function __construct($usuario, $pass, $frase)
+    {
+        $this->nombreUsuario = $usuario;
+        $this->contrasenia = $pass;
+        $this->fraseAyuda = $frase;
+        $this->arregloContras = [4];
+        $this->indiceArreglo = 0;
+        $this->arregloContras[$this->indiceArreglo] = $this->contrasenia;
+        $this->indiceArreglo++;
     }
 
-    //Observadoras
-    public function getFrase() {
-        return $this -> frase;
-    }
-
-    //Metodos
-    public function contraseniaValida($contra) {
-        if ($this -> contrasenia == $contra) {
-            $valida = true;
-        }else {
-            $valida = false;
-        }
-        return $valida;
-    }
-
-    public function cambiarContrasenia($nuevaContrasenia) {
-        $i = 0;
-        $valida = true;
-        while($i < $this -> indiceArreglo && $valida) {
-            if ($this -> arregloContrasenias[$i] == $nuevaContrasenia) {
-                $valida = false;
-                echo "La contrasena ingresada no puede ser igual a una anterior.";
-            }else {
-                $i++;
-            }
-        }
-
-        if($valida) {
-            $this -> arregloConstrasenias[$this -> indice] = $nuevaContrasenia;
-            $this -> indice = ($this -> indice + 1) % 4;
-        }
-
-        return $valida;
-    }
-
-    public function recordar ($usuario) {
-        if ($this -> nombreUsuario == $usuario) {
-            $retorno = $this -> frase;
-        }else {
-            $retorno = "Usuario incorrecto.";
-        }
-
-        return $retorno;
-    }
-}*/
-
-class Login {
-    private $nombreUsuario;
-    private $contraseNa;
-    private $frase;
-    private $arreglocontraseNas = array();
-    
-    
-    public function __construct($nombreUsuario,$contraseNa,$frase,$arreglo){
-        $this->nombreUsuario=$nombreUsuario;
-        $this->contraseNa=$contraseNa;
-        $this->frase=$frase;
-        $this->arreglocontraseNas=$arreglo;   
-    }
-    
-    public function getNombreUsuario(){
+    public function getNombreUsuario()
+    {
         return $this->nombreUsuario;
     }
 
-    public function getContrasenia(){
-        return $this->contraseNa;    
+    public function setFraseAyuda($nuevaFrase)
+    {
+        $this->fraseAyuda = $nuevaFrase;
     }
 
-    public function getFrase(){
-        return $this->frase;
-    }
-    
-    public function getArreglocontrasenias(){
-        return $this->arreglocontraseNas;    
-    }
-    
-    public function setNombreUsuario($nombreUsuario){
-        $this-> nombreUsuario= $nombreUsuario;
+    public function contraseniaValida($pass)
+    {
+        if ($this->contrasenia == $pass) {
+            $retorno = true;
+        } else {
+            $retorno = false;
+        }
+        return $retorno;
     }
 
-    public function setContrasenia($contraseNa){
-        $this-> contraseNa = $contraseNa;  
+    public function cambiarContrasenia($nuevaContrasenia)
+    {
+        $i = 0;
+        $valida = true;
+        while ($i < count($this->arregloContras) && $valida) {
+            if ($this->arregloContras[$i] == $nuevaContrasenia) {
+                $valida = false;
+                echo "La contrasenia ingresada no puede ser igual a una anterior\n";
+            } else {
+                $i++;
+            }
+        }
+        if ($valida) {
+            $this->arregloContras[$this->indiceArreglo] = $nuevaContrasenia;
+            $this->indiceArreglo = ($this->indiceArreglo + 1) % 4;
+        }
+        return $valida;
     }
 
-    public function setFrase($frase){
-        $this-> frase = $frase;
-    }
-    
-    public function setArregloContrasenias($arreglocontraseNas){
-            $this-> arreglocontraseNas = $arreglocontraseNas;
-    }
-    
-    public function validar($unacontraseNa){
-        $respuesta=false;
-        $objpass = $this->getContrasenia();
-        if($unacontraseNa == $objpass){
-            $respuesta = true;
+    public function recordar($usuario)
+    {
+        //String $retorno
+        if ($this->nombreUsuario == $usuario) {
+            $retorno = $this->fraseAyuda;
+        } else {
+            $retorno = "Usuario incorrecto\n";
         }
-        return $respuesta;
+        return $retorno;
     }
-    
-    public function cambiarPass($new) {
-        $arreglopass = $this->getArregloContrasenias();
-        if (!($this->validar($new))) {
-            array_push($arreglopass,$new);
-            $this->setContrasenia($new);
-            $resp = true;
-        }else{
-            $resp = false;
-        }
-        
-        return $resp;
+
+    public function __destruct()
+    {
+        echo $this . " instancia destruida, no hay referencias a este objeto";
     }
-    
-    public function recordar($usuario){
-        $lafrase="";
-        $u=$this->getNombreUsuario();
-        if($usuario==$u){
-            $lafrase=$this->getFrase();
-        }else{
-            return false;
-        }
-        return $lafrase;
-    }
-    
-    public function __tostring(){
-        $datos="\nNombre: ".$this->getNombreUsuario()."\nFrase: ".$this->getFrase();
-        return $datos;
-    }
-        
 }
