@@ -10,9 +10,8 @@ $tiempoSegundos = trim(fgets(STDIN));
 // Calculos para el tiempo empleado
 $tiempoEmpleado = $tiempoSegundos / 60;
 $minutos = (int)$tiempoEmpleado; // $minutos tiene la parte entera de $tiempoEmpleado
-$aux = $minutos - $tiempoEmpleado;
-$segundos = $aux * 100;
+$aux = $tiempoSegundos % 60;
+$segundos = $aux;
 
 // Devolucion de valores
 echo "La copia tardo ".$minutos.":".$segundos;
-?>

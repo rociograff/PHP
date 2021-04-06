@@ -1,7 +1,7 @@
 <?php
 include 'Login.php';
 $valida = false;
-$login = new Login("Pufu", "Paco", "gato");
+$login = new Login("Rocio", "123", "numero");
 
 while (!$valida) {
     echo "Ingrese su contrasenia: ";
@@ -21,8 +21,8 @@ if ($opcion == 's') {
     cambioDeContrasenia($login);
 }
 
-$login->cambiarContrasenia("Gauss");
-$login->cambiarContrasenia("Euler");
+$login->cambiarContrasenia("658");
+$login->cambiarContrasenia("471");
 
 cambioDeContrasenia($login);
 
