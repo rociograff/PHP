@@ -56,26 +56,22 @@ class Funcion {
         "\n\tDuracion: " . $this->getDuracion() . " minutos";
     }
 
+    /**
+     * Metodo para convertir las horas con formato hh:mm a minutos
+     * @return $totalMinutos
+     */
     public function horaAMinutos() {
-        //int $i, $minutos, $prod
         //String $hora
-        $i = 0;
-        $minutos = 0;
-        $prod = 10;
-        $hora = $this->getHoraInicio();
-        while ($hora[$i] != ":") {
-            $minutos += (intval($hora[$i], 10)) * $prod;
-            $i++;
-            $prod /= 10;
+        //int $horasPartes, $totalMinutos
+        $hora = $this->getHoraInicio();  //Hora a convertir en minutos
+
+        if(strpos($hora, ':') !== false) { //Encuentra la posición de la primera ocurrencia de un substring en un string
+            //Realizo una particion que separe la parte de la hora y la parte de los minutos
+            $horasPartes = explode(":", $hora);
         }
-        $i = 3;
-        $minutos *= 60;
-        $prod = 10;
-        while ($i != strlen($hora)) {
-            $minutos += (intval($hora[$i], 10)) * $prod;
-            $prod /= 10;
-            $i++;
-        }
-        return $minutos;
+        //La parte de la hora la multiplicamos por 60 para pasarla a minutos y asi realizar la suma de los minutos totales
+        $totalMinutos = ($horasPartes[0] * 60) + $horasPartes[1];
+
+        return $totalMinutos;
     }
 }
