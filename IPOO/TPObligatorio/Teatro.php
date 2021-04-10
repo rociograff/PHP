@@ -40,13 +40,12 @@ class Teatro {
      * Busca la existencia de una funcion requerida
      * De ser asi, devuelve la posicion en la que se encuentra
      */
-    public function buscarFuncion($funcionBuscada)
-    {
+    public function buscarFuncion($funcionBuscada) {
         /**
          * Declaracion de variables
          * int $indiceFuncion, $i
          * string $funcionBuscada
-         */
+         * */
 
         // Inicializacion de variables
         $pos = -1;

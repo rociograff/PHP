@@ -44,7 +44,6 @@ while(!$terminar){
                 $cantPag = trim(fgets(STDIN));
                 echo "Ingrese la sinopsis: \n";
                 $sinopsis = trim(fgets(STDIN));
-                echo "Ingrese el nombre del autor: \n";
                 echo "\n----------------------------\n";
                 echo "Datos del autor.\n";
                 echo "Ingrese el nombre de la persona: \n";
@@ -100,12 +99,19 @@ while(!$terminar){
                 $anioEdicion = trim(fgets(STDIN));
                 echo "ingrese editorial: \n";
                 $editorial = trim(fgets(STDIN));
-                echo "Ingrese el nombre del autor: \n";
+                echo "\n----------------------------\n";
+                echo "Datos del autor.\n";
+                echo "Ingrese el nombre de la persona: \n";
                 $nombre = trim(fgets(STDIN));
-                echo "Ingrese el apellido del autor: \n";
+                echo "Ingrese el apellido de la persona: \n";
                 $apellido = trim(fgets(STDIN));
+                echo "Ingrese el tipo de documento: \n";
+                $tipoDocumento = trim(fgets(STDIN));
+                echo "Ingrese el numero de documento: \n";
+                $numeroDocumento = trim(fgets(STDIN));
       
-                $libroABuscar = new Libro($isbn, $titulo, $anio, $editorial, $nombre, $apellido);
+                $persona = new Persona($nombre, $apellido, $tipoDocumento, $numeroDocumento);
+                $libroABuscar = new Libro($isbn, $titulo, $anio, $editorial, $cantPag, $sinopsis, $persona);
 
                 $seEncuentra = $libro->iguales($libroABuscar, $arregloLibros);
                 if($seEncuentra){
