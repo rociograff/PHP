@@ -1,5 +1,5 @@
 <?php
-class Funcion {
+class Funciones {
     //Atributos
     private $nombre;
     private $precio;
