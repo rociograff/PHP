@@ -166,9 +166,9 @@ class Empresa {
             $nuevaVenta = new Venta($numero, $fecha, $objCliente);
             for ($i = 0; $i < count($colCodigosProductos); $i++) {
                 $codigoProducto = $colCodigosProductos[$i];
-                $nuevoProducto = $this->retornarProducto($codigoProducto);
+                $nuevoProducto = $this->retornarProducto($codigoProducto); //Utilizo el metodo de esta clase
                 if ($nuevoProducto != null) {
-                    $nuevaVenta->incorporarProducto($nuevoProducto);
+                    $nuevaVenta->incorporarProducto($nuevoProducto); //Utilizo un metodo de la clase Venta
                 }
             }
             if (count($nuevaVenta->getColProductos()) != 0) {
