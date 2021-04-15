@@ -1,32 +1,28 @@
-<?php 
+<?php
 class Cliente {
-    //Atributos 
+    //Atributos
     private $nombre;
     private $apellido;
-    private $dadoDeBaja;
     private $tipoDocumento;
     private $numeroDocumento;
+    private $dadoDeBaja;
 
     //Constructor
-    public function __construct($nom, $ape, $deBaja, $tipoDoc, $numDoc) {
+    public function __construct($nom, $ape, $tipo, $num, $deBaja) {
         $this->nombre = $nom;
         $this->apellido = $ape;
+        $this->tipoDocumento = $tipo;
+        $this->numeroDocumento = $num;
         $this->dadoDeBaja = $deBaja;
-        $this->tipoDocumento = $tipoDoc;
-        $this->numeroDocumento = $numDoc;
     }
 
-    //Observadoras
+    //Observadores
     public function getNombre() {
         return $this->nombre;
     }
 
     public function getApellido() {
         return $this->apellido;
-    }
-
-    public function getDadoDeBaja() {
-        return $this->dadoDeBaja;
     }
 
     public function getTipoDocumento() {
@@ -37,7 +33,11 @@ class Cliente {
         return $this->numeroDocumento;
     }
 
-    //Modificadoras
+    public function getDadoDeBaja() {
+        return $this->dadoDeBaja;
+    }
+
+    //Modificadores
     public function setNombre($nom) {
         $this->nombre = $nom;
     }
@@ -46,29 +46,27 @@ class Cliente {
         $this->apellido = $ape;
     }
 
+    public function setTipoDocumento($tipo) {
+        $this->tipoDocumento = $tipo;
+    }
+
+    public function setNumeroDocumento($num) {
+        $this->numeroDocumento = $num;
+    }
+
     public function setDadoDeBaja($deBaja) {
         $this->dadoDeBaja = $deBaja;
-    }
-
-    public function setTipoDocumento($tipoDoc) {
-        $this->tipoDocumento = $tipoDoc;
-    }
-
-    public function setNumeroDocumento($numDoc) {
-        $this->numeroDocumento = $numDoc;
     }
 
     /**
      * Metodo toString() para devolver todos los datos del cliente
      */
     public function __toString() {
-        //String $si, $no
         $si = "Si";
         $no = "No";
-        return "\nNombre: ".$this->getNombre().
-        "\nApellido: ".$this->getApellido().
-        "\nTipo Documento: ".$this->getTipoDocumento().
-        "\nNumero de Documento: ".$this->getNumeroDocumento().
-        "\nEsta dado de baja: ".($this->getDadoDeBaja() ? $si : $no);
+        return "\nNombre: " . $this->getNombre() . "\n" .
+        "Apellido: " . $this->getApellido() . "\n" .
+        $this->getTipoDocumento() . " " . $this->getNumeroDocumento() . "\n" .
+        "Dado de baja: " . (($this->getDadoDeBaja()) ? $si : $no) . "\n";
     }
 }
