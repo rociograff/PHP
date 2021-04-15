@@ -17,10 +17,9 @@ function menu() {
     echo "--------------------------------------------------------------\n";
     echo "0) Salir del programa. \n";
     echo "1) Ingresar datos del teatro. \n";
-    echo "2) Mostrar funciones. \n";
-    echo "3) Mostrar datos del teatro. \n";
-    echo "4) Modificar datos del teatro. \n";
-    echo "5) Modificar datos de una funcion. \n";
+    echo "2) Mostrar datos del teatro. \n";
+    echo "3) Modificar datos del teatro. \n";
+    echo "4) Modificar datos de una funcion. \n";
     echo "--------------------------------------------------------------\n";
 
     echo "Ingrese una opcion: ";
@@ -63,13 +62,10 @@ do {
 
             $teatro = new Teatro($nombreTeatro, $direccionTeatro, $funcionesTeatro);
             break;
-        case 2: // Listar funciones del teatro
-            print_r($teatro->getFunciones());
-            break;
-        case 3: // Mostrar datos del teatro (nombre y direccion)
+        case 2: // Mostrar datos del teatro (nombre, direccion, funciones)
             echo $teatro . "\n";
             break;
-        case 4: // Modificar datos del teatro (nombre y direccion)
+        case 3: // Modificar datos del teatro (nombre y direccion)
             echo "Ingrese el nuevo nombre del teatro: ";
             $nombreTeatro = trim(fgets(STDIN));
             echo "Ingrese la nueva direccion del teatro: ";
@@ -78,7 +74,7 @@ do {
             $teatro -> setNombre($nombreTeatro);
             $teatro -> setDireccion($direccionTeatro);
             break;
-        case 5: // Modificar datos de una funcion del teatro (nombre y precio)
+        case 4: // Modificar datos de una funcion del teatro (nombre y precio)
             echo "Ingrese el nombre de la funcion a modificar: ";
             $nombreFuncion = trim(fgets(STDIN));
             $numeroFuncion = $teatro -> buscarFuncion($nombreFuncion);

@@ -3,13 +3,13 @@ class Teatro {
     //Atributos
     private $nombreTeatro;
     private $direccionTeatro;
-    private $funciones;
+    private $colFunciones;
 
     //Constructor
     private function __construct($nombre, $direccion, $funcion) {
         $this -> nombreTeatro = $nombre;
         $this -> direccionTeatro = $direccion;
-        $this -> funciones = $funcion;
+        $this -> colFunciones = $funcion;
     }
 
     //Observadores
@@ -21,8 +21,8 @@ class Teatro {
         return $this -> direccionTeatro;
     }
 
-    public function getFunciones() {
-        return $this -> funciones;
+    public function getColFunciones() {
+        return $this -> colFunciones;
     }
 
     //Modificadores
@@ -32,6 +32,9 @@ class Teatro {
 
     public function setDireccion ($direccion) {
         $this -> direccionTeatro = $direccion;
+    }
+    public function setColFunciones($funcion) {
+        $this -> colFunciones = $funcion;
     }
 
     //Metodos
@@ -45,14 +48,15 @@ class Teatro {
          * Declaracion de variables
          * int $indiceFuncion, $i
          * string $funcionBuscada
+         * Array Teatro $conFunciones
          * */
 
         // Inicializacion de variables
         $pos = -1;
         $i = 0;
-
-        while ($i < count($this->funciones) && $pos == -1) {
-            if ($this->funciones[$i]["nombre"] == $funcionBuscada) {
+        $colFunciones = $this -> getColFunciones();
+        while ($i < count($colFunciones) && $pos == -1) {
+            if ($colFunciones[$i]["nombre"] == $funcionBuscada) {
                 $pos = $i;
             } else {
                 $i++;
@@ -66,9 +70,12 @@ class Teatro {
      */
     public function cambiarFuncion($pos, $nuevoNombre, $nuevoPrecio) {
         //boolean $exito
+        //Array Teatro $colFunciones
+        $colFunciones = $this -> getColFunciones();
         if ($pos < 4 && $pos >= 0) {
-            $this->funciones[$pos]["Nombre"] = $nuevoNombre;
-            $this->funciones[$pos]["Precio"] = $nuevoPrecio;
+            $arregloAux = array ("Nombre"=> $nuevoNombre, "Precio"=>$nuevoPrecio);
+                $colFunciones[$pos] = $arregloAux;
+                $this->setFunciones($colFunciones);
             $exito = true;
         } else {
             $exito = false;
@@ -77,6 +84,20 @@ class Teatro {
     }
 
     public function __toString() {
-        return "El Teatro: " . $this->getNombre() . "\n esta ubicado en la " . "Direccion: " . $this->getDireccion() . "\n";
+        return "Nombre: " . $this->getNombre() . "\n" .
+        "Direccion: " . $this->getDireccion() . "\n";
+        "Funciones: ".$this->mostrarFunciones();
+    }
+
+    public function mostrarFunciones() {
+        //String $retorno
+        //Array Teatro $col
+        $retorno = "";
+        $col = $this->getColFunciones();
+        for ($i = 0; $i < count($col); $i++) {
+            $retorno .= $col[$i] . "\n";
+            $retorno .= "-------------------------\n";
+        }
+        return $retorno;
     }
 }
