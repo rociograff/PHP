@@ -50,12 +50,11 @@ class Teatro {
          * int $indiceFuncion, $i
          * string $funcionBuscada
          * */
-
         $pos = -1;
         $i = 0;
-
-        while ($i < count($this->funciones) && $pos == -1) {
-            if ($this->arregloFunciones[$i]->getNombre() == $funcionBuscada) {
+        $colFunciones = $this->getFunciones();
+        while ($i < count($colFunciones) && $pos == -1) {
+            if ($colFunciones[$i]->getNombre() == $funcionBuscada) {
                 $pos = $i;
             } else {
                 $i++;
@@ -73,15 +72,20 @@ class Teatro {
         $seSolapa = false;
         $i = 0;
 
-        while (!$seSolapa && $i < count($this->arregloFunciones)) {
-            $duracion = $this->arregloFunciones[$i]->getDuracion();
-            $horaFuncion = $this->arregloFunciones[$i]->horaAMinutos();
-            $total = $duracion + $horaFuncion;
-            if ($funcion->horaAMinutos() > $total || $horaFuncion > ($funcion->horaAMinutos() + $funcion->getDuracion())) {
-                $seSolapa = false;
+        $colFunciones = $this->getFunciones();
+        while (!$seSolapa && $i < count($colFunciones)) {
+            if($funcion->getNombre() != $colFunciones[$i]->getNombre()) {
+                $duracion = $colFunciones[$i]->getDuracion();
+                $horaFuncion = $colFunciones[$i]->horaAMinutos();
+                $total = $duracion + $horaFuncion;
+                if ($funcion->horaAMinutos() > $total || $horaFuncion > ($funcion->horaAMinutos() + $funcion->getDuracion())) {
+                    $seSolapa = false;
+                    $i++;
+                } else {
+                    $seSolapa = true;
+                }
+            }else {
                 $i++;
-            } else {
-                $seSolapa = true;
             }
         }
         return $seSolapa;
