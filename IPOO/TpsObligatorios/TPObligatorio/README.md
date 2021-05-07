@@ -6,5 +6,5 @@ Implementar las 4 funciones usando un array que almacena la información corresp
 
 Implementar un script testTeatro.php que cree una instancia de la clase Teatro y presente un menú  que permita cargar la información del Teatro, modificar y ver sus datos 
 
-
+Fecha de entrega: 03/04/2021
 
