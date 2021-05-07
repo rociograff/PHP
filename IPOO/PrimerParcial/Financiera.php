@@ -68,6 +68,7 @@ class Financiera {
     public function incorporarPrestamo($nuevoPrestamo) {
         $colPrestamo = $this->getColPrestamo();
         array_push($colPrestamo, $nuevoPrestamo);
+        $this->setColPrestamo($colPrestamo);
     }
 
     /**
@@ -86,7 +87,6 @@ class Financiera {
                     $unPrestamo->otorgarPrestamo ();
                 }
             }
-            
         }
     }
 
@@ -96,18 +96,21 @@ class Financiera {
      * cuota a pagar. El método debe retornar la referencia a la cuota.
      */
     public function informarCuotaPagar($idPrestamo) {
-        $coleccionPrestamos = $this->getColPrestamo();
-        $prestamoEncontrado = false;
+        $objCuota = null;
+        $encontre = false;
         $i = 0;
+        $coleccionPrestamos = $this->getColPrestamo();
 
-        for ($i = 0; $i < count($coleccionPrestamos); $i++) {
-            $prestamo = $coleccionPrestamos[$i];
+        while($i < count($coleccionPrestamos) && !$encontre) {
+            $objPrestamo = $coleccionPrestamos[$i];
 
-            if ($prestamo->getIdentificacionPrestamo() == $idPrestamo) {
-                $datosCuota = $prestamo->darSiguienteCuotaPagar();
+            if ($objPrestamo->getIdentificacionPrestamo() == $idPrestamo) {
+                $objCuota = $objPrestamo->darSiguienteCuotaPagar();
+                $encontre = true;
             }
+            $i++;
         }
 
-        return $datosCuota;
+        return $objCuota;
     }
 }

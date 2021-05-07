@@ -20,7 +20,7 @@ class Persona {
         $this->neto = $neto;
     }
 
-    //Observadoras
+    //Metodos Observadoras
     public function getNombre() {
         return $this->nombre;
     }
@@ -49,7 +49,7 @@ class Persona {
         return $this->neto;
     }
 
-    //Modificadoras
+    //Metodos Modificadoras
     public function setNombre($nom) {
         $this->nombre = $nom;
     }

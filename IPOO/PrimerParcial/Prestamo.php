@@ -128,18 +128,21 @@ class Prestamo {
      * numeroCuota) implementado en el inciso anterior.
      */
     public function otorgarPrestamo() {
-        $monto = $this->getMonto();
-        $cantidadDeCuotas = $this->getCantCuotas();
-
+        //setea la variable instancia fecha otorgamiento
         $fecha = getdate();
         $this->setFechaOtorgamiento($fecha);
-
-        $importeTotalCuota = 0;
-        $importeTotalCuota = $monto / $cantidadDeCuotas;
-
-        $cuotaPagar = $this->darSiguienteCuotaPagar();
-
-        $montoInteres = $this->calcularInteresPrestamo($cuotaPagar -> getNumeroCuota());
+        //genera cada una de las cuotas = generar la cantidad de objetos cuotas que corresponda
+        $monto = $this->getMonto();
+        $cantidadDeCuotas = $this->getCantCuotas();
+        for($i = 1; $i <= $cantidadDeCuotas; $i++) {
+            //El importe total de la cuota debe ser calculado de la siguiente manera: (monto / cantidad_de_cuotas)
+            $montoCuota = $monto / $cantidadDeCuotas;
+            //al interés debe ser el valor retornado por el método calcularInteresPrestamo(numeroCuota)
+            $montoInteres = $this->calcularInteresPrestamo($i);
+            $objCuota = new Cuota($i, $montoCuota, $montoInteres);
+            $colCuotas = array_push($colCuotas, $objCuota);
+        }
+        $this->setColCuota($colCuotas);
     }
 
     /**
@@ -149,15 +152,16 @@ class Prestamo {
     public function darSiguienteCuotaPagar() {
         $referencia = null;
         $colCuota = $this->getColCuota();
+        $encontre = false;
+        $i = 0;
 
-        for($i = 0; $i < count($colCuota); $i++) {
-            $cuotaAnterior = $colCuota[$i];
-            $cuotaSiguiente = $colCuota[$i + 1];
-            if($cuotaAnterior->getCancelada() == true && $cuotaSiguiente->getCancelada() == false) {
-                $referencia = $cuotaSiguiente;
-            }else {
-                $referencia = $cuotaAnterior;
+        while($i < count($colCuota) && !$encontre) {
+            $objCuota = $colCuota[$i];
+            if(!$objCuota->getCancelada()) {
+                $referencia = $objCuota;
+                $encontre = true;
             }
+            $i++;
         }
         return $referencia;
     }

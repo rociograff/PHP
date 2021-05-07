@@ -14,7 +14,7 @@ class Cuota {
         $this->cancelada = false;  //Por defecto todas las cuotas deben ser generadas como false.
     }
 
-    //Observadoras
+    //Metodos Observadoras
     public function getNumeroCuota() {
         return $this->numero;
     }
@@ -31,7 +31,7 @@ class Cuota {
         return $this->cancelada;
     }
 
-    //Modificadoras
+    //Metodos Modificadoras
     public function setNumeroCuota($num) {
         $this->numero = $num;
     }

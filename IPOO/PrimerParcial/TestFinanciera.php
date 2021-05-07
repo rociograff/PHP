@@ -29,9 +29,11 @@ echo $financiera;
 
 //INCISO 5
 echo "------EJECUTANDO INCISO 5------\n";
+$financiera->otorgarPrestamoSiCalifica();
 
 //INCISO 6
 $objCuota = $financiera->informarCuotaPagar(1);
+echo $objCuota;
 
 //INCISO 7
 echo "------EJECUTANDO INCISO 7------\n";
@@ -42,9 +44,11 @@ echo "------EJECUTANDO INCISO 8------\n";
 echo $objCuota->darMontoFinalCuota();
 
 //INCISO 9
+$objCuota->setCancelada(true);
 
 //INCISO 10
 $objCuota = $Financiera->informarCuotaPagar(2);
+echo $objCuota;
 
 //INCISO 11
 echo "------EJECUTANDO INCISO 11------\n";
