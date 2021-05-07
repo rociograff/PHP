@@ -104,7 +104,7 @@ class Financiera {
         while($i < count($coleccionPrestamos) && !$encontre) {
             $objPrestamo = $coleccionPrestamos[$i];
 
-            if ($objPrestamo->getIdentificacionPrestamo() == $idPrestamo) {
+            if ($objPrestamo->getIdentificacion() == $idPrestamo) {
                 $objCuota = $objPrestamo->darSiguienteCuotaPagar();
                 $encontre = true;
             }
