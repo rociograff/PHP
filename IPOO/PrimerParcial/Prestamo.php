@@ -116,11 +116,7 @@ class Prestamo {
         $cantidadDeCuotas = $this->getCantCuotas();
         $tazaDeInteres = $this->getTazaInteres();
         
-        if($numCuota == 1) {
-            $importe = ($monto * $tazaDeInteres / 0.01);
-        }elseif($numCuota > 1) {
-            $importe = ($monto - (($monto / $cantidadDeCuotas) * $numCuota -1)) * $tazaDeInteres/0.01;
-        }
+        $importe = ($monto - (($monto / $cantidadDeCuotas) * $numCuota -1)) * $tazaDeInteres/0.01;
 
         return $importe;
     }
@@ -163,7 +159,6 @@ class Prestamo {
                 $referencia = $cuotaAnterior;
             }
         }
-
         return $referencia;
     }
 }
