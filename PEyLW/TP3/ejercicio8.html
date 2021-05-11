@@ -1,0 +1,38 @@
+<!--
+Ejercicio 8 - Confeccione un formulario que solicite el ingreso del nombre de una persona. 
+              Luego que seleccione si es mayor de edad o no (por defecto inicializar en si),
+              el teléfono (cargar por defecto 0299-)
+              y por último en un textarea solicitar que ingrese comentarios.
+              Crear el boton del formulario para que los datos sean enviados al servidor para 
+              su procesamiento
+-->
+
+<html>
+<head><title>ejercicio8</title></head>
+
+<body bgcolor = "pink">
+
+<br/><br/>
+<center>
+<from>
+<table>
+<tr><caption>Formulario 2021</caption></tr>
+<tr><th>Ingrese su nombre:</th><td><INPUT TYPE = "text" value = "Nombre" maxlength = "10" size= "20" name = "usuario1" /></td></tr>
+</table>
+<table>
+<tr><td>Mayor de edad<INPUT TYPE = "radio" checked value = "edad" size = "20" name = "edad1"/></td>
+<td>Menor de edad<INPUT TYPE = "radio" value = "edad" size = "20" name = "edad2"/></td></tr>
+</table>
+<table>
+<tr><td><texttarea name = "numero">0299-</texttarea><INPUT TYPE = "text" value = "cel"  maxlength = "10" size= "20" name = "cel" /></td></tr>
+</table>
+<br>
+<table>
+<tr><td><textarea name="nombre" rows="10" cols="30">Ingresar comentario</textarea></td></tr>
+<tr><td><INPUT TYPE = "submit" value = "subir datos"/></td></tr>
+</table>
+</from>
+</center>
+</body>
+
+</html>

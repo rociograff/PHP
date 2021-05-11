@@ -1,0 +1,34 @@
+<!-- Ejercicio 12 - Confeccione un formulario que permita alquilar una película y 
+solicite el ingreso de un mail, una clave y luego muestre una serie de títulos 
+de películas con su respectivo checkbox. Disponer también del botón de tipo submit 
+para el envío de datos al servidor. 
+-->
+<html>
+<head><title>Ejercicio12</title></head>
+
+<body bgcolor = "pink">
+
+<br/><br/>
+<center>
+<from>
+<table>
+<tr><caption>Alquilar Pelicula</caption></tr>
+<tr><th>Ingrese su mail:</th><td><INPUT TYPE = "text" value = "mail" maxlength = "35" size= "20" name = "mail" /></td></tr>
+<tr><th>Ingrese su clave:</th><td><INPUT TYPE ="password" value = "clave" maxlength = "10" size= "20" name = "clave" /></td></tr>
+<tr><td>Seleccione las peliculas que desea alquilar:</td></tr>
+<tr><td>Pixeles</td> <td><INPUT TYPE ="radio" checkbox name = "pelicula1"/></td></tr>
+<tr><td>¿Que paso ayer?</td> <td><INPUT TYPE ="radio" checkbox name ="pelicula2"/></td></tr>
+<tr><td>Una esposa de mentira</td> <td><INPUT TYPE ="radio" checkbox name ="pelicula3"/></td></tr>
+<tr><td>Rapidos y Furiosos</td> <td><INPUT TYPE ="radio" checkbox name ="pelicula4"/></td></tr>
+<tr><td>Interestelar</td> <td><INPUT TYPE ="radio" checkbox name ="pelicula5"/></td></tr>
+<tr><td>Vacaciones</td> <td><INPUT TYPE ="radio" checkbox name ="pelicula6"/></td></tr>
+<tr><td>Harry Potter</td> <td><INPUT TYPE ="radio" checkbox name ="pelicula7"/></td></tr> 
+</table>
+<table>
+<tr><td><INPUT TYPE="submit" value="Alquilar peliculas"/></td> 
+<td><INPUT TYPE ="reset" value="Intentar de nuevo"/></td></tr>
+</table>
+</from>
+</center>
+</body>
+</html>

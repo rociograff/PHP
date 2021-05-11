@@ -1,0 +1,55 @@
+
+<!-- Ejercicio 13 - Confeccionar una página para el Sitio de la inmobiliaria realizado 
+en el práctico 2.
+La página debe contener un formulario en el que se solicita:
+• Nombre (25 caracteres máximo)
+• Apellido (25 caracteres máximo)
+• Dirección (un textarea de 30 caracteres máximo)
+• Teléfono (15 caracteres máximo con un valor inicial 0299)
+• Permitir seleccionar solo una de las siguientes opciones (Alquiler, compra) por defecto 
+seleccionado compra
+• Permitir seleccionar una o mas de las siguientes opciones (zona centro, zona norte, 
+zona sur), por defecto seleccionada zona centro y zona sur
+• Comentario del inmueble que busca
+• Botón para resetear el formulario
+• Botón para enviar los datos al servidor 
+-->
+
+<html>
+
+<head><title>Ejercicio13</title></head>
+
+<body bgcolor = "pink">
+
+<br/><br/>
+<center>
+<from>
+<table>
+<tr><caption><h4>Formulario:</h4></caption></tr>
+<tr><th>Ingrese su nombre:</th><td><INPUT TYPE = "text" value = "Nombre" maxlength = "25" size= "20" name = "nombre" /></td></tr>
+<tr><th>Ingrese su apellido:</th><td><INPUT TYPE = "text" value = "Apellido" maxlength = "25" size= "20" name = "apellido" /></td></tr>
+<tr><th>Ingrese su direccion:</th><td><textarea maxlength = "30" name = "direccion" rows = "5" cols = "16">Direccion</textarea></td></tr>
+<tr><th>Ingrese su numero de telefono:</th><td><texttarea name = "numero">0299-</texttarea><INPUT TYPE = "text" value = "tel"  maxlength = "15" size= "20" name = "tel" /></td></tr>
+</table>
+<br>
+<b>Seleccione una opcion:</b>
+<select name = "alquiler">
+<option>Comprar
+<option>Alquiler
+</select>
+<INPUT TYPE = "submit" value = "Enviar eleccion"/>
+<br><br>
+<table>
+<tr><td><b>Seleccionar las opciones que decee...</b></td></tr>
+<tr><td>Zona centro</td> <td><INPUT TYPE ="radio" checkbox ="off" name = "zona1"/></td></tr>
+<tr><td>Zona norte</td> <td><INPUT TYPE ="radio" checkbox name ="zona2"/></td></tr>
+<tr><td>Zona sur</td> <td><INPUT TYPE ="radio" checkbox = "off" name ="zona3"/></td></tr>
+</table>
+<textarea maxlength = "30" name = "comentario" rows = "5" cols = "20">Comentario del inmueble que busca</textarea>
+<table>
+<tr><td><INPUT TYPE="submit" value="Enviar"/></td><td><INPUT TYPE ="reset" value="Borrar"/></td></tr>
+</table>
+</from>
+</center>
+</body>
+</html>

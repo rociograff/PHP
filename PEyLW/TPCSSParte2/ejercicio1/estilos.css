@@ -1,0 +1,38 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+h1 {
+    padding: 2% 0 2% 0;
+}
+
+h2 {
+    padding: 0 0 2% 1%;
+}
+
+p {
+    padding: 0 0 2% 1%;
+}
+
+a:link {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+a:visited {
+    color: brown;
+    font-weight: bold;
+}
+
+a:hover {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
+a:active {
+    color: blue;
+    font-weight: bold;
+    font-size: 2em;
+}

@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.parrafoImpar {
+    font-weight: bold;
+    padding: 0 0 2% 1%;
+}
+
+.parrafoPar {
+    padding: 0 0 2% 1%;
+}
+
+h1 {
+    padding: 2% 0 2% 1%;
+}
+
+h2 {
+    padding: 2% 0 2% 1%;
+}

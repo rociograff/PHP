@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: darkred;
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    color: darkgreen;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+}

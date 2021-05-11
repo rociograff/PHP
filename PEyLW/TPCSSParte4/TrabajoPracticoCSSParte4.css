@@ -1,0 +1,83 @@
+#css-zen-garden {
+    margin: 0%;
+    padding: 0%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
+    background-color: white;
+    color: black;
+}
+
+#container {
+    width: 100%;
+}
+
+#intro,
+#supportingText {
+    width: 80%;
+    float: right;
+}
+
+#linkList {
+    width: 20%;
+    float: left;
+    position: absolute;
+}
+
+#pageHeader h1 {
+    padding: 10px;
+    border: 1px solid black;
+    background: #DDD;
+    margin-bottom: 0;
+    background-image: url("/PEyLW/imagenes/tpCSS4/css_zen_garden.gif");
+    background-repeat: no-repeat;
+}
+
+#pageHeader h2 {
+    margin-top: 0;
+    padding: 10px;
+    border: 1px solid gray;
+    background-image: url("/PEyLW/imagenes/tpCSS4/zen_h2_back.gif");
+    background-repeat: repeat-x;
+    background-color: #489AED;
+}
+
+#lresources ul {
+    list-style: none;
+}
+
+#lresources {
+    margin-top: 10%;
+    background: #9CF;
+    position: relative;
+}
+
+#lresources ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    background: #036;
+    color: #9CF;
+}
+
+#larchives {
+    position: relative;
+}
+
+#larchives ul {
+    list-style: none;
+}
+
+#solito {
+    float: left;
+}
+
+.juntitos {
+    float: right;
+    padding: 0 100px 0 0;
+}
+
+#lselect ul {
+    list-style-image: url("/PEyLW/imagenes/tpCSS4/blue_bullet.gif");
+}

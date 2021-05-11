@@ -1,0 +1,32 @@
+<!--Ejercicio 11 - Confeccionar una página que permita hacer un reclamo de reparaciones y 
+				   se envíen los datos a una dirección de correo.Se debe poder ingresar el 
+				   nombre, dirección y un comentario del problema.
+                   El formulario deberá tener los siguientes atributos:
+                   <form action="mailto:reclamos@gmail.com" method="post" enctype="text/plain">  
+                   donde tuCorreos@xxxxx.com es tu dirección de correo
+-->
+
+<html>
+<head> <title> ejercicio11 </title> </head>
+
+<body bgcolor = "pink">
+
+<br/><br/>
+<center>
+<form action="mailto:reclamos@gmail.com" method="post" enctype="text/plain"/>
+<from>
+<table>
+<tr><caption>RECLAMO DE REPARACIONES</caption></tr>
+<tr><th>Ingrese su nombre:</th><td><INPUT TYPE = "text" value = "Nombre" maxlength = "20" size= "20" name = "Nombre1" /></td></tr>
+<tr><th>Ingrese su direccion:</th><td><INPUT TYPE = "text" value = "Direccion" maxlength = "10" size= "20" name = "Direccion1" /></td></tr>
+</table>
+<textarea name = "reclamo" rows = 10 cols = "30">Comente su problema</textarea>
+<table>
+<tr><td><INPUT TYPE ="submit" value="Subir eleccion"/></td> 
+<td><INPUT TYPE ="reset" value ="Intentar de nuevo"/></td></tr>
+</table>
+</from>
+</center>
+</body>
+ 
+ </html>

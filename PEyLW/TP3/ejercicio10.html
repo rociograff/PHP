@@ -1,0 +1,48 @@
+
+<!--
+Ejercicio 10 - Confeccione un formulario de un libro de visitas, 
+               se debe solicitar el nombre,
+               mail,pais de origen (por defecto la opción seleccionada debe ser 
+               "seleccione país"),valoración del sitio (malo, regular, bueno, muy bueno,
+               excelente) por defecto debe estar seleccionado "bueno".
+               Por último disponer un textarea donde se puede ingresar los comentarios
+-->
+
+<html>
+<head><title>ejercicio10</title></head>
+
+<body bgcolor = "pink">
+
+<br/><br/>
+<center>
+<from>
+<table>
+<tr><caption><h4>Libro de Visitas 2021</h4></caption></tr>
+<tr><th>Ingrese su nombre:</th><td><INPUT TYPE = "text" value = "Nombre" maxlength = "10" size= "20" name = "Nombre1" /></td></tr>
+<tr><caption>Formulario 2021</caption></tr>
+<tr><th>Ingrese su mail:</th><td><INPUT TYPE = "text" value = "mail" maxlength = "20" size= "20" name = "email1" /></td></tr>
+</table>
+<p><b>Seleccionar su pais:</b></p>
+<select name="pais">
+<option>Seleccione pais
+<option>Argentina
+<option>Uruguay
+<option>peru
+</select>
+<INPUT TYPE="submit" value = "Enviar elección"/>
+<p><b>Seleccionar opinion de este sitio:</b></p>
+<select name="opinion">
+<option>Bueno
+<option>Muy bueno
+<option>Excelente
+<option>regular
+<option>malo
+</select>
+<INPUT TYPE="submit" value = "Enviar elección"/>
+<br><br>
+<textarea name = "opinion" rows = 10 cols = "30">Ingrese un comentario</textarea>
+</from>
+</center>
+</body>
+
+</html>
