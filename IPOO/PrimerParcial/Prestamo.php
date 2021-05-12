@@ -150,19 +150,17 @@ class Prestamo {
      * que debe ser abonada de un préstamo, si el préstamo tiene todas sus cuotas canceladas retorna null.
      */
     public function darSiguienteCuotaPagar() {
-        $referencia = null;
-        $colCuota = $this->getColCuota();
-        $encontre = false;
+        $retorno = null;
+        $cancelada = true;
+        $colCuotas = $this->getColCuota();
         $i = 0;
-
-        while($i < count($colCuota) && !$encontre) {
-            $objCuota = $colCuota[$i];
-            if(!$objCuota->getCancelada()) {
-                $referencia = $objCuota;
-                $encontre = true;
+        while ($i < count($colCuotas) && $cancelada) { //Itera mientras que las cuotas de la coleccion estén canceladas
+            $cancelada = $colCuotas[$i]->getCancelada();
+            if (!$cancelada) { //Si encuentra una cuota sin cancelar retorna la referencia
+                $retorno = $colCuotas[$i];
             }
             $i++;
         }
-        return $referencia;
+        return $retorno;
     }
 }

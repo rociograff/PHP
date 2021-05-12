@@ -78,16 +78,18 @@ class Financiera {
      * al método otorgarPrestamo().
      */
     public function otorgarPrestamoSiCalifica() {
-        $colPrestamos = $this->getColPrestamo();
-        for ($i = 0; $i < count($colPrestamos); $i++) {
-            $unPrestamo = $colPrestamos[$i];
-            if ($unPrestamo->getColCuota() == null) {
-                $total = $unPrestamo->getMonto()/$unPrestamo->getCantCuotas();
-                if ($total <= 0.4) {
-                    $unPrestamo->otorgarPrestamo ();
+        $coleccion = $this->getColPrestamo();
+        foreach ($coleccion as $prestamo) {
+            if (count($prestamo->getColCuota()) == 0) { //Verifica que aun no se haya aprobado el prestamo
+                $monto = $prestamo->getMonto();
+                $cantCuotas = $prestamo->getCantCuotas();
+                $persona = $prestamo->getObjPersona();
+                if (($monto / $cantCuotas) <= ($persona->getNeto() * 0.4)) { //Verifica que el valor de las cuotas no supere el 40% del neto de la persona solicitante
+                    $prestamo->otorgarPrestamo();
                 }
             }
         }
+        $this->setColPrestamo($coleccion); //Actualizo la coleccion de prestamos luego de las modificaciones
     }
 
     /**
