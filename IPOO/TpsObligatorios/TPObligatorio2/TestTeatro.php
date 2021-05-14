@@ -68,32 +68,38 @@ function cargarFunciones($teatro) {
     //int $precio, $duracion
     //Funcion $nuevaFuncion
     //boolean $seSolapa, $existe
-    do {  //Verifico que la funcion ingresada no exista en la coleccion para poder cargarla
-        echo "Ingrese el nombre de la funcion: ";
-        $nombre = trim(fgets(STDIN));
-        $existe = $teatro->buscarFuncion($nombre);
-    } while ($existe != -1);
-    echo "Ingrese el precio de la funcion: ";
-    $precio = trim(fgets(STDIN));
-    echo "Ingrese la hora de inicio de la funcion (hs:min): ";
-    $horaInicio = trim(fgets(STDIN));
-    echo "Ingrese la duracion de la funcion (en minutos): ";
-    $duracion = trim(fgets(STDIN));
-
-    $nuevaFuncion = new Funciones($nombre, $precio, $horaInicio, $duracion);
-    $seSolapa = $teatro->seSolapan($nuevaFuncion);  //Verifico si la funcion se solapa con otra funcion en ese mismo horario
-
-    while ($seSolapa) {
-        echo "Ingrese un nuevo horario para la funcion: ";
+    //char $agregarFuncion
+    do {
+        do {  //Verifico que la funcion ingresada no exista en la coleccion para poder cargarla
+            echo "Ingrese el nombre de la funcion: ";
+            $nombre = trim(fgets(STDIN));
+            $existe = $teatro->buscarFuncion($nombre);
+        } while ($existe != -1);
+        echo "Ingrese el precio de la funcion: ";
+        $precio = trim(fgets(STDIN));
+        echo "Ingrese la hora de inicio de la funcion (hs:min): ";
         $horaInicio = trim(fgets(STDIN));
-        $nuevaFuncion->setHoraInicio($horaInicio);
-        $seSolapa = $teatro->seSolapan($nuevaFuncion);  //Verifico de nuevo si la funcion se solapa con otra funcion
-    }
+        echo "Ingrese la duracion de la funcion (en minutos): ";
+        $duracion = trim(fgets(STDIN));
 
-    //Agrego en la ultima posicion del arreglo de funciones la funcion ingresada
-    $arregloFunciones = $teatro->getFunciones();
-    $arregloFunciones[count($arregloFunciones)] = $nuevaFuncion;
-    $teatro->setFunciones($arregloFunciones);
+        $nuevaFuncion = new Funciones($nombre, $precio, $horaInicio, $duracion);
+        $seSolapa = $teatro->seSolapan($nuevaFuncion);  //Verifico si la funcion se solapa con otra funcion en ese mismo horario
+
+        while ($seSolapa) {
+            echo "Ingrese un nuevo horario para la funcion: ";
+            $horaInicio = trim(fgets(STDIN));
+            $nuevaFuncion->setHoraInicio($horaInicio);
+            $seSolapa = $teatro->seSolapan($nuevaFuncion);  //Verifico de nuevo si la funcion se solapa con otra funcion
+        }
+
+        //Agrego en la ultima posicion del arreglo de funciones la funcion ingresada
+        $arregloFunciones = $teatro->getFunciones();
+        $arregloFunciones[count($arregloFunciones)] = $nuevaFuncion;
+        $teatro->setFunciones($arregloFunciones);
+
+        echo  "¿Desea ingresar otra función? (s / n):" ;
+        $agregarFuncion = trim(fgets(STDIN));
+    } while ($agregarFuncion != 'n');
 }
 
 //OPCION 3
