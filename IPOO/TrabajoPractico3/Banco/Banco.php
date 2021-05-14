@@ -138,7 +138,7 @@ class Banco {
      * de cuentas, verificando que el cliente dueño de la cuenta es cliente del Banco
      */
     public function incorporarCajaAhorro($numeroCliente) {
-        $objPersona = $this->verificarNumCliente($numeroCliente); //Referencial adueño de la cuenta
+        $objPersona = $this->verificarNumCliente($numeroCliente); //Referencia al dueño de la cuenta
         $objCajaAhorro = null;
 
         if(!is_null($objPersona)) {
