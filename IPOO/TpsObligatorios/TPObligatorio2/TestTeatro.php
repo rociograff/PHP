@@ -10,11 +10,7 @@ function menu() {
     echo "2) Mostrar las funciones.\n";
     echo "3) Cambiar el nombre del teatro.\n";
     echo "4) Cambiar la direccion del teatro.\n";
-    echo "5) Buscar una funcion.\n";
-    echo "6) Cambiar el nombre de una funcion.\n";
-    echo "7) Cambiar el precio de una funcion.\n";
-    echo "8) Cambiar el horario de una funcion.\n";
-    echo "9) Cambiar la duracion de una funcion.\n";
+    echo "5) Cambiar los datos de una funcion.\n";
 }
 
 /**
@@ -38,40 +34,28 @@ do {
     $datosCargados = false;
     $opcion = trim(fgets(STDIN));
     switch ($opcion) {
-        case 0:
+        case 0:  //Salir del programa
             echo "FIN DEL PROGRAMA!";
             break;
-        case 1:
-            cargar($teatro);
+        case 1:  //Cargar una funcion
+            cargarFunciones($teatro);
             $datosCargados = true;
             break;
-        case 2:
+        case 2:  //Mostrar las funciones
             if ($longitud > 0) {
                 echo $teatro;
             } else {
                 echo "NO HAY FUNCIONES CARGADAS!\n";
             }
             break;
-        case 3:
+        case 3:  //Cambiar el nombre del Teatro
             cambiarNombreTeatro($teatro);
             break;
-        case 4:
+        case 4:  //Cambiar la direccion del Teatro
             cambiarDireccionTeatro($teatro);
             break;
-        case 5:
-            buscarFuncion($teatro);
-            break;
-        case 6:
-            cambiarNombreFuncion($teatro);
-            break;
-        case 7:
-            cambiarPrecioFuncion($teatro);
-            break;
-        case 8:
-            cambiarHorarioFuncion($teatro);
-            break;
-        case 9:
-            cambiarDuracionFuncion($teatro);
+        case 5:  //Cambiar los datos de una Funcion
+            cambiarDatosFuncion($teatro);
             break;
         default:
             echo "Opcion invalida, por favor ingrese una opcion valida\n";
@@ -79,12 +63,12 @@ do {
 } while ($opcion != 0);
 
 //OPCION 1
-function cargar($teatro) {
+function cargarFunciones($teatro) {
     //String $nombre, $horaInicio
     //int $precio, $duracion
     //Funcion $nuevaFuncion
     //boolean $seSolapa, $existe
-    do {
+    do {  //Verifico que la funcion ingresada no exista en la coleccion para poder cargarla
         echo "Ingrese el nombre de la funcion: ";
         $nombre = trim(fgets(STDIN));
         $existe = $teatro->buscarFuncion($nombre);
@@ -96,15 +80,17 @@ function cargar($teatro) {
     echo "Ingrese la duracion de la funcion (en minutos): ";
     $duracion = trim(fgets(STDIN));
 
-    $nuevaFuncion = new Funcion($nombre, $precio, $horaInicio, $duracion);
-    $seSolapa = $teatro->seSolapan($nuevaFuncion);
+    $nuevaFuncion = new Funciones($nombre, $precio, $horaInicio, $duracion);
+    $seSolapa = $teatro->seSolapan($nuevaFuncion);  //Verifico si la funcion se solapa con otra funcion en ese mismo horario
 
     while ($seSolapa) {
         echo "Ingrese un nuevo horario para la funcion: ";
         $horaInicio = trim(fgets(STDIN));
         $nuevaFuncion->setHoraInicio($horaInicio);
-        $seSolapa = $teatro->seSolapan($nuevaFuncion);
+        $seSolapa = $teatro->seSolapan($nuevaFuncion);  //Verifico de nuevo si la funcion se solapa con otra funcion
     }
+
+    //Agrego en la ultima posicion del arreglo de funciones la funcion ingresada
     $arregloFunciones = $teatro->getFunciones();
     $arregloFunciones[count($arregloFunciones)] = $nuevaFuncion;
     $teatro->setFunciones($arregloFunciones);
@@ -115,7 +101,7 @@ function cambiarNombreTeatro($teatro) {
     //String $nuevoNombre
     echo "Ingrese el nuevo nombre del teatro: ";
     $nuevoNombre = trim(fgets(STDIN));
-    $teatro->setNombre($nuevoNombre);
+    $teatro->setNombre($nuevoNombre);  //Reemplazo el nombre anterior por el nuevo 
 }
 
 //OPCION 4
@@ -123,110 +109,42 @@ function cambiarDireccionTeatro($teatro) {
     //String $nuevaDireccion
     echo "Ingrese la nueva direccion del teatro: ";
     $nuevaDireccion = trim(fgets(STDIN));
-    $teatro->setDireccion($nuevaDireccion);
+    $teatro->setDireccion($nuevaDireccion);  //Reemplazo la direccion anterior por la nueba
 }
 
 //OPCION 5
-function buscarFuncion($teatro) {
-    //String $funcionBuscada
-    //int $posFuncion
-    echo "Ingrese el nombre de la funcion que busca: ";
-    $funcionBuscada = trim(fgets(STDIN));
-    $posFuncion = $teatro->buscarFuncion($funcionBuscada); //Retorno la posicion en que se encuentra la funcion
+function cambiarDatosFuncion($teatro) {
+    //array $coleccionFuncionesTeatro
+    //string $funcionBuscada, $nuevoNombreFuncion, $nuevoHorarioFuncion
+    //int $numeroFuncion, $nuevaDuracionFuncion
+    //float $nuevoPrecioFuncion
 
-    if ($posFuncion == -1) {
-        echo "La funcion buscada no se encuentra en el teatro.\n";
-    } else {
-        echo "La funcion se encuentra en la posicion " . $posFuncion . ".\n";
+    echo "Ingrese el nombre de la funcion a modificar: ";
+    $funcionBuscada = trim(fgets(STDIN));
+    $numeroFuncion = $teatro->buscarFuncion($funcionBuscada);
+
+    if ($numeroFuncion >= 0) {
+        $coleccionFuncionesTeatro = $teatro->getFunciones();
+
+        echo "Ingrese el nuevo nombre de la funcion: ";
+        $nuevoNombreFuncion = trim(fgets(STDIN));
+        echo "Ingrese el nuevo horario (hh:mm): ";
+        $nuevoHorarioFuncion = trim(fgets(STDIN));
+        echo "Ingrese la nueva duracion (en minutos): ";
+        $nuevaDuracionFuncion = (int) trim(fgets(STDIN));
+        echo "Ingrese el nuevo precio: ";
+        $nuevoPrecioFuncion = trim(fgets(STDIN));
+
+        //Reemplazo por los nuevos valores
+        $coleccionFuncionesTeatro[$numeroFuncion]->setNombre($nuevoNombreFuncion);
+        $coleccionFuncionesTeatro[$numeroFuncion]->setHoraInicio($nuevoHorarioFuncion);
+        $coleccionFuncionesTeatro[$numeroFuncion]->setDuracion($nuevaDuracionFuncion);
+        $coleccionFuncionesTeatro[$numeroFuncion]->setPrecio($nuevoPrecioFuncion);
+
+        //Mando los nuevos valores al objeto
+        $teatro->setFunciones($coleccionFuncionesTeatro);
     }
 }
 
-//OPCION 6
-function cambiarNombreFuncion($teatro) {
-    //String $funcionBuscada, $nuevoNombre
-    //int $posFuncion
-    //Array Funcion $arregloFunciones
-    echo "Ingrese el nombre de la funcion que quiere cambiar: ";
-    $funcionBuscada = trim(fgets(STDIN));
-    $posFuncion = $teatro->buscarFuncion($funcionBuscada); //Retorno la posicion en que se encuentra la funcion
 
-    if ($posFuncion == -1) {
-        echo "La funcion ingresada no se encuentra en el teatro.\n";
-    } else {
-        $arregloFunciones = $teatro->getFunciones();
-        echo "Ingrese el nombre por el que desea cambiarlo: ";
-        $nuevoNombre = trim(fgets(STDIN));
-        $arregloFunciones[$posFuncion]->setNombre($nuevoNombre);
-        $teatro->setFunciones($arregloFunciones);
-    }
-}
 
-//OPCION 7
-function cambiarPrecioFuncion($teatro) {
-    //String $funcionBuscada
-    //float $nuevoPrecio
-    //int $posFuncion
-    //Array Funcion $arregloFunciones
-    echo "Ingrese el nombre de la funcion para modificar el precio: ";
-    $funcionBuscada = trim(fgets(STDIN));
-    $posFuncion = $teatro->buscarFuncion($funcionBuscada);
-
-    if ($posFuncion == -1) {
-        echo "La funcion ingresada no se encuentra en el teatro.\n";
-    } else {
-        $arregloFunciones = $teatro->getFunciones();
-        echo "Ingrese el precio por el que desea cambiarlo: ";
-        $nuevoPrecio = trim(fgets(STDIN));
-        $arregloFunciones[$posFuncion]->setPrecio($nuevoPrecio);
-        $teatro->setFunciones($arregloFunciones);
-    }
-}
-
-//OPCION 8
-function cambiarHorarioFuncion($teatro) {
-    //String $funcionBuscada, $nuevoHorario
-    //Funcion $f
-    //int $posFuncion
-    //Array Funcion $arregloFunciones
-    //boolean $seSolapa
-    echo "Ingrese el nombre de la funcion para modificar el horario: ";
-    $funcionBuscada = trim(fgets(STDIN));
-    $posFuncion = $teatro->buscarFuncion($funcionBuscada);
-
-    if ($posFuncion == -1) {
-        echo "La funcion ingresada no se encuentra en el teatro.\n";
-    } else {
-        $arregloFunciones = $teatro->getFunciones();
-        $f = $arregloFunciones[$posFuncion];
-        do { //Itera mientras que hora ingresada haga que se solape con otra funcion
-            echo "Ingrese el nuevo horario por el que desea cambiarlo (hs:min): ";
-            $nuevoHorario = trim(fgets(STDIN));
-            $f->setHoraInicio($nuevoHorario);
-            $seSolapa = $arregloFunciones->seSolapan($f);
-        } while ($seSolapa);
-        $arregloFunciones[$posFuncion] = $f;
-        $teatro->setFunciones($arregloFunciones);
-    }
-}
-
-//OPCION 9
-function cambiarDuracionFuncion($teatro) {
-    echo "Ingrese el nombre de la funcion para modificar la duracion: ";
-    $funcionBuscada = trim(fgets(STDIN));
-    $posFuncion = $teatro->buscarFuncion($funcionBuscada);
-
-    if ($posFuncion == -1) {
-        echo "La funcion ingresada no se encuentra en el teatro.\n";
-    } else {
-        $arregloFunciones = $teatro->getFunciones();
-        $f = $arregloFunciones[$posFuncion];
-        do { //Itera mientras que la duracion ingresada haga que se solape con otra funcion
-            echo "Ingrese la nueva duracion por la que desea cambiarla (en minutos): ";
-            $nuevaDuracion = trim(fgets(STDIN));
-            $f->setDuracion($nuevaDuracion);
-            $seSolapa = $arregloFunciones->seSolapan($f);
-        } while ($seSolapa);
-        $arregloFunciones[$posFuncion] = $f;
-        $teatro->setFunciones($arregloFunciones);
-    }
-}
