@@ -55,10 +55,10 @@ class Funciones {
      * @return $cadena
      */
     public function __toString() {
-        return "\tNombre: " . $this->getNombre() . 
-        "\n\tPrecio: $" . $this->getPrecio() . 
-        "\n\tHora inicio: " . $this->getHoraInicio() . 
-        "\n\tDuracion: " . $this->getDuracion() . " minutos";
+        return "\nNombre: ".$this->getNombre()."\n". 
+        "Precio: $".$this->getPrecio()."\n". 
+        "Hora inicio: ".$this->getHoraInicio()."\n". 
+        "Duracion: ".$this->getDuracion()." minutos.\n";
     }
 
     /**

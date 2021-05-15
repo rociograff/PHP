@@ -39,7 +39,6 @@ class Teatro {
     }
 
     //Metodos
-
     /**
     * Busca la existencia de una funcion requerida
     * De ser asi, devuelve la posicion en la que se encuentra
@@ -93,29 +92,49 @@ class Teatro {
 
     /**
     * Metodo calcularCostoTotal() el cual determina según las actividades del teatro cuál debería ser el cobro obtenido.
-    * @return $costoTotal
+    * @return $cadena variable que muestra cada costo de las actividades y la suma total
     */
     public function calcularCostoTotal() {
         /*variable: array $colFunciones, int $costoTotal, int $precioFuncion*/
         //La coleccion tiene instancias de Obra, Musical y Cine
         $colFunciones = $this->getColFunciones();
+        $costoObra = 0;
+        $costoCine = 0;
+        $costoMusical = 0;
+        $mes = date('m/Y');
         $costoTotal = 0;
         foreach ($colFunciones as $actividad) {
             $precioFuncion = $actividad->darCostos();
             //Sumo los precios de cada tipo de actividad y aplico un incremento por actividad segun se detalla en cada clase
-            $costoTotal += $precioFuncion;
+            switch (get_class($actividad)) {
+                case "Obra":
+                    $costoObra += $precioFuncion;
+                    break;
+                case "Cine":
+                    $costoCine += $precioFuncion;
+                    break;
+                case "Musical":
+                    $costoMusical += $precioFuncion;
+                    break;
+            }
+            //Sumo el costo total
+            $costoTotal = $costoCine + $costoMusical + $costoObra;
         }
-        return $costoTotal;
+        return "\nCostos al ".$mes.":"."\n". 
+        "Obras: $".$costoObra."\n".
+        "Cine: $".$costoCine."\n".
+        "Musicales: $".$costoMusical."\n". 
+        "Costo total: $".$costoTotal."\n";
     }
 
     /**
-    * Metodo toString() para mostrar los datos del Teatro
+    * Metodo __toString() para mostrar los datos del Teatro
     * @return $cadena 
     */
     public function __toString() {
         return "Teatro: " . $this->getNombre() . "\n" .
         "Direccion: " . $this->getDireccion() . "\n" .
-        "Funciones: " . $this->mostrarColeccion($this->getColFunciones());
+        "Funciones: " . $this->mostrarColeccion($this->getColFunciones())."\n";
     }
 
     /**

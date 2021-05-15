@@ -141,7 +141,7 @@ function cambiarDireccionTeatro($teatro) {
     //String $nuevaDireccion
     echo "Ingrese la nueva direccion del teatro: ";
     $nuevaDireccion = trim(fgets(STDIN));
-    $teatro->setDireccion($nuevaDireccion);  //Reemplazo la direccion anterior por la nueba
+    $teatro->setDireccion($nuevaDireccion);  //Reemplazo la direccion anterior por la nueva
 }
 
 //OPCION 5
@@ -181,7 +181,7 @@ function cambiarDatosFuncion($teatro) {
 function mostrarCostos($teatro) {
     //int $costoTotal
     $costoTotal = $teatro->calcularCostoTotal();
-    echo "El costo total del teatro es: $".$costoTotal."\n";
+    echo $costoTotal."\n";
 }
 
 
