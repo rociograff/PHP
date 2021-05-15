@@ -101,7 +101,6 @@ class Teatro {
         $costoObra = 0;
         $costoCine = 0;
         $costoMusical = 0;
-        $mes = date('m/Y');
         $costoTotal = 0;
         foreach ($colFunciones as $actividad) {
             $precioFuncion = $actividad->darCostos();
@@ -120,8 +119,7 @@ class Teatro {
             //Sumo el costo total
             $costoTotal = $costoCine + $costoMusical + $costoObra;
         }
-        return "\nCostos al ".$mes.":"."\n". 
-        "Obras: $".$costoObra."\n".
+        return "\nObras: $".$costoObra."\n".
         "Cine: $".$costoCine."\n".
         "Musicales: $".$costoMusical."\n". 
         "Costo total: $".$costoTotal."\n";
