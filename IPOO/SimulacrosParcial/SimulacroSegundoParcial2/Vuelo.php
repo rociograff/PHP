@@ -12,7 +12,7 @@ class Vuelo {
     private $colPasajeros;
 
     //Constructor
-    public function __construct($numeroVuelo, $plazasEjecutivasDisponibles, $plazasEconomicasDisponibles, $horaPartida, $horaLlegada, $destinoVuelo, $avionAsignado, $importeVuelo) {
+    public function __construct($numeroVuelo, $plazasEjecutivasDisponibles, $plazasEconomicasDisponibles, $horaPartida, $horaLlegada, $destinoVuelo, $avionAsignado, $importeVuelo, $colPasajeros) {
         $this->numeroVuelo = $numeroVuelo;
         $this->plazasEjecutivasDisponibles = $plazasEjecutivasDisponibles;
         $this->plazasEconomicasDisponibles = $plazasEconomicasDisponibles;
@@ -21,7 +21,7 @@ class Vuelo {
         $this->destinoVuelo = $destinoVuelo;
         $this->avionAsignado = $avionAsignado;
         $this->importeVuelo = $importeVuelo;
-        $this->colPasajeros = array();
+        $this->colPasajeros = $colPasajeros;
     }
 
     //Observadores

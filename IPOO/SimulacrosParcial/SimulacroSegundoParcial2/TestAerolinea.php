@@ -8,21 +8,17 @@ include 'Internacional.php';
 include 'Nacional.php';
 
 //INCISO 1
-echo "----------EJECUTANDO INCISO 1----------\n";
 $d1 = new Destino("Neuquen", "Neuquen");
 $d2 = new Destino("Bariloche", "Rio Negro");
 
 //INCISO 2
-echo "----------EJECUTANDO INCISO 2----------\n";
 $av1 = new Avion(0, 1, 1);
 $av2 = new Avion(1, 1, 1);
 
 //INCISO 3
-echo "----------EJECUTANDO INCISO 3----------\n";
 $aerolinea = new Aerolinea("Aerolineas Argentinas", [], []);
 
 //INCISO 4
-echo "----------EJECUTANDO INCISO 4----------\n";
 $p1 = new Pasajero(123456, 39614732, "Argentina", "Pablo", "Gonzalez");
 $p2 = new Pasajero(456789, 42186347, "Argentina", "Laura", "Sabio");
 

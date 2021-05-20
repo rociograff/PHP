@@ -5,9 +5,9 @@ class Internacional extends Vuelo {
     private $costoPasaje;
 
     //Constructor
-    public function __construct($numeroVuelo, $plazasEjecutivasDisponibles, $plazasEconomicasDisponibles, $horaPartida, $horaLlegada, $destinoVuelo, $avionAsignado, $importeVuelo, $cantEscalas, $costoPasaje) {
+    public function __construct($numeroVuelo, $plazasEjecutivasDisponibles, $plazasEconomicasDisponibles, $horaPartida, $horaLlegada, $destinoVuelo, $avionAsignado, $importeVuelo, $colPasajeros, $cantEscalas, $costoPasaje) {
         //Invoco el constructor de la clase Vuelo
-        parent::__construct($numeroVuelo, $plazasEjecutivasDisponibles, $plazasEconomicasDisponibles, $horaPartida, $horaLlegada, $destinoVuelo, $avionAsignado, $importeVuelo);
+        parent::__construct($numeroVuelo, $plazasEjecutivasDisponibles, $plazasEconomicasDisponibles, $horaPartida, $horaLlegada, $destinoVuelo, $avionAsignado, $importeVuelo, $colPasajeros);
         $this->cantEscalas = $cantEscalas;
         $this->costoPasaje = $costoPasaje;
     }

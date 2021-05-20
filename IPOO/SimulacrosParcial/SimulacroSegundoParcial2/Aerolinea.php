@@ -66,7 +66,7 @@ class Aerolinea {
     public function configurarVuelo($objDestino, $objAvion, $arreglo) {
         //Claves del arreglo asociativo
         $horaPartida = $arreglo["partida"];
-        $horaLlegada = $arreglo["hora llegada al destino"];
+        $horaLlegada = $arreglo["hora de llegada al destino"];
         $importe = $arreglo["importe"];
         $numeroVuelo = count($this->getColVuelos());
         //La cantidad de plazas del Avion
@@ -75,7 +75,7 @@ class Aerolinea {
         $coleccionPasajeros = array(); //Creo la coleccion de Pasajeros vacia
 
         //Creo un objeto vuelo 
-        $vuelo = new Vuelo($numeroVuelo, $plazasEjecutivas, $plazasEconomicas, $horaPartida, $horaLlegada, $objDestino, $objAvion, $importe);
+        $vuelo = new Vuelo($numeroVuelo, $plazasEjecutivas, $plazasEconomicas, $horaPartida, $horaLlegada, $objDestino, $objAvion, $importe, $coleccionPasajeros);
         //Retorno la instancia $vuelo creada
         return $vuelo;
     }
@@ -120,7 +120,7 @@ class Aerolinea {
                 }
             }
             //Actualizo las colecciones segun los cambios realizados
-            $objVuelo->setColeccionPasajeros($pasajerosVuelo);
+            $objVuelo->setColPasajeros($pasajerosVuelo);
             $coleccionVuelos[$i] = $objVuelo;
             $this->setColVuelos($coleccionVuelos);
             $this->setColPasajeros($coleccionPasajeros);
