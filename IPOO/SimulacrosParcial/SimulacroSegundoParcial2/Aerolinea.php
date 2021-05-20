@@ -6,10 +6,10 @@ class Aerolinea {
     private $colPasajeros;
 
     //Constructor
-    public function __construct($nombreAerolinea) {
+    public function __construct($nombreAerolinea, $colVuelos, $colPasajeros) {
         $this->nombreAerolinea = $nombreAerolinea;
-        $this->colVuelos = array();
-        $this->colPasajeros = array();
+        $this->colVuelos = $colVuelos;
+        $this->colPasajeros = $colPasajeros;
     }
 
     //Observadores
