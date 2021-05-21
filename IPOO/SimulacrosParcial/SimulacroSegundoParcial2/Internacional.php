@@ -2,14 +2,12 @@
 class Internacional extends Vuelo {
     //Atributos
     private $cantEscalas;
-    private $costoPasaje;
 
     //Constructor
-    public function __construct($numeroVuelo, $plazasEjecutivasDisponibles, $plazasEconomicasDisponibles, $horaPartida, $horaLlegada, $destinoVuelo, $avionAsignado, $importeVuelo, $colPasajeros, $cantEscalas, $costoPasaje) {
+    public function __construct($numeroVuelo, $plazasEjecutivasDisponibles, $plazasEconomicasDisponibles, $horaPartida, $horaLlegada, $destinoVuelo, $avionAsignado, $importeVuelo, $colPasajeros, $cantEscalas) {
         //Invoco el constructor de la clase Vuelo
         parent::__construct($numeroVuelo, $plazasEjecutivasDisponibles, $plazasEconomicasDisponibles, $horaPartida, $horaLlegada, $destinoVuelo, $avionAsignado, $importeVuelo, $colPasajeros);
         $this->cantEscalas = $cantEscalas;
-        $this->costoPasaje = $costoPasaje;
     }
 
     //Observador
@@ -17,25 +15,16 @@ class Internacional extends Vuelo {
         return $this->cantEscalas;
     }
 
-    public function getCostoPasaje() {
-        return $this->costoPasaje;
-    }
-
     //Modificador
     public function setCantEscalas($cantEscalas) {
         $this->cantEscalas = $cantEscalas;
-    }
-
-    public function setCostoPasaje($costoPasaje) {
-        $this->costoPasaje = $costoPasaje;
     }
 
     //Metodos
     /*Metodo __toString() para mostrar los datos de los vuelvos Internacionales */
     public function __toString() {
         return parent::__toString()."\n".
-        "Cantidad de escalas: ".$this->getCantEscalas()."\n".
-        "Costo pasaje: ".$this->getCostoPasaje()."\n";
+        "Cantidad de escalas: ".$this->getCantEscalas()."\n";
     }
 
     /*Metodo calcularImporte($objPasajero) que recibe por parametro un objeto Pasajero y si el vuelo es internacional

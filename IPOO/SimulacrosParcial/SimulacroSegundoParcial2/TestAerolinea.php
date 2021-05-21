@@ -16,7 +16,7 @@ $av1 = new Avion(0, 1, 1);
 $av2 = new Avion(1, 1, 1);
 
 //INCISO 3
-$aerolinea = new Aerolinea("Aerolineas Argentinas", [], []);
+$aerolinea = new Aerolinea("Aerolineas Argentinas", []);
 
 //INCISO 4
 $p1 = new Pasajero(123456, 39614732, "Argentina", "Pablo", "Gonzalez");
@@ -29,14 +29,14 @@ $coleccion = [
     "hora de llegada al destino" => "23:50",
     "importe" => 1000,
 ];
-$vuelo1 = $aerolinea->configurarVuelo($d1, $av1, $coleccion);
+$vuelo1 = $aerolinea->configurarVuelo($d1, $av1, $coleccion, $tipoVuelo);
 $coleccionVuelos = $aerolinea->getColVuelos();
 array_push($coleccionVuelos, $vuelo1);
 $aerolinea->setColVuelos($coleccionVuelos);
 
 echo "VUELO 1:\n" . $vuelo1 . "\n";
 
-$vuelo2 = $aerolinea->configurarVuelo($d2, $av2, $coleccion);
+$vuelo2 = $aerolinea->configurarVuelo($d2, $av2, $coleccion, $tipoVuelo);
 $coleccionVuelos = $aerolinea->getColVuelos();
 array_push($coleccionVuelos, $vuelo2);
 $aerolinea->setColVuelos($coleccionVuelos);

@@ -3,13 +3,11 @@ class Aerolinea {
     //Atributos
     private $nombreAerolinea;
     private $colVuelos;
-    private $colPasajeros;
 
     //Constructor
-    public function __construct($nombreAerolinea, $colVuelos, $colPasajeros) {
+    public function __construct($nombreAerolinea, $colVuelos) {
         $this->nombreAerolinea = $nombreAerolinea;
         $this->colVuelos = $colVuelos;
-        $this->colPasajeros = $colPasajeros;
     }
 
     //Observadores
@@ -21,10 +19,6 @@ class Aerolinea {
         return $this->colVuelos;
     }
 
-    public function getColPasajeros() {
-        return $this->colPasajeros;
-    }
-
     //Modificadores
     public function setNombreAerolinea($nombreAerolinea) {
         $this->nombreAerolinea = $nombreAerolinea;
@@ -34,16 +28,11 @@ class Aerolinea {
         $this->colVuelos = $colVuelos;
     }
 
-    public function setColPasajeros($colPasajeros) {
-        $this->colPasajeros = $colPasajeros;
-    }
-
     //Metodos
     /*Metodo __toString() para mostrar la informacion de las Aerolineas */
     public function __toString() {
         return "Nombre de la Aerolinea: ".$this->getNombreAerolinea()."\n".
-        "------VUELOS------\n".$this->mostrarColeccion($this->getColVuelos())."\n".
-        "------PASAJEROS------\n".$this->mostrarColeccion($this->getColPasajeros())."\n";
+        "------VUELOS------\n".$this->mostrarColeccion($this->getColVuelos())."\n";
     }
 
     /* Metodo para mostrar colecciones */
@@ -63,7 +52,7 @@ class Aerolinea {
     avión y la colección de pasajeros que van a realizar el vuelo debe crearse vacía, El método retorna la
     instancia de vuelo creada. (Ayuda: puede utilizar como numero de vuelo el subíndice de la colección de
     vuelos de la aerolinea) */
-    public function configurarVuelo($objDestino, $objAvion, $arreglo) {
+    public function configurarVuelo($objDestino, $objAvion, $arreglo, $tipoVuelo) {
         //Claves del arreglo asociativo
         $horaPartida = $arreglo["partida"];
         $horaLlegada = $arreglo["hora de llegada al destino"];
@@ -73,10 +62,13 @@ class Aerolinea {
         $plazasEjecutivas = $objAvion->getCantPlazasEjecutivas();
         $plazasEconomicas = $objAvion->getcantPlazasEconomicas();
         $coleccionPasajeros = array(); //Creo la coleccion de Pasajeros vacia
-
-        //Creo un objeto vuelo 
-        $vuelo = new Vuelo($numeroVuelo, $plazasEjecutivas, $plazasEconomicas, $horaPartida, $horaLlegada, $objDestino, $objAvion, $importe, $coleccionPasajeros);
-        //Retorno la instancia $vuelo creada
+        //De acuerdo al tipo de vuelo...
+        if($tipoVuelo == "internacional") {
+            $vuelo = new Internacional($numeroVuelo, $plazasEjecutivas, $plazasEconomicas, $horaPartida, $horaLlegada, $objDestino, $objAvion, $importe, $coleccionPasajeros, 0);
+        }else {
+            $vuelo = new Nacional($numeroVuelo, $plazasEjecutivas, $plazasEconomicas, $horaPartida, $horaLlegada, $objDestino, $objAvion, $importe, $coleccionPasajeros, 0);
+        }
+        //Retorno la instancia $vuelo creada segun su tipo de vuelo
         return $vuelo;
     }
 
@@ -86,7 +78,6 @@ class Aerolinea {
     se realiza y vincular el pasajero a la colección de pasajeros del vuelo, */
     public function venderVuelo($numeroVuelo, $objPasajero, $clase) {
         $coleccionVuelos = $this->getColVuelos();
-        $coleccionPasajeros = $this->getColPasajeros();
         $encontrado = false;
         $i = -1;
         $costo = -1; //En caso de que no se pueda vender el vuelo, retorna -1
@@ -123,7 +114,6 @@ class Aerolinea {
             $objVuelo->setColPasajeros($pasajerosVuelo);
             $coleccionVuelos[$i] = $objVuelo;
             $this->setColVuelos($coleccionVuelos);
-            $this->setColPasajeros($coleccionPasajeros);
         }
         //Retorno el importe que abona el pasajero
         return $costo;
