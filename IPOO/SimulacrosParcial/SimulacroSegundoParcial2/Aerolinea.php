@@ -98,7 +98,6 @@ class Aerolinea {
                     $objVuelo->setPlazasEconomicasDisponibles($plazasEc);
                     $costo = $objVuelo->calcularImporte($objPasajero);
                     array_push($pasajerosVuelo, $objPasajero);
-                    array_push($coleccionPasajeros, $objPasajero);
                 }
             } else {
                 $plazasEj = $objVuelo->getPlazasEjecutivasDisponibles();
@@ -107,7 +106,6 @@ class Aerolinea {
                     $objVuelo->setPlazasEjecutivasDisponibles($plazasEj);
                     $costo = $objVuelo->calcularImporte($objPasajero);
                     array_push($pasajerosVuelo, $objPasajero);
-                    array_push($coleccionPasajeros, $objPasajero);
                 }
             }
             //Actualizo las colecciones segun los cambios realizados
