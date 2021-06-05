@@ -1,0 +1,28 @@
+.nosotros {
+    width: 100%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Quiénes somos*/
+.info-nosotros h1 {
+    color: #961607;
+    font-size: 50px;
+    margin-left: 6%;
+}
+
+/*Texto explicativo*/
+.info-nosotros p {
+    width: 70%;
+    margin-left: 6%;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 16px;
+}
+
+/*Subtitulos*/
+.info-nosotros h2 {
+    color:darkslategray;
+    font-size: 25px;
+    margin-left: 6%;
+}

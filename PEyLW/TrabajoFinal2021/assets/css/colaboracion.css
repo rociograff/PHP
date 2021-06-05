@@ -1,0 +1,232 @@
+.options {
+    width: 100%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*------VOLUNTARIADO------*/
+.voluntariado {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*Se voluntario*/
+.voluntariado h2 {
+    color: #961607;
+    margin-left: 80px;
+    font-size: 50px;
+}
+
+/*¿En que pueden ayudar las voluntarias y voluntarios?*/
+.voluntariado h3 {
+    color:darkslategray;
+    margin-left: 80px;
+    font-size: 30px;
+    text-align: left;
+}
+
+/*Condicion para ser voluntario*/
+.condicion {
+    width: 50%;
+    margin-left: 80px;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 16px;
+}
+
+/*Titulos de las opciones para ser voluntario*/
+.voluntariado h4 {
+    font-size: 20px;
+    text-align: center;
+    color:#bb4a3d;
+}
+
+/*Opciones voluntariado de la izquierda*/
+.bloque1 {
+    width: 49%;
+    float: left;
+    margin-left: 25px;
+}
+
+/*Opciones voluntariado de la derecha*/
+.bloque2 {
+    width: 49%;
+    float: left;
+}
+
+/*Opciones voluntariado*/
+.opcion1, .opcion2, .opcion3, .opcion4, .opcion5 {
+    width: 70%;
+    line-height: 30px;
+    text-align: justify;
+    font-size: 14px;
+}
+
+/*Lista de opciones*/
+.voluntariado ul {
+    width: 100%;
+}
+
+/*----Bullets opciones----*/
+.opcion1 {
+    margin: 0;
+	list-style: none;
+	background-image: url("../img/transporte.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 40px;
+}
+
+.opcion2 {
+    margin: 0;
+	list-style: none;
+	background-image: url("../img/veterinaria.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 40px;
+}
+
+.opcion3 {
+    margin: 0;
+	list-style: none;
+	background-image: url("../img/marketing.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 40px;
+}
+
+.opcion4 {
+    margin: 0;
+	list-style: none;
+	background-image: url("../img/asistencia-en-jornadas.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 40px;
+}
+
+.opcion5 {
+    margin: 0;
+	list-style: none;
+	background-image: url("../img/recaudacion.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 40px;
+}
+
+/*----BOTON A FORMULARIO DE VOLUNTARIADO----*/
+.frase-boton {
+    width: 55%;
+    height: 15%;
+    text-align: center;
+    border: 1px double black;
+    margin-top: 50px;
+    margin-left: 22%;
+}
+
+#boton-voluntariado {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(37, 151, 37);
+    color: beige;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*------DONACIONES------*/
+.donaciones {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*Descripcion de la donación*/
+.descripcion {
+    width: 50%;
+    float: left;
+}
+
+/*Texto descripcion*/
+.descripcion p {
+    margin-left: 80px;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 16px;
+}
+
+/*Hacé una donación*/
+.donaciones h2 {
+    color: #961607;
+    margin-left: 80px;
+    font-size: 50px;
+}
+
+/*Ayúdanos a ayudar*/
+.donaciones h3 {
+    color:darkslategray;
+    margin-left: 80px;
+    font-size: 30px;
+    text-align: left;
+}
+
+/*Cartelito*/
+.cartel-donacion {
+    width: 24%;
+    border: 1px double black;
+    float: left;
+    margin-top: 60px;
+    margin-left: 200px;
+    padding: 10px;
+    text-align: center;
+    background-color: #a8201a;
+}
+
+/*Tu aporte nos ayuda mucho*/
+.cartel-donacion h4 {
+    font-size: 25px;
+    color: beige;
+}
+
+/*Texto del cartel*/
+.cartel-donacion p {
+    color: beige;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/*----BOTONES A FORMULARIOS DE DONACIONES----*/
+.boton-donacion1 {
+    width: 35%;
+    height: 15%;
+    text-align: center;
+    border: 1px double black;
+    margin-top: 50px;
+    margin-left: 10%;
+    float: left;
+}
+
+/*Trasferencia Bancaria*/
+#boton1 {
+    width: 100%;
+    height: 100%;
+    background-color: #7a9e9f;
+    color: white;
+    font-size: 30px;
+}
+
+.boton-donacion2 {
+    width: 35%;
+    height: 15%;
+    text-align: center;
+    border: 1px double black;
+    margin-top: 50px;
+    margin-left: 10%;
+    float: left;
+}
+
+/*Mercado Pago*/
+#boton2 {
+    width: 100%;
+    height: 100%;
+    background-color: #0471a6;
+    color: white;
+    font-size: 30px;
+}
