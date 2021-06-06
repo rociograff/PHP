@@ -17,14 +17,6 @@
     font-size: 50px;
 }
 
-/*¿En que pueden ayudar las voluntarias y voluntarios?*/
-.voluntariado h3 {
-    color:darkslategray;
-    margin-left: 80px;
-    font-size: 30px;
-    text-align: left;
-}
-
 /*Condicion para ser voluntario*/
 .condicion {
     width: 50%;
@@ -34,11 +26,17 @@
     font-size: 16px;
 }
 
-/*Titulos de las opciones para ser voluntario*/
-.voluntariado h4 {
-    font-size: 20px;
-    text-align: center;
-    color:#bb4a3d;
+/*¿En que pueden ayudar las voluntarias y voluntarios?*/
+.voluntariado h3 {
+    color:darkslategray;
+    margin-left: 80px;
+    font-size: 30px;
+    text-align: left;
+}
+
+/*Lista de opciones*/
+.voluntariado ul {
+    width: 100%;
 }
 
 /*Opciones voluntariado de la izquierda*/
@@ -54,17 +52,19 @@
     float: left;
 }
 
+/*Titulos de las opciones para ser voluntario*/
+.voluntariado h4 {
+    font-size: 20px;
+    text-align: center;
+    color:#bb4a3d;
+}
+
 /*Opciones voluntariado*/
 .opcion1, .opcion2, .opcion3, .opcion4, .opcion5 {
     width: 70%;
     line-height: 30px;
     text-align: justify;
     font-size: 14px;
-}
-
-/*Lista de opciones*/
-.voluntariado ul {
-    width: 100%;
 }
 
 /*----Bullets opciones----*/
@@ -115,12 +115,12 @@
 
 /*----BOTON A FORMULARIO DE VOLUNTARIADO----*/
 .frase-boton {
-    width: 55%;
+    width: 33%;
     height: 15%;
     text-align: center;
     border: 1px double black;
     margin-top: 50px;
-    margin-left: 22%;
+    margin-left: 32%;
 }
 
 #boton-voluntariado {
@@ -201,11 +201,11 @@
 
 /*----BOTONES A FORMULARIOS DE DONACIONES----*/
 .boton-donacion1 {
-    width: 35%;
+    width: 25%;
     height: 15%;
     text-align: center;
     border: 1px double black;
-    margin-top: 50px;
+    margin-top: 25px;
     margin-left: 10%;
     float: left;
 }
@@ -227,11 +227,11 @@
 }
 
 .boton-donacion2 {
-    width: 35%;
+    width: 25%;
     height: 15%;
     text-align: center;
     border: 1px double black;
-    margin-top: 50px;
+    margin-top: 25px;
     margin-left: 10%;
     float: left;
 }

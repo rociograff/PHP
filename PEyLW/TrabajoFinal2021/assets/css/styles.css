@@ -9,13 +9,11 @@ body {
 
 /*Vida Animal*/
 .titulo {
-    position: relative;
-    z-index: 2; /*Establezco un z-index para que arrastre por encima de la img el titulo*/
     font-family: 'Sigmar One', cursive;  
     float: left;
-    width: 45%;
+    width: 40%;
     color: rgb(37, 151, 37);
-    font-size: 30px;
+    font-size: 25px;
     text-align: right;
 }
 
@@ -27,17 +25,26 @@ body {
     text-decoration: none;
 }
 
-/*Boton SÚMATE*/
-.boton-titulo {
-    width: 20%;
-    height: 10%;
-    float: right;
-    border: 1px double black;
-    margin-right: 5%;
-    margin-top: 4.5%;
+.eslogan p  {
+    width: 100%;
+    font-size: 20px;
+    margin-top: 2%; 
+    font-weight: bold;
+    margin-left: 55%;   
+    color: #b44e12;
 }
 
-/*Color del boton, tamaño del texto y color*/
+/*----Boton SÚMATE----*/
+.boton-titulo {
+    width: 20%;
+    height: 15%;
+    float: right;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 16%;
+}
+
+/*Color del boton, tamaño del texto y color de la letra*/
 .boton-titulo input {
     width: 100%;
     height: 100%;
@@ -54,25 +61,24 @@ body {
     transition: all 0.2s ease;
 }
 
-/*Diseño del menu con color de fondo y un sombreado abajo*/
+/*Diseño del header con color de fondo y un sombreado abajo*/
 .page-name {
     width: 100%;
     position: relative;
     overflow: hidden;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);  /*sombreado abajo del menu*/
-    /*background-color:#a5ce6f;*/
     background-color: #adc698;
 }
 
-/*Realizo un posicionamiento absoluto de la etiqueta img y la estiro para que llene la barra de navegacion
-por completo. Y posiciono relativamente todo lo demás para poder establecer un z-index que lo arrastre por 
-encima de img.*/
+/*Imagen titulo*/
 .page-name img {
     position: absolute;
     left: 0;
     top: 0;
-    height: 90%;
-    margin-left: 56%;
+    height: 77%;
+    margin-left: 15px; /*Lo mueve 15px hacia la derecha*/
+    padding-top: 8.5px; /*Lo mueve 8.5px hacia abajo*/
+
 }
 
 /*Barra de navegación*/
@@ -91,34 +97,34 @@ encima de img.*/
 
 /*Menu*/
 .menu{
-    display: flex;
-    flex-wrap: nowrap;
+    display: flex; /*Propiedad que obliga a los hijos a acomodarse y no salirse de la caja*/
+    flex-wrap: nowrap; /*Los elementos flex son distribuidos en una sola línea*/
 }
+/*La propiedad flex-wrap de CSS especifica si los elementos "hijos" son obligados a permanecer en una misma línea 
+o pueden fluir en varias líneas*/
 
 /*Edicion de los elementos del menu, color de fondo, tamaño de fuente...*/
 .page-name li {
-    position: relative;
-    display: inline;
+    /*display: inline;*/
     font-size: 15px;
     background-color: beige;
 }
 
-/*Incio*/
+/*Inicio*/
 .first-element {
-    display: inline;
-    padding: 0px 60px 0 60px;
+    display: inline; /*El elemento genera uno o más cuadros de elemento en línea.*/
+    padding: 0px 60px 0 50px;
 }
 
-/*Nosotros, Animales, Proyectos, Cómo ayudar, Contacto*/
+/*Nosotros, Animales, Campañas, Cómo ayudar, Contacto*/
 .element {
-    display: inline;
+    display: inline; /*El elemento genera uno o más cuadros de elemento en línea.*/
     padding: 0px 60px 0 60px;
-    border-left: 1px solid black;
+    border-left: 1px solid black; /*Barritas de separacion*/
 }
 
 /*Estilo de fuente para los elementos del menu, y sin decoracion al texto*/
 .active, .disabled {
-    position: relative;
     text-decoration: none;
     font-family: 'Sigmar One', cursive;  
 }
@@ -154,8 +160,7 @@ encima de img.*/
 #copyright {
     overflow: hidden;
     padding: 8px 8px;
-    position: relative;
-
+    background-color: #adc698;
     display: block;
     float: right;
     width: 100%;
@@ -165,24 +170,16 @@ encima de img.*/
 }
 
 #copyright p {
-    position: relative;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: right;
     margin: 0;
     padding: 0;
     margin-right: 70px;
-    color: beige;
+    color: black;
 }
 
-/*Realizo un posicionamiento absoluto de la etiqueta img y la estiro para que llene el contenedor 
-por completo. Y posiciono relativamente todo lo demás*/
-#copyright img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.8;
+br.clear {
+    clear: both;
 }
 
 
