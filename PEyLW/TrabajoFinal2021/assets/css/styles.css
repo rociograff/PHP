@@ -3,7 +3,7 @@ html,
 body {
     margin: 0 auto;
     background-color: #e7e7e7;
-    color: #1E1E24;
+    color: black;
     scroll-behavior: smooth;  /*scrollea hasta el hipervinculo seleccionado*/
 }
 
@@ -12,52 +12,67 @@ body {
     position: relative;
     z-index: 2; /*Establezco un z-index para que arrastre por encima de la img el titulo*/
     font-family: 'Sigmar One', cursive;  
-    text-align: center;
-    width: 100%;
+    float: left;
+    width: 45%;
     color: rgb(37, 151, 37);
-    font-size: 35px;
+    font-size: 30px;
+    text-align: right;
 }
 
-header {
+/*Color del link del titulo para redireccionar al inicio*/
+.titulo a:link,
+.titulo a:active,
+.titulo a:visited {
+    color: rgb(37, 151, 37);
+    text-decoration: none;
+}
+
+/*Boton SÚMATE*/
+.boton-titulo {
+    width: 20%;
+    height: 10%;
+    float: right;
+    border: 1px double black;
+    margin-right: 5%;
+    margin-top: 4.5%;
+}
+
+/*Color del boton, tamaño del texto y color*/
+.boton-titulo input {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(37, 151, 37);
+    font-size: 20px;
+    font-weight: bold;
+    color: beige;
+}
+
+/*Efecto para el boton cuando se le pasa el mouse*/
+.boton-titulo:hover {
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgb(37, 151, 37);  /*Efecto resplandor*/
+    transition: all 0.2s ease;
+}
+
+/*Diseño del menu con color de fondo y un sombreado abajo*/
+.page-name {
+    width: 100%;
     position: relative;
     overflow: hidden;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);  /*sombreado abajo del menu*/
+    /*background-color:#a5ce6f;*/
+    background-color: #adc698;
 }
 
 /*Realizo un posicionamiento absoluto de la etiqueta img y la estiro para que llene la barra de navegacion
 por completo. Y posiciono relativamente todo lo demás para poder establecer un z-index que lo arrastre por 
 encima de img.*/
-header img {
+.page-name img {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.8;
-}
-
-header li {
-    position: relative;
-    display: inline;
-    font-size: 15px;
-    background-color: beige;
-}
-
-header a {
-    position: relative;
-    text-decoration: none;
-    font-family: 'Sigmar One', cursive;  
-}
-
-/*Cambio de color de los links*/
-header a:link,
-header a:visited,
-header a:active {
-    color: #b44e12;
-}
-header a:hover {
-    background-color:#f1894d;
-    border-bottom: 15px;
+    height: 90%;
+    margin-left: 56%;
 }
 
 /*Barra de navegación*/
@@ -71,12 +86,21 @@ header a:hover {
 .menu-container {
     width: 100%;
     text-align: center;
+    background-color: beige;
 }
 
 /*Menu*/
 .menu{
     display: flex;
     flex-wrap: nowrap;
+}
+
+/*Edicion de los elementos del menu, color de fondo, tamaño de fuente...*/
+.page-name li {
+    position: relative;
+    display: inline;
+    font-size: 15px;
+    background-color: beige;
 }
 
 /*Incio*/
@@ -90,6 +114,40 @@ header a:hover {
     display: inline;
     padding: 0px 60px 0 60px;
     border-left: 1px solid black;
+}
+
+/*Estilo de fuente para los elementos del menu, y sin decoracion al texto*/
+.active, .disabled {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Sigmar One', cursive;  
+}
+
+/*----Cambio de color de los links----*/
+/*Link activo*/
+.active:link,
+.active:visited,
+.active:active {
+    color: #b44e12;
+}
+
+/*Color encima del link*/
+.active:hover {
+    background-color:#f1894d;
+    border-bottom: 15px;
+}
+
+/*Link no visitado*/
+.disabled:link,
+.disabled:visited,
+.disabled:active {
+    color: #b44e12;
+}
+
+/*Color encima del link*/
+.disabled:hover {
+    background-color:#f1894d;
+    border-bottom: 15px;   
 }
 
 /* ------Copyright------*/

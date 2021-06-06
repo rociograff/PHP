@@ -1,41 +1,16 @@
-.info-animals {
+/*Contenido principal*/
+.main-content {
     margin: 0 auto;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /*Animales de Argentina en peligro de extinción*/
-.header {
+.info-animals h2 {
     width: 50%;
     color: #961607;
     margin-left: 35px;
-    font-size: 25px;
-}
-
-/*Contenido principal*/
-.main-content {
-    width: 100%;
-}
-
-/*Contenido*/
-.contents {
-    width: 70%;
-    margin-left: 25px;
-    float: left;
-}
-
-/*Imagenes de los animales*/
-img {
-    width: 580;
-    height: 380;
-    margin-right: 40px;
-}
-
-/*Alineacion del texto en las descripciones de los animales y el contenido en si*/
-.animal-description, .contents {
-    text-align: justify;
-    line-height: 25px;
-    font-size: 16px;
+    font-size: 35px;
 }
 
 /*Tablita con listado de los animales*/
@@ -53,7 +28,45 @@ img {
     text-align: center;
 }
 
-/*Cambio de color de links*/
-.indice a {
+/*----Cambio de color de links----*/
+.indice a:link,
+.indice a:active {
+    color: #961607;
+}
 
+/*Link visitado*/
+.indice a:visited {
+    color: #b44e12;
+}
+
+/*Cambio de color cuando se pasa el mouse por el link*/
+.indice a:hover {
+    color: #da7c45;
+    text-decoration:underline;
+}
+
+/*Links sin subrayado*/
+.indice a {
+    text-decoration: none;
+}
+
+/*Contenido: imagenes y descripciones*/
+.contenido {
+    width: 70%;
+    margin-left: 23px;
+    float: left;
+}
+
+/*Imagenes de los animales*/
+.animal-description img {
+    width: 670;
+    height: 390;
+    margin-right: 40px;
+}
+
+/*Alineacion del texto en las descripciones de los animales y el contenido en si, interlineado y tamaño de fuente*/
+.animal-description, .contenido {
+    text-align: justify;
+    line-height: 25px;
+    font-size: 16px;
 }
