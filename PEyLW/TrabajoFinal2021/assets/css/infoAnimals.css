@@ -1,15 +1,14 @@
 /*Contenido principal*/
 .main-content {
-    margin: 0 auto;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /*Animales de Argentina en peligro de extinción*/
-.info-animals h2 {
+.main-content h2 {
     width: 50%;
     color: #961607;
-    margin-left: 35px;
+    margin-left: 3%;
     font-size: 35px;
 }
 
@@ -18,7 +17,7 @@
     width: 23%;
     float: right;
     margin-left: 25px;
-    margin-right: 25px;
+    margin-right: 10px;
     border: 1px solid black;
     background-color: #cdcdcd;
 }
@@ -30,19 +29,15 @@
 
 /*----Cambio de color de links----*/
 .indice a:link,
+.indice a:visited,
 .indice a:active {
-    color: #961607;
-}
-
-/*Link visitado*/
-.indice a:visited {
     color: #b44e12;
 }
 
 /*Cambio de color cuando se pasa el mouse por el link*/
 .indice a:hover {
-    color: #da7c45;
-    text-decoration:underline;
+    color: #961607;
+    text-decoration:underline; /*Se subraya cuando se pasa el mouse por encima*/
 }
 
 /*Links sin subrayado*/
@@ -53,20 +48,23 @@
 /*Contenido: imagenes y descripciones*/
 .contenido {
     width: 70%;
-    margin-left: 23px;
+    margin-left: 2.5%;
     float: left;
+}
+
+.animal-description {
+    width: 100%;
 }
 
 /*Imagenes de los animales*/
 .animal-description img {
-    width: 670;
-    height: 390;
-    margin-right: 40px;
+    width: 680px;
+    height: 390px;
+    margin-right: 2%;
 }
 
 /*Alineacion del texto en las descripciones de los animales y el contenido en si, interlineado y tamaño de fuente*/
 .animal-description, .contenido {
-    text-align: justify;
     line-height: 25px;
     font-size: 16px;
 }

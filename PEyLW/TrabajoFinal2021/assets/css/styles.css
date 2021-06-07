@@ -25,22 +25,14 @@ body {
     text-decoration: none;
 }
 
-.eslogan p  {
-    width: 100%;
-    font-size: 20px;
-    margin-top: 2%; 
-    font-weight: bold;
-    margin-left: 55%;   
-    color: #b44e12;
-}
-
 /*----Boton SÚMATE----*/
 .boton-titulo {
     width: 20%;
-    height: 15%;
+    height: 50px;
     float: right;
     border: 1px solid black;
     border-radius: 5px;
+    margin-top: 5%;
     margin-right: 16%;
 }
 
@@ -78,7 +70,6 @@ body {
     height: 77%;
     margin-left: 15px; /*Lo mueve 15px hacia la derecha*/
     padding-top: 8.5px; /*Lo mueve 8.5px hacia abajo*/
-
 }
 
 /*Barra de navegación*/
@@ -110,14 +101,14 @@ o pueden fluir en varias líneas*/
     background-color: beige;
 }
 
-/*Inicio*/
-.first-element {
+/*Inicio, Nosotros, Animales, Campañas, Cómo ayudar, Contacto*/
+.menu li:first-child {
     display: inline; /*El elemento genera uno o más cuadros de elemento en línea.*/
     padding: 0px 60px 0 50px;
+    border: none;
 }
 
-/*Nosotros, Animales, Campañas, Cómo ayudar, Contacto*/
-.element {
+.menu li {
     display: inline; /*El elemento genera uno o más cuadros de elemento en línea.*/
     padding: 0px 60px 0 60px;
     border-left: 1px solid black; /*Barritas de separacion*/
@@ -178,9 +169,11 @@ o pueden fluir en varias líneas*/
     color: black;
 }
 
+/*Es un keyword que indica que el elemento es movido hacia abajo para limpiar tanto elementos flotantes de la izquierda como de la derecha.*/
 br.clear {
     clear: both;
 }
+
 
 
 
