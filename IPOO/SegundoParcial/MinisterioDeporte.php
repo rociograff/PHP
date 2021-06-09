@@ -9,7 +9,7 @@ class MinisterioDeporte {
         $this->anioTorneo = $anioTorneo;
         $this->colTorneos = $colTorneos;
     }
-
+    
     //Observadores
     public function getAnioTorneo() {
         return $this->anioTorneo;
@@ -28,15 +28,15 @@ class MinisterioDeporte {
         $this->colTorneos = $colTorneos;
     }
 
-    //Metodos 
+    //Metodos
     /*Metodo __toString() para mostrar los datos del Ministerio de Deporte */
     public function __toString() {
         return "Año del Torneo: ".$this->getAnioTorneo()."\n".
         "------TORNEOS------\n".$this->mostrarColeccion($this->getColTorneos())."\n";
     }
 
-    /* Metodo para mostrar colecciones */
-    private function mostrarColeccion($coleccion) {
+     /* Metodo para mostrar colecciones */
+     private function mostrarColeccion($coleccion) {
         $arreglo = "";
         foreach ($coleccion as $obj) {
             $arreglo .= $obj . "\n";
@@ -49,25 +49,46 @@ class MinisterioDeporte {
     jugar en el torneo, el tipo que indica si es nacional o provincial y un arreglo asociativo cuyas claves van a 
     conicidir con la info necesaria para crear el torneo dependiendo de su tipo. El metodo debe retornar la instancia
     de la clase Torneo creada segun corresponda. */
-    public function registrarTorneo($colPartidos, $tipo, $arrayAsociativo) {
+    public function registrarTorneo($colPartidos, $tipo, $arrayAsociativo){
+        $coleccionTorneos = $this->getColTorneos();
+
         $montoPremio = $arrayAsociativo["montoPremio"];
         $nombreLocalidad = $arrayAsociativo["localidad"];
-        $nombreProvincia = $arrayAsociativo["provincia"];
         $idTorneo = count($this->getColTorneos());
-    
-        //De acuerdo al tipo de Torneo creo la instancia...
+
         if($tipo == "provincial") {
+            $nombreProvincia = $arrayAsociativo["provincia"];
             $torneo = new Provincial($idTorneo, $colPartidos, $montoPremio, $nombreLocalidad, $nombreProvincia);
         }else {
             $torneo = new Nacional($idTorneo, $colPartidos, $montoPremio, $nombreLocalidad);
         }
-        //Retorno la instancia de la clase Torneo segun corresponda
+
+        array_push($coleccionTorneos, $torneo);
+        $this->setColTorneos($coleccionTorneos);
+
         return $torneo;
     }
 
     /*Metodo otorgarPremioTorneo($idTorneo) el cual debe retornar el objeto del equipo ganador y el importe correspondiente
     a su premio. Para la implementacion del metodo debe invocar a/los metodos implementaos. */
     public function otorgarPremioTorneo($idTorneo) {
+        $retorno = [];
+        $i = 0;
+        $existe = false;
+        $coleccionTorneos = $this->getColTorneos();
+        do {
+            $existe = ($coleccionTorneos[$i]->getIdTorneo() == $idTorneo);
+            $i++;
+        } while ($i < count($coleccionTorneos));
 
+        if ($existe) {
+            $premio = $coleccionTorneos[$i - 1]->obtenerPremioTorneo();
+            $ganador = $coleccionTorneos[$i - 1]->obtenerEquipoGanadorTorneo();
+            $retorno = [
+                'ganador' => $ganador['equipo'],
+                'premio' => $premio,
+            ];
+        }
+        return $retorno;
     }
 }

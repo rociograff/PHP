@@ -4,20 +4,20 @@ class Equipo {
     private $nombreEquipo;
     private $nombreCapitan;
     private $cantJugadores;
-    private $categoriaEquipo; //Referencia a su categoria
+    private $objCategoria;
 
     //Constructor
-    public function __construct($nombreEquipo, $nombreCapitan, $cantJugadores, $categoriaEquipo) {
+    public function __construct($nombreEquipo, $nombreCapitan, $cantJugadores, $objCateoria) {
         $this->nombreEquipo = $nombreEquipo;
         $this->nombreCapitan = $nombreCapitan;
         $this->cantJugadores = $cantJugadores;
-        $this->categoriaEquipo = $categoriaEquipo;
+        $this->objCategoria = $objCateoria;
     }
 
     //Observadores
     public function getNombreEquipo() {
         return $this->nombreEquipo;
-    }
+    } 
 
     public function getNombreCapitan() {
         return $this->nombreCapitan;
@@ -27,15 +27,15 @@ class Equipo {
         return $this->cantJugadores;
     }
 
-    public function getCategoriaEquipo() {
-        return $this->categoriaEquipo;
+    public function getObjCategoria() {
+        return $this->objCategoria;
     }
 
     //Modificadores
     public function setNombreEquipo($nombreEquipo) {
         $this->nombreEquipo = $nombreEquipo;
     }
-
+    
     public function setNombreCapitan($nombreCapitan) {
         $this->nombreCapitan = $nombreCapitan;
     }
@@ -43,17 +43,17 @@ class Equipo {
     public function setCantJugadores($cantJugadores) {
         $this->cantJugadores = $cantJugadores;
     }
-
-    public function setCategoriaEquipo($categoriaEquipo) {
-        $this->categoriaEquipo = $categoriaEquipo;
+    
+    public function setObjCategoria($objCategoria) {
+        $this->objCategoria = $objCategoria;
     }
 
-    //Metodos 
+    //Metodos
     /*Metodo __toString() para mostrar los datos del Equipo */
     public function __toString() {
         return "Nombre del Equipo: ".$this->getNombreEquipo()."\n".
         "Nombre del Capitan: ".$this->getNombreCapitan()."\n".
         "Cantidad de jugadores: ".$this->getCantJugadores()."\n".
-        "Categoria del Equipo: ".$this->getCategoriaEquipo()."\n";
+        "Categoria: ".$this->getCategoriaEquipo()."\n";
     }
 }

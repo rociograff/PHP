@@ -1,66 +1,133 @@
 <?php
-include_once 'Partido.php';
-include_once 'Equipo.php';
-include_once 'Categoria.php';
-include_once 'MinisterioDeporte.php';
-include_once 'Torneo.php';
-include_once 'Provincial.php';
-include_once 'Nacional.php';
+include 'Categoria.php';
+include 'Equipo.php';
+include 'Torneo.php';
+include 'Nacional.php';
+include 'Provinciales.php';
+include 'Partido.php';
+include 'MinisterioDeporte.php';
 
-//INCISO 1
-$objE1 = new Equipo("Equipo 1", "Cap E1", "11", "Menores");
-$objE2 = new Equipo("Equipo 2", "Cap E2", "11", "Menores");
-$objE3 = new Equipo("Equipo 3", "Cap E3", "11", "Juveniles");
-$objE4 = new Equipo("Equipo 4", "Cap E4", "11", "Juveniles");
-$objE5 = new Equipo("Equipo 5", "Cap E5", "11", "Mayores");
-$objE6 = new Equipo("Equipo 6", "Cap E6", "11", "Mayores");
-$objE7 = new Equipo("Equipo 7", "Cap E7", "11", "Juveniles");
-$objE8 = new Equipo("Equipo 8", "Cap E8", "11", "Juveniles");
-$objE9 = new Equipo("Equipo 9", "Cap E9", "11", "Mayores");
-$objE10 = new Equipo("Equipo 10", "Cap E10", "11", "Mayores");
-$objE11 = new Equipo("Equipo 11", "Cap E11", "11", "Mayores");
-$objE12 = new Equipo("Equipo 12", "Cap E12", "11", "Mayores");
+// Creo las categorias
+$categoriaMayores = new Categoria(3, 'mayores');
 
-$objPart1 = new Partido(1, $objE7, $objE8, '28/06/2020', 80, 120);
-$objPart2 = new Partido(2, $objE9, $objE10, '29/08/2020', 81, 110);
-$objPart3 = new Partido(3, $objE11, $objE12, '14/04/2020', 115, 85);
-$objPart4 = new Partido(4, $objE1, $objE2, '26/07/2020', 3, 2);
-$objPart5 = new Partido(5, $objE3, $objE4, '17/09/2020', 0, 1);
-$objPart6 = new Partido(6, $objE5, $objE6, '03/01/2020', 2, 3);
+// Creo los equipos
+$objE1 = new Equipo('pepe1', 'Enrique Iglesias', 17, $categoriaMayores);
+$objE2 = new Equipo('pepe2', 'Juan Gabriel', 17, $categoriaMayores);
+$objE3 = new Equipo('pepe3', 'Eminem', 14, $categoriaMayores);
+$objE4 = new Equipo('pepe4', 'Bizarrap', 14, $categoriaMayores);
+$objE5 = new Equipo('pepe5', 'JBalvin', 16, $categoriaMayores);
+$objE6 = new Equipo('pepe6', 'Fer Palacios', 16, $categoriaMayores);
+$objE7 = new Equipo('pepe7', 'Daddy Yankee', 22, $categoriaMayores);
+$objE8 = new Equipo('pepe8', 'Bad Bunny', 22, $categoriaMayores);
 
-//INCISO 2
-$colPartidosProvinciales = [$objPart1, $objPart2, $objPart3];
+// Creo los partidos de futbol provinciales
+$objPartido1 = new Partido(1, '1/10/2020', $objE1, 3, $objE2, 2);
+$objPartido2 = new Partido(2, '1/10/2020', $objE3, 0, $objE4, 2);
+$objPartido3 = new Partido(3, '2/10/2020', $objE1, 2, $objE3, 3);
+$objPartido4 = new Partido(4, '2/10/2020', $objE2, 4, $objE4, 2);
+$objPartido5 = new Partido(5, '3/10/2020', $objE1, 2, $objE4, 2);
+$objPartido6 = new Partido(6, '3/10/2020', $objE2, 0, $objE3, 1);
+$objPartido7 = new Partido(7, '4/10/2020', $objE1, 1, $objE2, 0);
+$objPartido8 = new Partido(8, '4/10/2020', $objE3, 4, $objE4, 1);
+$objPartido9 = new Partido(9, '5/10/2020', $objE1, 3, $objE3, 1);
+$objPartido10 = new Partido(10, '5/10/2020', $objE2, 5, $objE4, 3);
+$objPartido11 = new Partido(11, '6/10/2020', $objE1, 1, $objE4, 2);
+$objPartido12 = new Partido(12, '6/10/2020', $objE2, 0, $objE3, 1);
 
-//INCISO 3
-$colPartidosNacionales = [$objPart4, $objPart5, $objPart6];
+// Creo los partidos de nacionales
+$objPartido13 = new Partido(13, '1/11/2020', $objE1, 2, $objE2, 4);
+$objPartido14 = new Partido(14, '1/11/2020', $objE3, 5, $objE4, 3);
+$objPartido15 = new Partido(15, '2/11/2020', $objE1, 3, $objE3, 6);
+$objPartido16 = new Partido(16, '2/11/2020', $objE2, 1, $objE4, 3);
+$objPartido17 = new Partido(17, '3/11/2020', $objE1, 0, $objE4, 5);
+$objPartido18 = new Partido(18, '3/11/2020', $objE2, 3, $objE3, 1);
+$objPartido19 = new Partido(19, '4/11/2020', $objE1, 6, $objE2, 0);
+$objPartido20 = new Partido(20, '4/11/2020', $objE3, 0, $objE4, 3);
+$objPartido21 = new Partido(21, '5/11/2020', $objE1, 0, $objE3, 5);
+$objPartido22 = new Partido(22, '5/11/2020', $objE2, 3, $objE4, 2);
+$objPartido23 = new Partido(23, '6/11/2020', $objE1, 1, $objE4, 3);
+$objPartido24 = new Partido(24, '6/11/2020', $objE2, 3, $objE3, 5);
 
-//INCISO 4
-$ministerioDeporte = new MinisterioDeporte(2020, $colPartidosProvinciales);
+$coleccionPartidosProvinciales = array($objPartido1, $objPartido2, $objPartido3, $objPartido4, $objPartido5, $objPartido6, $objPartido7, $objPartido8, $objPartido9, $objPartido10, $objPartido11, $objPartido12);
 
-//INCISO 5
-echo "EJECUTANDO INCISO 5 \n";
-$ArrayAsociativo = [];
-$objMinDep = $objMinDep->registrarTorneo($colPartidosProvinciales, 'provincial', $ArrayAsociativo);
-echo $objMinDep . "\n";
+$coleccionPartidosNacionales = array($objPartido13, $objPartido14, $objPartido15, $objPartido16, $objPartido17, $objPartido18, $objPartido19, $objPartido20, $objPartido21, $objPartido22, $objPartido23, $objPartido24);
 
-//INCISO 6
-echo "EJECUTANDO INCISO 6 \n";
-$ArrayAsociativo = [];
-$objMinDep = $objMinDep->registrarTorneo($colPartidosNacionales, 'nacional', $ArrayAsociativo);
-echo $objMinDep . "\n";
+$coleccionTorneos = array('provincial'=>[], 'nacional'=>[]);
 
-//INCISO 7
-echo "EJECUTANDO INCISO 7 \n";
-$torneo = new Torneo($colPartidosProvinciales, 10000);
-$objMinDep = otorgarPremioTorneo($idTorneo_5);
-echo $objMinDep . "\n";
+$ministerioDeporte = new MinisterioDeporte(2020, $coleccionTorneos);
 
-//INCISO 8
-echo "EJECUTANDO INCISO 8 \n";
-$torneo = new Torneo($colPartidosNacionales, 10000);
-$objMinDep = otorgarPremioTorneo($idTorneo_6);
-echo $objMinDep . "\n";
+// echo $ministerioDeporte;
 
-//INCISO 9
-echo "EJECUTANDO INCISO 9\n";
-echo $objMinDep . "\n";
+echo "--------------------" . "\n";
+
+echo "PUNTO 5: REGISTRANDO TORNEO PROVINCIAL" . "\n";
+
+echo "--------------------" . "\n";
+
+$arrayAsociativoInfoTorneo = array('identificacion'=>1, 'importePremioTorneo'=>50000, 'localidad'=>'Neuquen Capital', 'nombreProvincia'=>'Neuquen');
+
+$torneoNuevoProvincial = $ministerioDeporte->registrarTorneo($coleccionPartidosProvinciales, 'provincial', $arrayAsociativoInfoTorneo);
+
+echo '---------TORNEO---------' . "\n";
+
+echo $torneoNuevoProvincial;
+
+echo "--------------------" . "\n";
+
+echo "PUNTO 6: REGISTRANDO TORNEO NACIONAL" . "\n";
+
+echo "--------------------" . "\n";
+
+$arrayAsociativoInfoTorneo = array('identificacion'=>2, 'importePremioTorneo'=>100000, 'localidad'=>'San Justo');
+
+$torneoNuevoNacional = $ministerioDeporte->registrarTorneo($coleccionPartidosProvinciales, 'nacional', $arrayAsociativoInfoTorneo);
+
+echo '---------TORNEO---------' . "\n";
+
+echo $torneoNuevoNacional;
+
+echo "--------------------------------" . "\n";
+
+echo "PUNTO 7: PREMIO TORNEO PROVINCIAL" . "\n";
+
+echo "--------------------------------" . "\n";
+
+$idTorneoProvincial = $torneoNuevoProvincial->getIdTorneo();
+
+$premioTorneoProvincial = $ministerioDeporte->otorgarPremioTorneo($idTorneoProvincial);
+
+$importeGanadorProvincial = $premioTorneoProvincial['importeGanado'];
+
+$ganadorTorneoProvincial = $premioTorneoProvincial['equipoGanador'];
+
+$nombreEquipo = $ganadorTorneoProvincial->getNombreEquipo();
+
+echo "\n" . "El equipo " . $nombreEquipo . " han ganado el torneo provincial y se llevan $" . $importeGanadorProvincial . "\n";
+
+echo "--------------------------------" . "\n";
+
+echo "PUNTO 8: PREMIO TORNEO NACIONAL" . "\n";
+
+echo "--------------------------------" . "\n";
+
+$idTorneoNacional = $torneoNuevoNacional->getIdTorneo();
+
+$premioTorneoNacional = $ministerioDeporte->otorgarPremioTorneo($idTorneoNacional);
+
+$importeGanadorNacional = $premioTorneoNacional['importeGanado'];
+
+$ganadorTorneoNacional = $premioTorneoNacional['equipoGanador'];
+
+$nombreEquipo = $ganadorTorneoNacional->getNombreEquipo();
+
+echo "\n" . "El equipo " . $nombreEquipo . " han ganado el Torneo Nacional y se llevan $" . $importeGanadorNacional . "\n";
+
+echo "--------------------------------" . "\n";
+
+echo "PUNTO 9: MINISTERIO DE DEPORTE" . "\n";
+
+echo "--------------------------------" . "\n";
+
+echo $ministerioDeporte;
+
+

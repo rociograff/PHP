@@ -2,12 +2,12 @@
 class Categoria {
     //Atributos
     private $idCategoria;
-    private $descripcionCategoria;
+    private $descripcion;
 
     //Constructor
-    public function __construct($idCategoria, $descripcionCategoria) {
+    public function __construct($idCategoria, $descripcion) {
         $this->idCategoria = $idCategoria;
-        $this->descripcionCategoria = $descripcionCategoria;
+        $this->descripcion = $descripcion;
     }
 
     //Observadores
@@ -15,23 +15,23 @@ class Categoria {
         return $this->idCategoria;
     }
 
-    public function getDescripcionCategoria() {
-        return $this->descripcionCategoria;
+    public function getDescripcion() {
+        return $this->descripcion;
     }
 
     //Modificadores
     public function setIdCategoria($idCategoria) {
         $this->idCategoria = $idCategoria;
     }
-
-    public function setDescripcionCategoria($descripcionCategoria) {
-        $this->descripcionCategoria = $descripcionCategoria;
+   
+    public function setDescripcion($descripcion) {
+        $this->descripcion = $descripcion;
     }
 
     //Metodos
     /*Metodo __toString() para mostrar los datos de la Categoria */
     public function __toString() {
-        return "ID Categoria: ".$this->getIdCategoria()."\n".
-        "Descripcion de la Categoria: ".$this->getDescripcionCategoria()."\n";
+        return 'Numero de Categoria: ' . $this->getIdCategoria() . "\n" .
+        'Descripcion: ' . $this->getDescripcion() . "\n";
     }
 }
