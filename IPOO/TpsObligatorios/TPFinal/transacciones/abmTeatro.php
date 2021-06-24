@@ -89,7 +89,7 @@ class abmTeatro{
             }else{
                 $abm=new abmObra();
             }
-            $exito=$abm->altaFuncion($datos);
+            $exito=$abm->crearFuncion($datos);
         }
         return $exito;
     }
