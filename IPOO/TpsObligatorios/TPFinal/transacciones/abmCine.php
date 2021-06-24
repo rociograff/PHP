@@ -55,7 +55,7 @@ class abmCine{
      */
     public function darCosto($objCine){
         $costo = $objCine->getPrecio();
-        $costo = $costo + (($costo * 12) / 100);
+        $costo = $costo + (($costo * 65) / 100);  //65% incremento
 
         $objCine->setCostoSala($costo);
     }

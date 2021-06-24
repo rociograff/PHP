@@ -53,7 +53,7 @@ class abmMusical{
      */
     public function darCosto($objMusical){
         $costo = $objMusical->getPrecio();
-        $costo = $costo + (($costo * 12) / 100);
+        $costo = $costo + (($costo * 12) / 100);  //12% incremento
 
         $objMusical->setCostoSala($costo);
     }

@@ -55,7 +55,7 @@ class abmObra{
      */
     public function darCosto($objObra){
         $costo = $objObra->getPrecio();
-        $costo = $costo + (($costo * 45) / 100);
+        $costo = $costo + (($costo * 45) / 100);  //45% incremento
 
         $objObra->setCostoSala($costo);
     }
