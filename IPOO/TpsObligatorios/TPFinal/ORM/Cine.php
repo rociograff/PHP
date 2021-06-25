@@ -56,7 +56,7 @@ class Cine extends Funcion{
 	 */		
     public function Buscar($id){
 		$base=new BaseDatos();
-		$consulta="Select * from cine where idFuncion=".$id;
+		$consulta="SELECT * FROM cine WHERE idFuncion=".$id;
 		$resp= false;
 		if($base->Iniciar()){
 		    if($base->Ejecutar($consulta)){
@@ -106,7 +106,7 @@ class Cine extends Funcion{
 		 return $arreglo;
 	}
 
-		/**
+	/**
      * Inserta una funcion en la BD
      * @return boolean 
      */

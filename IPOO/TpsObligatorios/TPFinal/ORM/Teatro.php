@@ -38,17 +38,20 @@ class Teatro{
         return $this->direccion;
     }
     
+    /**
+     * Utilizo la coleccion de funciones para no setear continuamente las funciones nuevas
+     */
     public function getColFunciones(){
         if(count($this->colFunciones)==0){
-            $nuevoCine=new Cine();
-            $nuevoMusical=new Musical();
-            $nuevaObra=new Obra();
+            $nuevoCine = new Cine();
+            $nuevoMusical = new Musical();
+            $nuevaObra = new Obra();
             
-            $condicion="idTeatro='".$this->getIdTeatro()."'";
-            $colCine=$nuevoCine->listar($condicion);
-            $colMusical=$nuevoMusical->listar($condicion);
-            $colObra=$nuevaObra->listar($condicion);
-            $colFunciones=array_merge($colCine,$colMusical,$colObra);
+            $condicion = "idTeatro=".$this->getIdTeatro();
+            $colCine = $nuevoCine->listar($condicion);
+            $colMusical = $nuevoMusical->listar($condicion);
+            $colObra = $nuevaObra->listar($condicion);
+            $colFunciones = array_merge($colCine,$colMusical,$colObra);
             $this->setColFunciones($colFunciones);
         }
         return $this->colFunciones;
@@ -86,8 +89,23 @@ class Teatro{
     public function __toString(){
         $mensaje = "-ID Teatro: ".$this->getIdTeatro()."\n".
         "-Nombre del Teatro: " . $this->getNombre() . "\n" .
-        "-Direccion del Teatro: " . $this->getDireccion() . "\n" ;
+        "-Direccion del Teatro: " . $this->getDireccion() . "\n".
+        "----Funciones----\n".$this->mostrarColeccion($this->getColFunciones());
         return $mensaje;
+    }
+
+    /**
+    * Metodo para mostrar colecciones
+    * @return $arreglo
+    */
+    private function mostrarColeccion($coleccion) {
+        //Array Funciones $arreglo
+        $arreglo = "";
+        foreach ($coleccion as $obj) {
+            $arreglo .= $obj . "\n";
+            $arreglo .= "--------------------------\n";
+        }
+        return $arreglo;
     }
 
     /*****************************METODOS DE LA BASE DE DATOS******************************/
@@ -98,7 +116,7 @@ class Teatro{
 	 */	
     public function Buscar($idT){
         $base = new BaseDatos();
-        $consultaTeatro = "Select * from teatro where idTeatro=" . "'" . $idT . "'";
+        $consultaTeatro = "SELECT * FROM teatro WHERE idTeatro=" . "'" . $idT . "'";
         $resp = false;
         if ($base->Iniciar()) {
             if ($base->Ejecutar($consultaTeatro)) {
@@ -125,11 +143,11 @@ class Teatro{
     public function listar($condicion = ""){
         $arregloTeatro = null;
         $base = new BaseDatos();
-        $consultaTeatro = "Select * from teatro ";
+        $consultaTeatro = "SELECT * FROM teatro ";
         if ($condicion != "") {
             $consultaTeatro = $consultaTeatro . ' where ' . $condicion;
         }
-        $consultaTeatro .= " order by idTeatro ";
+        $consultaTeatro .= " ORDER BY idTeatro ";
         if ($base->Iniciar()) {
             if ($base->Ejecutar($consultaTeatro)) {
                 $arregloTeatro = array();
@@ -152,7 +170,7 @@ class Teatro{
         return $arregloTeatro;
     }
 
-      /**
+    /**
      * Inserta un teatro en la BD
      * @return boolean 
      */

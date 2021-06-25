@@ -129,10 +129,6 @@ class abmTeatro{
      * @return float
      */
     public function darCostoTeatro($mes,$objTeatro){
-        /**
-         * @var float $costo
-         * @var int $fechaEntero, $mesFuncion
-         */
         $costo = 0;
         foreach ($objTeatro->getColFunciones() as $funcion) {
             $fechaEntero = strtotime($funcion->getfecha());
@@ -147,7 +143,7 @@ class abmTeatro{
 
     /**
      * Retorna un strin con la informacion de los teatros cargados
-     * @return string
+     * @return string $strTeatros
      */
     public function mostrarTeatros(){
         /**
@@ -155,15 +151,12 @@ class abmTeatro{
          * @var array $colTeatro
          * @var string $strTeatros
          */
-        $objTeatro=new Teatro();
-        $colTeatro=$objTeatro->listar();
-        $strTeatros="Teatros: \n";
+        $objTeatro = new Teatro();
+        $colTeatro = $objTeatro->listar();
+        $strTeatros = "Teatros: \n";
         foreach($colTeatro as $teatro){
             $strTeatros.="* \n".$teatro;
         }
         return $strTeatros;
     }
-
-
 }
-?>

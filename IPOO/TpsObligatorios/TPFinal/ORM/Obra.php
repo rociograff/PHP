@@ -29,22 +29,22 @@ class Obra extends Funcion{
 	 * @return true en caso de encontrar los datos, false en caso contrario 
 	 */		
     public function Buscar($id){
-		$base=new BaseDatos();
-		$consulta="Select * from obra where idFuncion=".$id;
-		$resp= false;
+		$base = new BaseDatos();
+		$consulta = "SELECT * FROM obra WHERE idFuncion=".$id;
+		$resp = false;
 		if($base->Iniciar()){
 		    if($base->Ejecutar($consulta)){
-				if($row2=$base->Registro()){	
+				if($row2 = $base->Registro()){	
 				    parent::Buscar($id);
-					$resp= true;
+					$resp = true;
 				}				
-		 	}	else {
-		 			$this->setmensajeoperacion($base->getError());
-			}
-		 }	else {
+		 	}else {
 		 		$this->setmensajeoperacion($base->getError());
-		 }		
-		 return $resp;
+			}
+		}else {
+		 	$this->setmensajeoperacion($base->getError());
+		}		
+		return $resp;
 	}
 
 	/**
@@ -54,49 +54,49 @@ class Obra extends Funcion{
 	 */
     public function listar($condicion=""){
 	    $arreglo = null;
-		$base=new BaseDatos();
+		$base = new BaseDatos();
 
 		$consulta="SELECT * FROM obra INNER JOIN funcion ON obra.idFuncion=funcion.idFuncion ";
 		if ($condicion!=""){
-		    $consulta=$consulta.' where '.$condicion;
+		    $consulta = $consulta.' where '.$condicion;
 		}
-		$consulta.=" order by obra.idFuncion ";
-		// echo$consulta."\n";
+		$consulta.=" ORDER BY obra.idFuncion ";
+		
 		if($base->Iniciar()){
 		    if($base->Ejecutar($consulta)){				
-			    $arreglo= array();
-				while($row2=$base->Registro()){
-					$obj=new Obra();
+			    $arreglo = array();
+				while($row2 = $base->Registro()){
+					$obj = new Obra();
 					$obj->Buscar($row2['idFuncion']);
 					array_push($arreglo,$obj);
 				}
-		 	}	else {
-		 			$this->setmensajeoperacion($base->getError());
-			}
-		 }	else {
+		 	}else {
 		 		$this->setmensajeoperacion($base->getError());
-		 }	
-		 return $arreglo;
+			}
+		}else {
+		 	$this->setmensajeoperacion($base->getError());
+		}	
+		return $arreglo;
 	}
 
-		/**
+	/**
      * Inserta una funcion en la BD
      * @return boolean 
      */
     public function insertar(){
-		$base=new BaseDatos();
-		$resp= false;
+		$base = new BaseDatos();
+		$resp = false;
 
 		if(parent::insertar()){
-		    $consultaInsertar="INSERT INTO Obra(idFuncion)
+		    $consultaInsertar = "INSERT INTO Obra(idFuncion)
 				VALUES (".parent::getIdFuncion().")";
 		    if($base->Iniciar()){
 		        if($base->Ejecutar($consultaInsertar)){
-		            $resp=  true;
-		        }	else {
+		            $resp = true;
+		        }else {
 		            $this->setmensajeoperacion($base->getError());
 		        }
-		    } else {
+		    }else {
 		        $this->setmensajeoperacion($base->getError());
 		    }
 		 }
@@ -108,13 +108,13 @@ class Obra extends Funcion{
      * @return boolean 
      */
     public function modificar(){
-	    $resp =false; 
-	    $base=new BaseDatos();
+	    $resp = false; 
+	    $base = new BaseDatos();
 	    if(parent::modificar()){
-	        $consultaModifica="UPDATE obra SET idFuncion='".parent::getIdFuncion()."' WHERE idFuncion=". parent::getIdFuncion();
+	        $consultaModifica = "UPDATE obra SET idFuncion='".parent::getIdFuncion()."' WHERE idFuncion=". parent::getIdFuncion();
 	        if($base->Iniciar()){
 	            if($base->Ejecutar($consultaModifica)){
-	                $resp=  true;
+	                $resp = true;
 	            }else{
 	                $this->setmensajeoperacion($base->getError());
 	            }
@@ -130,19 +130,19 @@ class Obra extends Funcion{
      * @return boolean 
      */
     public function eliminar(){
-		$base=new BaseDatos();
-		$resp=false;
+		$base = new BaseDatos();
+		$resp = false;
 		if($base->Iniciar()){
-				$consultaBorra="DELETE FROM obra WHERE idFuncion=".parent::getIdFuncion();
-				if($base->Ejecutar($consultaBorra)){
-				    if(parent::eliminar()){
-				        $resp=  true;
-				    }
-				}else{
-						$this->setmensajeoperacion($base->getError());	
+			$consultaBorra = "DELETE FROM obra WHERE idFuncion=".parent::getIdFuncion();
+			if($base->Ejecutar($consultaBorra)){
+				if(parent::eliminar()){
+				    $resp = true;
 				}
-		}else{
-				$this->setmensajeoperacion($base->getError());
+			}else{
+				$this->setmensajeoperacion($base->getError());	
+			}
+		}else {
+			$this->setmensajeoperacion($base->getError());
 		}
 		return $resp; 
 	}

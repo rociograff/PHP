@@ -9,7 +9,7 @@ class Musical extends Funcion{
     public function __construct(){
         parent::__construct();
         $this->director = "";
-        $this->personasEnEscena =0;
+        $this->personasEnEscena = 0;
     }
 
     /** 
@@ -56,7 +56,7 @@ class Musical extends Funcion{
 	 */		
     public function Buscar($id){
 		$base=new BaseDatos();
-		$consulta="Select * from musical where idFuncion=".$id;
+		$consulta="SELECT * FROM musical WHERE idFuncion=".$id;
 		$resp= false;
 		if($base->Iniciar()){
 		    if($base->Ejecutar($consulta)){
@@ -88,7 +88,7 @@ class Musical extends Funcion{
 		if ($condicion!=""){
 		    $consulta=$consulta.' where '.$condicion;
 		}
-		$consulta.=" order by musical.idFuncion ";
+		$consulta.=" ORDER BY musical.idFuncion ";
 		if($base->Iniciar()){
 		    if($base->Ejecutar($consulta)){				
 			    $arreglo= array();
@@ -106,7 +106,7 @@ class Musical extends Funcion{
 		 return $arreglo;
 	}
 
-		/**
+	/**
      * Inserta una funcion en la BD
      * @return boolean 
      */

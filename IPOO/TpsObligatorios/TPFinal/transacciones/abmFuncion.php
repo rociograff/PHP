@@ -72,7 +72,7 @@ class abmFuncion{
         return $exito;
     }
 
-     /**
+    /**
      * Calcula el costo de la funcion
      * @return float $costo
      */

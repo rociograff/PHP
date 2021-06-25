@@ -72,43 +72,43 @@ class Funcion{
     public function getMensajeOperacion(){
         return $this->mensajeoperacion;
     }
+    
     //Modificadores
-    public function setIdFuncion($id){
-        $this->idFuncion = $id;
+    public function setIdFuncion($idFuncion){
+        $this->idFuncion = $idFuncion;
     }
     
-    public function setNombre($nom){
-        $this->nombre = $nom;
+    public function setNombre($nombre){
+        $this->nombre = $nombre;
     }
     
-    public function setHorarioInicio($hs){
-        $this->horarioInicio = $hs;
+    public function setHorarioInicio($horarioInicio){
+        $this->horarioInicio = $horarioInicio;
     }
     
-    public function setDuracion($durac){
-        $this->duracion = $durac;
+    public function setDuracion($duracion){
+        $this->duracion = $duracion;
     }
     
-    public function setPrecio($prec){
-        $this->precio = $prec;
+    public function setPrecio($precio){
+        $this->precio = $precio;
     }
 
-    public function setFecha($fech){
-        $this->fecha = $fech;
+    public function setFecha($fecha){
+        $this->fecha = $fecha;
     }
     
-    public function setCostoSala($costo){
-        $this->costoSala = $costo;
+    public function setCostoSala($costoSala){
+        $this->costoSala = $costoSala;
     }
     
-    public function setObjTeatro($teatro){
-        $this->objTeatro = $teatro;
+    public function setObjTeatro($objTeatro){
+        $this->objTeatro = $objTeatro;
     }
     
-    public function setMensajeOperacion($menaje){
-        $this->mensajeoperacion = $menaje;
+    public function setMensajeOperacion($mensajeoperacion){
+        $this->mensajeoperacion = $mensajeoperacion;
     }
-
 
     /**
      * Retorna un string con la informacion de una funcion
@@ -136,17 +136,12 @@ class Funcion{
      * @return true en caso de encontrar los datos, false en caso contrario 
      */
     public function Buscar($idF){
-        /**
-         * @var object $base
-         * @var string $consultaPersona
-         * @var boolean $resp
-         */
         $base = new BaseDatos();
         $consultaPersona = "Select * from funcion where idFuncion=" . $idF;
         $resp = false;
         if ($base->Iniciar()) {
             if ($base->Ejecutar($consultaPersona)) {
-                if ($row2 = $base->Registro()) {
+                if ($row2 = $base->Registro()) { //Verifica que el arreglo no es vacio 
                     $this->setIdFuncion($idF);
                     $this->setNombre($row2['nombre']);
                     $this->setHorarioInicio($row2['horarioInicio']);
@@ -157,7 +152,7 @@ class Funcion{
 
                     $idTeatro = $row2['idTeatro'];
                     $teatro = new Teatro();
-                    $teatro->buscar($idTeatro);
+                    $teatro->Buscar($idTeatro);
 
                     $this->setObjTeatro($teatro);
                     $resp = true;
@@ -206,11 +201,6 @@ class Funcion{
      * @return boolean 
      */
     public function insertar(){
-        /**
-         * @var object $base
-         * @var boolean $resp
-         * @var string $consultaInsertar
-         */
         $base = new BaseDatos();
         $resp = false;
         $consultaInsertar = "INSERT INTO funcion(nombre, horarioInicio, duracion, precio, costoSala, fecha, idTeatro) 
