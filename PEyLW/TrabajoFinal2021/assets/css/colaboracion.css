@@ -179,12 +179,9 @@
     text-align: center;
     background-color: #bb4a3d;
     /*Sombreado*/
-    /*box-shadow: 10px 10px 16px 2px rgba(0,0,0,0.55);
+    box-shadow: 10px 10px 16px 2px rgba(0,0,0,0.55);
     -webkit-box-shadow: 10px 10px 16px 2px rgba(0,0,0,0.55);
-    -moz-box-shadow: 10px 10px 16px 2px rgba(0,0,0,0.55);*/
-    box-shadow: 3px 2px 64px 13px rgba(0,0,0,0.62);
-    -webkit-box-shadow: 3px 2px 64px 13px rgba(0,0,0,0.62);
-    -moz-box-shadow: 3px 2px 64px 13px rgba(0,0,0,0.62);
+    -moz-box-shadow: 10px 10px 16px 2px rgba(0,0,0,0.55);
 }
 
 /*Tu aporte nos ayuda mucho*/

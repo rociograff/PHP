@@ -1,404 +1,383 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-    
-        <title>Vida Animal</title>
 
-        <!-- stylesheet -->
-        <link rel = "stylesheet" type = "text/css" href = "../assets/css/styles.css">  
-        <link rel = "stylesheet" type = "text/css" href = "../assets/css/infoAnimals.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
 
-    <body>
-        <header class="page-name">
-            <div class = "titulo">
-                <a href="../index.html"><h1>Vida Animal</h1></a>
-            </div>
-            
-            <img src="../assets/img/yaguarete-logo.jpg">
+    <title>Vida Animal</title>
 
-            <div class = "boton-titulo">
-                <input type = "button" value = "SÚMATE">
-            </div>
-        
-            <div class="bar-nav">
-                <div class="menu-container">
-                    <ul class="menu">
-                        <li>
-                            <a class="disabled" href="../index.html">INICIO</a>
-                        </li>
-                        <li>
-                            <a class="disabled" href="nosotros.html">NOSOTROS</a>
-                        </li>
-                        <li>
-                            <a class="active" href="#">ANIMALES</a>
-                        </li>
-                        <li>
-                            <a class="disabled" href="proyectos.html">CAMPAÑAS</a>
-                        </li>
-                        <li>
-                            <a class="disabled" href="colaboracion.html">CÓMO AYUDAR</a>
-                        </li>
-                        <li>
-                            <a class="disabled" href="contacto.html">CONTACTO</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/infoAnimals.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+</head>
 
-        <div class = "main-content">
-            <h2>Animales de Argentina en peligro de extinción</h2>
-            
-            <div class = "indice">
-                <h4>Lista de Animales</h4>
-                <ul>
+<body>
+    <header class="page-name">
+        <div class="titulo">
+            <a href="../index.html"><img src="../assets/img/logo-vida-animal.png" /></a>
+        </div>
+
+        <div class="bar-nav">
+            <div class="menu-container">
+                <ul class="menu">
                     <li>
-                        <a href = "#Huemul">Huemul</a>
+                        <a class="disabled" href="../index.html">INICIO</a>
                     </li>
                     <li>
-                        <a href = "#AguaraGuazu">Aguará Guazú</a>
+                        <a class="disabled" href="nosotros.html">NOSOTROS</a>
                     </li>
                     <li>
-                        <a href="#OsoHormiguero">Oso Hormiguero</a>
+                        <a class="active" href="#">ANIMALES</a>
                     </li>
                     <li>
-                        <a href="#PingüinodeMagallanes">Pingüino de Magallanes</a>
+                        <a class="disabled" href="proyectos.html">CAMPAÑAS</a>
                     </li>
                     <li>
-                        <a href ="#Ciervo">Ciervo de los pantanos</a>
+                        <a class="disabled" href="colaboracion.html">CÓMO AYUDAR</a>
                     </li>
                     <li>
-                        <a href = "#Suri">Suri cordillerano</a>
-                    </li>
-                    <li>
-                        <a href = "#Condor">Cóndor andino</a>
-                    </li>
-                    <li>
-                        <a href = "#Venado">Venado de las pampas</a>
-                    </li>
-                    <li>
-                        <a href = "#Yaguarete">Yaguareté</a>
-                    </li>
-                    <li>
-                        <a href = "#Tatu">Tatú carreta</a>
-                    </li>
-                    <li>
-                        <a href = "#CarayaPita">Carayá-Pita</a>
-                    </li>
-                    <li>
-                        <a href = "#Flamenco">Flamenco andino</a>
-                    </li>
-                    <li>
-                        <a href="#Pecari">Pecarí del chaco</a>
-                    </li>
-                    <li>
-                        <a href = "#Ballena">Ballena franca austral</a>
-                    </li>
-                    <li>
-                        <a href = "#Pichiciego">Pichiciego</a>
-                    </li>
-                    <li>
-                        <a href = "#Capuchino">Mono caí o capuchino</a>
-                    </li>
-                    <li>
-                        <a href = "#Chinchilla">Chinchilla de cola larga</a>
-                    </li>
-                    <li>
-                        <a href = "#Tapir">Tapir</a>
-                    </li>
-                    <li>
-                        <a href = "#Guacamayo">Guacamayo verde</a>
-                    </li>
-                    <li>
-                        <a href = "#Huillin">Huillín</a>
-                    </li>
-                    <li>
-                        <a href = "#Cauquen">Cauquén colorado</a>
-                    </li>
-                    <li>
-                        <a href = "#Mara">Mara</a>
-                    </li>
-                    <li>
-                        <a href = "#Rana">Rana telmatobius atacamensis</a>
-                    </li>
-                    <li>
-                        <a href = "#Ranita">Ranita de Laguna Blanca</a>
+                        <a class="disabled" href="contacto.html">CONTACTO</a>
                     </li>
                 </ul>
             </div>
-
-            <div class = "contenido">
-                <p>
-                    Argentina es uno de los países con mayor biodiversidad del mundo, con un extenso territorio, climas y
-                    paisajes de todo tipo. Su fauna es muy variada, aunque en la actualidad se encuentra severamente 
-                    afectada por la falta de conservación. Ya son más de 500 especies las que están en peligro de extinción. 
-                    Aquí, algunas de las especies más amenazadas.
-                </p>
-
-                <a name = "Huemul"><h3>Huemul</h3></a>
-                <p class = animal-description>
-                    <img  align = "left" src = "../assets/img/huemul.jpg">
-                    Este ciervo robusto, con grandes orejas y astas en los machos, es una de las especies típicas de la zona 
-                    cordillerana de la Patagonia. El huemul fue víctima de la caza furtiva, ataques de otras especies y enfermedades. 
-                    Además, los incendios forestales de las últimas décadas en su hábitat redujeron considerablemente su población. 
-                    Se calcula que no hay más de 700 ejemplares, y se encuentran dispersos entre áreas aisladas y fragmentadas de los 
-                    bosques de lenga de la Patagonia andina y la estepa patagónica.
-                </p>
-                <br clear="all">
-
-                <a name = "AguaraGuazu"><h3>Aguará Guazú</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src = "../assets/img/aguara-guazu.jpg">
-                    El avance del hombre sobre su ecosistema hizo que se redujera considerablemente el número de ejemplares de 
-                    este zorro, el más grande de Sudamérica. Vive en las provincias de Formosa, Chaco, Santa Fe y Corrientes, al 
-                    noreste del país, en zonas inundables. Este zorro de pelaje largo y hermoso color rojo, encarna la leyenda del 
-                    lobizón para los criollos aunque en la mitología toba es un ser protector y padre de todos los perros. 
-                    En guaraní, aguará guazú significa zorro grande.
-                </p>
-                <br clear="all">
-
-                <a name = "OsoHormiguero"><h3>Oso Hormiguero gigante</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src = "../assets/img/oso-hormiguero.jpg">
-                    El oso hormiguero gigante o «yurumí» es uno de los dos grandes devoradores de hormigas que viven en la Argentina. 
-                    Se lo encuentra en la selva misionera, Formosa, El impenetrable y otras áreas chaqueñas, el este de Salta, el 
-                    noreste de Santiago del Estero y, probablemente, norte de Corrientes. Se estima que su baja población se debe a que 
-                    no posee grandes posibilidades de reproducción, y además es un animal muy atractivo para el hombre.
-                </p>
-                <br clear="all">
-
-                <a name = "PingüinodeMagallanes"><h3>Pingüino de Magallanes</h3></a>
-                <p class = animal-description>
-                    <img align ="left" src = "../assets/img/pinguino-de-magallanes.jpg">
-                    Una de las especies más simpáticas e indefensas de pingüinos que todavía puede encontrarse en su hábitat natural. 
-                    También se lo llama, según el lugar, pachanca, pájaro niño o pájaro bobo, y es originario de la región más austral 
-                    de América.<br>
-                    <br>
-                    A lo largo de la costa de la Patagonia argentina hay varias colonias de estos pequeños animales donde se los puede 
-                    ver en su hábitat natural. En Punta Tombo, Chubut, está la mayor reserva continental de pingüinos magallanes.
-                </p>
-                <br clear="all">
-
-                <a name = "Ciervo"><h3>Ciervo de los pantanos</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src = "../assets/img/ciervo-de-los-pantanos.jpg">
-                    Es el ciervo más grande en Sudamérica y habita en los Esteros del Iberá, un extenso humedal que abarca entre 15.000 
-                    y 25.000 km² en la provincia de Corrientes. La caza indiscriminada, así como los cambios ambientales impulsados por 
-                    la expansión ganadera y la producción forestal, redujeron notablemente su población en las últimas cuatro décadas, 
-                    aunque el nuevo Parque Nacional está haciendo grandes esfuerzos por proteger a esta especie.
-                </p>
-                <br clear="all">
-
-                <a name = "Suri"><h3>Suri cordillerano</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src = "../assets/img/suri-cordillerano.jpg">
-                    El suri cordillerano, también llamado ñandú de Darwin, ñandú del norte, choique, ñandú petiso, ñandú de las alturas, 
-                    ñandú andino o ñandú cordillerano, fue perseguido por el alto valor de sus plumas. Es un ave de un metro de altura 
-                    con las alas bien desarrolladas, lo que le permite correr a velocidades de hasta 60 kilómetros por hora. Habitan en 
-                    zonas altas de hasta 4000 metros sobre el nivel del mar, en la región de la cordillera de los Andes y el altiplano.
-                </p>
-                <br clear="all">
-
-                <a name = "Condor"><h3>Cóndor andino</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src = "../assets/img/condor-andino.jpg">
-                    Habitante de la cordillera, el cóndor andino es el ave más grande del continente, con una extraordinaria capacidad 
-                    de planeo y una extensión de sus alas de hasta 3 metros. La principal amenaza para su supervivencia es el alto nivel 
-                    de envenenamiento del que son víctimas por parte de los productores de ganado para defender a sus animales.<br>
-                    <br>
-                    En la Argentina, el área de nidificación del cóndor se extiende de sur a norte del país por la región montañosa y 
-                    en las sierras de Córdoba y San Luis. En sus desplazamientos las aves llegan a una franja costera comprendida entre 
-                    Tierra del Fuego y el norte del golfo de San Matías.
-                </p>
-                <br clear="all">
-
-                <a name = "Venado"><h3>Venado de las pampas</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/venado-de-las-pampas.jpg">
-                    Tiene un tamaño mediano y originalmente habitaba desde el norte del país hasta la provincia de Río Negro, en el norte 
-                    de la Patagonia argentina. Al haber menos praderas, es mucho más complejo que siga subsistiendo, sumado a la caza 
-                    masiva en el siglo XIX y la ocupación de su hábitat por el ganado bovino. Actualmente solo subsisten poblaciones 
-                    aisladas en diversos puntos.
-                </p>
-                <br clear="all">
-
-                <a name = "Yaguarete"><h3>Yaguareté</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/yaguarete.jpg">
-                    Es el tercer felino más grande después del tigre y el león. Pertenece a la familia de las panteras y es una de las 
-                    especies más amenazadas, debido al desmonte y la caza furtiva. También conocido como jaguar o yaguar, vive en las 
-                    provincias de Misiones, Formosa, Chaco y Jujuy, aunque su hábitat se redujo principalmente a la zona de la selva 
-                    misionera. Es una especie clave para la estabilización de los ecosistemas en los que habita, pues al ser un 
-                    supe predador regula las poblaciones de las especies que captura.
-                </p>
-                <br clear="all">
-
-                <a name = "Tatu"><h3>Tatú carreta</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/tatu-carreta.jpg">
-                    Pese a ser uno de los animales típicos de Argentina, su supervivencia está severamente amenazada por la pérdida de 
-                    su hábitat natural y la caza indiscriminada. También conocido como armadillo gigante -es el de mayor tamaño en la 
-                    actualidad-, se estima que en las últimas dos décadas se perdió el 30% de la población de esta especie. Actualmente 
-                    está en situación de “peligro crítico”. Se encuentra en las provincias del Chaco y Formosa.
-                </p>
-                <br clear="all">
-
-                <a name = "CarayaPita"><h3>Carayá-Pita</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/caraya-pita.jpg">
-                    El mono carayá es la especie más austral de todos los monos de América, en especial en la selva misionera, en terrenos 
-                    altos y serranos, y muy frecuentemente en las copas de los pinos Paraná. Los continuos desmontes, las epidemias de 
-                    fiebre amarilla y la caza destinada a proveerse de su carne, son los problemas más serios que enfrenta este simio 
-                    robusto y de cola larga para su supervivencia.
-                </p>
-                <br clear="all">
-
-                <a name = "Flamenco"><h3>Flamenco andino</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/flamenco-andino.jpg">
-                    Se trata de una especie de flamencos característico de Sudamérica que vive en el norte de Chile, en Bolivia, Perú y en 
-                    la Laguna Mar Chiquita de Argentina. La venta de huevos para consumo humano, sumada a la baja tasa de reproducción, han 
-                    puesto a esta bellísima especie de ave en peligro de extinción. Otros factores que ponen en riesgo a los flamencos 
-                    andinos son la creciente actividad minera, los bajos niveles de agua, los desastres naturales y la erosión de espacios 
-                    para anidar.
-                </p>
-                <br clear="all">
-
-                <a name = "Pecari"><h3>Pecarí del chaco</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/pecari-del-chaco.jpg">
-                    Es el mayor de los chanchos salvajes. Vive en toda la región comprendida entre el oeste de la provincia de Chaco, este de 
-                    Salta, Santiago del Estero y nordeste de Tucumán, entre quebrachales y cardonales. La caza de esta variedad de pecarí se debe 
-                    a la calidad de su carne para consumo, a la utilización de su cuero para diferentes usos, y al hecho de que los cazadores deportivos 
-                    lo eligen como trofeo.
-                </p>
-                <br clear="all">
-
-                <a name = "Ballena"><h3>Ballena franca austral</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/ballena-franca-austral.jpg">
-                    Este mamífero es el más grande de la Argentina y fue declarado “Monumento Natural Ballena Franca Austral”. Desde el 
-                    siglo XIX y debido a la caza indiscriminada, su población original se redujo hasta en un 90 por ciento. En la actualidad 
-                    existen aproximadamente 3000 ejemplares en todo el mundo, de los cuales el 20 por ciento ha sido registrado en 
-                    jurisdicción de Argentina. Pueden observarse desde la costa de Puerto Madryn o en silenciosos y respetuosos viajes en 
-                    pequeñas embarcaciones, zona a la que llegan para aparearse entre los meses de septiembre y diciembre.
-                </p>
-                <br clear="all">
-
-                <a name = "Pichiciego"><h3>Pichiciego</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/pichiciego.jpg">
-                    Es diminuto (entre 7 y 10 centímetros de largo) y con un suave pelaje cubierto por un caparazón rosado. Es el más chiquito de los 
-                    armadillos, se alimenta de invertebrados y plantas, pasa casi toda su vida excavando bajo tierra y se deja ver en la superficie en muy 
-                    raras ocasiones.<br>
-                    <br>
-                    Además, es muy susceptible al estrés y no tolera muy bien los encuentros con humanos. Vive en las zonas más secas, áridas 
-                    y arenosas del centro y noroeste de Argentina, y los datos sobre su conservación son poco precisos. Esto lo pone dentro de 
-                    la lista de animales de Argentina en peligro de extinción, si se consideran los cambios producidos en su hábitat natural.
-                </p>
-                <br clear="all">
-
-                <a name = "Capuchino"><h3>Mono caí o capuchino</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/mono-capuchino.jpg">
-                    Es el mono más popular de Sudamérica, de larga cola y rostro expresivo, inquieto y curioso. Durante muchas décadas fue 
-                    utilizado como mascota -es muy fácil de domesticar- y en un tiempo fue habitual participante de espectáculos callejeros 
-                    como acompañantes de organilleros y otros músicos ambulantes.<br>
-                    <br>
-                    Habitan en ambientes boscosos o selváticos y su distribución geográfica coincide con las de las selvas tropicales y 
-                    subtropicales. En Argentina se los encuentra especialmente en Misiones, y se los puede ver en el Parque Nacional Iguazú. 
-                    El tráfico y comercio ilegal es la mayor amenaza para esta especie.
-                </p>
-                <br clear="all">
-
-                <a name = "Chinchilla"><h3>Chinchilla de cola larga</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/chinchilla-de-cola-larga.jpg">
-                    La Reserva Nacional Formosa tiene como uno de sus principales objetivos la protección de algunos de los últimos ejemplares 
-                    de esta especie, que en los últimos 15 años vio disminuida su población en casi un 90 por ciento. La explotación agropecuaria 
-                    de los terrenos en donde solía habitar, la caza ilegal y el aumento de la población de zorros (su depredador) pusieron a esta 
-                    especie en peligro de extinción, al menos en estado salvaje.<br>
-                    <br>
-                    Su simpática apariencia -de grandes y redondas orejas- hace que muchas personas elijan chinchillas de cola larga como mascotas 
-                    domésticas.
-                </p>
-                <br clear="all">
-
-                <a name = "Tapir"><h3>Tapir</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/tapir.jpg">
-                    Este mamífero vive en zonas de selvas y bosques húmedos y en cerros de hasta 2000 metros de altura, en las provincias de Chaco, 
-                    Salta, Formosa, norte de Corrientes y Misiones. La deforestación, la caza ilegal y una población fragmentada lo pusieron en serio 
-                    riesgo de extinción. El tapir cuenta con diversos programas oficiales para su conservación ejecutados por científicos nacionales y 
-                    organizaciones internacionales, aunque la caza de este animal de extraña apariencia sigue en aumento.
-                </p>
-                <br clear = "all">
-                
-                <a name = "Guacamayo"><h3>Guacamayo verde</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/guacamayo-verde.jpg">
-                    Esta especie se creía extinta hasta que en 2007, un grupo de guarda parques registraron la presencia de la única población en Argentina, 
-                    restringida a una pequeña porción en la parte norte de la región de Las Yungas. Debido a su colorido plumaje, el guacamayo verde 
-                    -también conocido como guacamayo militar- es una de las víctimas preferidas de los cazadores furtivos dedicados al comercio.
-                </p>
-                <br clear = "all">
-
-                <a name = "Huillin"><h3>Huillín</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/huillin.jpg">
-                    Esta nutria, -también conocida como lobito de río-, es originaria de las zonas aledañas al Parque Nacional Nahuel Huapi. Se encuentra en 
-                    peligro de extinción desde 1977, cuando se detectó un fuerte descenso de su población por matanzas indiscriminadas. Además, tal como 
-                    sucede con otros animales de Argentina en peligro de extinción, la destrucción de su hábitat, la contaminación en lagos y los ataques 
-                    de otras especies representan una amenaza seria para el huillín.
-                </p>
-                <br clear = "all">
-
-                <a name = "Cauquen"><h3>Cauquén colorado</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/cauquen-colorado.jpg">
-                    Esta ave fue declarada plaga nacional en 1960 y las matanzas indiscriminadas redujeron su población a sólo 700 ejemplares. Tiene la 
-                    particularidad de que migra del sur hacia el centro del país en el invierno para no sufrir las bajas temperaturas. Los pocos ejemplares 
-                    que quedan viven entre las praderas patagónicas y el sur de la provincia de Buenos Aires.
-                </p>
-                <br clear = "all">
-
-                <a name = "Mara"><h3>Mara</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/mara-patagonica.jpg">
-                    La mara es una especie de liebre que habita la Patagonia, de hecho también se la conoce como mara patagónica o liebre patagónica. Es uno 
-                    de los roedores más grandes del mundo (con un peso promedio de 8 kilogramos) y uno de los mamíferos endémicos de Argentina de mayor tamaño.<br>
-                    <br>
-                    Vive en estepas semiáridas y desiertos de arbustos espinosos del oeste, centro, y sur de la Argentina. Su distribución se encuentra reducida 
-                    debido a la alteración de su hábitat, en especial en la llanura pampeana y en las regiones costeras, por causa de la urbanización y la extensión 
-                    de zonas de cultivo y pastoreo.
-                </p>
-                <br clear = "all">
-
-                <a name = "Rana"><h3>Rana telmatobius atacamensis</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/rana-telmatobius-atacamensis.jpeg">
-                    Este pequeño anfibio vive en el Río San Antonio de los Cobres, en la provincia de Salta, a casi 4000 metros de altura. La principal causa de su 
-                    peligro de extinción es la introducción de peces exóticos en su hábitat -que depredaron la especie-, y la contaminación del agua por la actividad 
-                    minera. Según algunos científicos, esta ranita ya está extinta.
-                </p>
-                <br clear = "all">
-
-                <a name = "Ranita"><h3>Ranita de Laguna Blanca (Atelognathus patagonicus)</h3></a>
-                <p class = animal-description>
-                    <img align = "left" src="../assets/img/rana-de-laguna-blanca.jpg">
-                    Su situación es similar a la rana telmatobius atacamensis, pero su facilidad de adaptación está permitiendo que sobrevivan como especie. Por este motivo 
-                    fue migrada a otras fuentes de agua cercanas en las que logró desarrollar su ciclo vital sin problemas. Habita en una pequeña laguna en Copahue, en otra 
-                    en Batea Mahuida, y en siete lagunas del Parque Nacional Laguna Blanca, en la provincia del Neuquén.
-                </p>
-            </div>
         </div>
-        
-        <!-- copyright -->
-        <div id="copyright">
-            <p><b>Copyright &copy; 2021 - Graff Rocío -</b></p>
-            <br class="clear" />
+    </header>
+
+    <div class="main-content">
+        <h2>Animales de Argentina en peligro de extinción</h2>
+
+        <div class="indice">
+            <h4>Lista de Animales</h4>
+            <ul>
+                <li>
+                    <a href="#Huemul">Huemul</a>
+                </li>
+                <li>
+                    <a href="#AguaraGuazu">Aguará Guazú</a>
+                </li>
+                <li>
+                    <a href="#OsoHormiguero">Oso Hormiguero</a>
+                </li>
+                <li>
+                    <a href="#PingüinodeMagallanes">Pingüino de Magallanes</a>
+                </li>
+                <li>
+                    <a href="#Ciervo">Ciervo de los pantanos</a>
+                </li>
+                <li>
+                    <a href="#Suri">Suri cordillerano</a>
+                </li>
+                <li>
+                    <a href="#Condor">Cóndor andino</a>
+                </li>
+                <li>
+                    <a href="#Venado">Venado de las pampas</a>
+                </li>
+                <li>
+                    <a href="#Yaguarete">Yaguareté</a>
+                </li>
+                <li>
+                    <a href="#Tatu">Tatú carreta</a>
+                </li>
+                <li>
+                    <a href="#CarayaPita">Carayá-Pita</a>
+                </li>
+                <li>
+                    <a href="#Flamenco">Flamenco andino</a>
+                </li>
+                <li>
+                    <a href="#Pecari">Pecarí del chaco</a>
+                </li>
+                <li>
+                    <a href="#Ballena">Ballena franca austral</a>
+                </li>
+                <li>
+                    <a href="#Pichiciego">Pichiciego</a>
+                </li>
+                <li>
+                    <a href="#Capuchino">Mono caí o capuchino</a>
+                </li>
+                <li>
+                    <a href="#Chinchilla">Chinchilla de cola larga</a>
+                </li>
+                <li>
+                    <a href="#Tapir">Tapir</a>
+                </li>
+                <li>
+                    <a href="#Guacamayo">Guacamayo verde</a>
+                </li>
+                <li>
+                    <a href="#Huillin">Huillín</a>
+                </li>
+                <li>
+                    <a href="#Cauquen">Cauquén colorado</a>
+                </li>
+                <li>
+                    <a href="#Mara">Mara</a>
+                </li>
+                <li>
+                    <a href="#Rana">Rana telmatobius atacamensis</a>
+                </li>
+                <li>
+                    <a href="#Ranita">Ranita de Laguna Blanca</a>
+                </li>
+            </ul>
         </div>
-    </body>
+
+        <div class="contenido">
+            <p>
+                Argentina es uno de los países con mayor biodiversidad del mundo, con un extenso territorio, climas y paisajes de todo tipo. Su fauna es muy variada, aunque en la actualidad se encuentra severamente afectada por la falta de conservación. Ya son más de
+                500 especies las que están en peligro de extinción. Aquí, algunas de las especies más amenazadas.
+            </p>
+
+            <a name="Huemul">
+                <h3>Huemul</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/huemul.jpg"> Este ciervo robusto, con grandes orejas y astas en los machos, es una de las especies típicas de la zona cordillerana de la Patagonia. El huemul fue víctima de la caza furtiva, ataques de otras especies
+                y enfermedades. Además, los incendios forestales de las últimas décadas en su hábitat redujeron considerablemente su población. Se calcula que no hay más de 700 ejemplares, y se encuentran dispersos entre áreas aisladas y fragmentadas
+                de los bosques de lenga de la Patagonia andina y la estepa patagónica.
+            </p>
+            <br class="clear">
+
+            <a name="AguaraGuazu">
+                <h3>Aguará Guazú</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/aguara-guazu.jpg"> El avance del hombre sobre su ecosistema hizo que se redujera considerablemente el número de ejemplares de este zorro, el más grande de Sudamérica. Vive en las provincias de Formosa, Chaco, Santa
+                Fe y Corrientes, al noreste del país, en zonas inundables. Este zorro de pelaje largo y hermoso color rojo, encarna la leyenda del lobizón para los criollos aunque en la mitología toba es un ser protector y padre de todos los perros. En
+                guaraní, aguará guazú significa zorro grande.
+            </p>
+            <br class="clear">
+
+            <a name="OsoHormiguero">
+                <h3>Oso Hormiguero gigante</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/oso-hormiguero.jpg"> El oso hormiguero gigante o «yurumí» es uno de los dos grandes devoradores de hormigas que viven en la Argentina. Se lo encuentra en la selva misionera, Formosa, El impenetrable y otras áreas
+                chaqueñas, el este de Salta, el noreste de Santiago del Estero y, probablemente, norte de Corrientes. Se estima que su baja población se debe a que no posee grandes posibilidades de reproducción, y además es un animal muy atractivo para
+                el hombre.
+            </p>
+            <br class="clear">
+
+            <a name="PingüinodeMagallanes">
+                <h3>Pingüino de Magallanes</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/pinguino-de-magallanes.jpg"> Una de las especies más simpáticas e indefensas de pingüinos que todavía puede encontrarse en su hábitat natural. También se lo llama, según el lugar, pachanca, pájaro niño o pájaro
+                bobo, y es originario de la región más austral de América.<br>
+                <br> A lo largo de la costa de la Patagonia argentina hay varias colonias de estos pequeños animales donde se los puede ver en su hábitat natural. En Punta Tombo, Chubut, está la mayor reserva continental de pingüinos magallanes.
+            </p>
+            <br class="clear">
+
+            <a name="Ciervo">
+                <h3>Ciervo de los pantanos</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/ciervo-de-los-pantanos.jpg"> Es el ciervo más grande en Sudamérica y habita en los Esteros del Iberá, un extenso humedal que abarca entre 15.000 y 25.000 km² en la provincia de Corrientes. La caza indiscriminada,
+                así como los cambios ambientales impulsados por la expansión ganadera y la producción forestal, redujeron notablemente su población en las últimas cuatro décadas, aunque el nuevo Parque Nacional está haciendo grandes esfuerzos por proteger
+                a esta especie.
+            </p>
+            <br class="clear">
+
+            <a name="Suri">
+                <h3>Suri cordillerano</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/suri-cordillerano.jpg"> El suri cordillerano, también llamado ñandú de Darwin, ñandú del norte, choique, ñandú petiso, ñandú de las alturas, ñandú andino o ñandú cordillerano, fue perseguido por el alto valor de
+                sus plumas. Es un ave de un metro de altura con las alas bien desarrolladas, lo que le permite correr a velocidades de hasta 60 kilómetros por hora. Habitan en zonas altas de hasta 4000 metros sobre el nivel del mar, en la región de la
+                cordillera de los Andes y el altiplano.
+            </p>
+            <br class="clear">
+
+            <a name="Condor">
+                <h3>Cóndor andino</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/condor-andino.jpg"> Habitante de la cordillera, el cóndor andino es el ave más grande del continente, con una extraordinaria capacidad de planeo y una extensión de sus alas de hasta 3 metros. La principal amenaza
+                para su supervivencia es el alto nivel de envenenamiento del que son víctimas por parte de los productores de ganado para defender a sus animales.<br>
+                <br> En la Argentina, el área de nidificación del cóndor se extiende de sur a norte del país por la región montañosa y en las sierras de Córdoba y San Luis. En sus desplazamientos las aves llegan a una franja costera comprendida entre
+                Tierra del Fuego y el norte del golfo de San Matías.
+            </p>
+            <br class="clear">
+
+            <a name="Venado">
+                <h3>Venado de las pampas</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/venado-de-las-pampas.jpg"> Tiene un tamaño mediano y originalmente habitaba desde el norte del país hasta la provincia de Río Negro, en el norte de la Patagonia argentina. Al haber menos praderas, es mucho más complejo
+                que siga subsistiendo, sumado a la caza masiva en el siglo XIX y la ocupación de su hábitat por el ganado bovino. Actualmente solo subsisten poblaciones aisladas en diversos puntos.
+            </p>
+            <br class="clear">
+
+            <a name="Yaguarete">
+                <h3>Yaguareté</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/yaguarete.jpg"> Es el tercer felino más grande después del tigre y el león. Pertenece a la familia de las panteras y es una de las especies más amenazadas, debido al desmonte y la caza furtiva. También conocido
+                como jaguar o yaguar, vive en las provincias de Misiones, Formosa, Chaco y Jujuy, aunque su hábitat se redujo principalmente a la zona de la selva misionera. Es una especie clave para la estabilización de los ecosistemas en los que habita,
+                pues al ser un supe predador regula las poblaciones de las especies que captura.
+            </p>
+            <br class="clear">
+
+            <a name="Tatu">
+                <h3>Tatú carreta</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/tatu-carreta.jpg"> Pese a ser uno de los animales típicos de Argentina, su supervivencia está severamente amenazada por la pérdida de su hábitat natural y la caza indiscriminada. También conocido como armadillo
+                gigante -es el de mayor tamaño en la actualidad-, se estima que en las últimas dos décadas se perdió el 30% de la población de esta especie. Actualmente está en situación de “peligro crítico”. Se encuentra en las provincias del Chaco y
+                Formosa.
+            </p>
+            <br class="clear">
+
+            <a name="CarayaPita">
+                <h3>Carayá-Pita</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/caraya-pita.jpg"> El mono carayá es la especie más austral de todos los monos de América, en especial en la selva misionera, en terrenos altos y serranos, y muy frecuentemente en las copas de los pinos Paraná. Los
+                continuos desmontes, las epidemias de fiebre amarilla y la caza destinada a proveerse de su carne, son los problemas más serios que enfrenta este simio robusto y de cola larga para su supervivencia.
+            </p>
+            <br class="clear">
+
+            <a name="Flamenco">
+                <h3>Flamenco andino</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/flamenco-andino.jpg"> Se trata de una especie de flamencos característico de Sudamérica que vive en el norte de Chile, en Bolivia, Perú y en la Laguna Mar Chiquita de Argentina. La venta de huevos para consumo humano,
+                sumada a la baja tasa de reproducción, han puesto a esta bellísima especie de ave en peligro de extinción. Otros factores que ponen en riesgo a los flamencos andinos son la creciente actividad minera, los bajos niveles de agua, los desastres
+                naturales y la erosión de espacios para anidar.
+            </p>
+            <br class="clear">
+
+            <a name="Pecari">
+                <h3>Pecarí del chaco</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/pecari-del-chaco.jpg"> Es el mayor de los chanchos salvajes. Vive en toda la región comprendida entre el oeste de la provincia de Chaco, este de Salta, Santiago del Estero y nordeste de Tucumán, entre quebrachales
+                y cardonales. La caza de esta variedad de pecarí se debe a la calidad de su carne para consumo, a la utilización de su cuero para diferentes usos, y al hecho de que los cazadores deportivos lo eligen como trofeo.
+            </p>
+            <br class="clear">
+
+            <a name="Ballena">
+                <h3>Ballena franca austral</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/ballena-franca-austral.jpg"> Este mamífero es el más grande de la Argentina y fue declarado “Monumento Natural Ballena Franca Austral”. Desde el siglo XIX y debido a la caza indiscriminada, su población original
+                se redujo hasta en un 90 por ciento. En la actualidad existen aproximadamente 3000 ejemplares en todo el mundo, de los cuales el 20 por ciento ha sido registrado en jurisdicción de Argentina. Pueden observarse desde la costa de Puerto
+                Madryn o en silenciosos y respetuosos viajes en pequeñas embarcaciones, zona a la que llegan para aparearse entre los meses de septiembre y diciembre.
+            </p>
+            <br class="clear">
+
+            <a name="Pichiciego">
+                <h3>Pichiciego</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/pichiciego.jpg"> Es diminuto (entre 7 y 10 centímetros de largo) y con un suave pelaje cubierto por un caparazón rosado. Es el más chiquito de los armadillos, se alimenta de invertebrados y plantas, pasa casi toda
+                su vida excavando bajo tierra y se deja ver en la superficie en muy raras ocasiones.<br>
+                <br> Además, es muy susceptible al estrés y no tolera muy bien los encuentros con humanos. Vive en las zonas más secas, áridas y arenosas del centro y noroeste de Argentina, y los datos sobre su conservación son poco precisos. Esto lo
+                pone dentro de la lista de animales de Argentina en peligro de extinción, si se consideran los cambios producidos en su hábitat natural.
+            </p>
+            <br class="clear">
+
+            <a name="Capuchino">
+                <h3>Mono caí o capuchino</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/mono-capuchino.jpg"> Es el mono más popular de Sudamérica, de larga cola y rostro expresivo, inquieto y curioso. Durante muchas décadas fue utilizado como mascota -es muy fácil de domesticar- y en un tiempo fue
+                habitual participante de espectáculos callejeros como acompañantes de organilleros y otros músicos ambulantes.<br>
+                <br> Habitan en ambientes boscosos o selváticos y su distribución geográfica coincide con las de las selvas tropicales y subtropicales. En Argentina se los encuentra especialmente en Misiones, y se los puede ver en el Parque Nacional Iguazú.
+                El tráfico y comercio ilegal es la mayor amenaza para esta especie.
+            </p>
+            <br class="clear">
+
+            <a name="Chinchilla">
+                <h3>Chinchilla de cola larga</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/chinchilla-de-cola-larga.jpg"> La Reserva Nacional Formosa tiene como uno de sus principales objetivos la protección de algunos de los últimos ejemplares de esta especie, que en los últimos 15 años vio disminuida
+                su población en casi un 90 por ciento. La explotación agropecuaria de los terrenos en donde solía habitar, la caza ilegal y el aumento de la población de zorros (su depredador) pusieron a esta especie en peligro de extinción, al menos
+                en estado salvaje.<br>
+                <br> Su simpática apariencia -de grandes y redondas orejas- hace que muchas personas elijan chinchillas de cola larga como mascotas domésticas.
+            </p>
+            <br class="clear">
+
+            <a name="Tapir">
+                <h3>Tapir</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/tapir.jpg"> Este mamífero vive en zonas de selvas y bosques húmedos y en cerros de hasta 2000 metros de altura, en las provincias de Chaco, Salta, Formosa, norte de Corrientes y Misiones. La deforestación, la caza
+                ilegal y una población fragmentada lo pusieron en serio riesgo de extinción. El tapir cuenta con diversos programas oficiales para su conservación ejecutados por científicos nacionales y organizaciones internacionales, aunque la caza de
+                este animal de extraña apariencia sigue en aumento.
+            </p>
+            <br class="clear">
+
+            <a name="Guacamayo">
+                <h3>Guacamayo verde</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/guacamayo-verde.jpg"> Esta especie se creía extinta hasta que en 2007, un grupo de guarda parques registraron la presencia de la única población en Argentina, restringida a una pequeña porción en la parte norte
+                de la región de Las Yungas. Debido a su colorido plumaje, el guacamayo verde -también conocido como guacamayo militar- es una de las víctimas preferidas de los cazadores furtivos dedicados al comercio.
+            </p>
+            <br class="clear">
+
+            <a name="Huillin">
+                <h3>Huillín</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/huillin.jpg"> Esta nutria, -también conocida como lobito de río-, es originaria de las zonas aledañas al Parque Nacional Nahuel Huapi. Se encuentra en peligro de extinción desde 1977, cuando se detectó un fuerte
+                descenso de su población por matanzas indiscriminadas. Además, tal como sucede con otros animales de Argentina en peligro de extinción, la destrucción de su hábitat, la contaminación en lagos y los ataques de otras especies representan
+                una amenaza seria para el huillín.
+            </p>
+            <br class="clear">
+
+            <a name="Cauquen">
+                <h3>Cauquén colorado</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/cauquen-colorado.jpg"> Esta ave fue declarada plaga nacional en 1960 y las matanzas indiscriminadas redujeron su población a sólo 700 ejemplares. Tiene la particularidad de que migra del sur hacia el centro del
+                país en el invierno para no sufrir las bajas temperaturas. Los pocos ejemplares que quedan viven entre las praderas patagónicas y el sur de la provincia de Buenos Aires.
+            </p>
+            <br class="clear">
+
+            <a name="Mara">
+                <h3>Mara</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/mara-patagonica.jpg"> La mara es una especie de liebre que habita la Patagonia, de hecho también se la conoce como mara patagónica o liebre patagónica. Es uno de los roedores más grandes del mundo (con un peso promedio
+                de 8 kilogramos) y uno de los mamíferos endémicos de Argentina de mayor tamaño.<br>
+                <br> Vive en estepas semiáridas y desiertos de arbustos espinosos del oeste, centro, y sur de la Argentina. Su distribución se encuentra reducida debido a la alteración de su hábitat, en especial en la llanura pampeana y en las regiones
+                costeras, por causa de la urbanización y la extensión de zonas de cultivo y pastoreo.
+            </p>
+            <br class="clear">
+
+            <a name="Rana">
+                <h3>Rana telmatobius atacamensis</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/rana-telmatobius-atacamensis.jpeg"> Este pequeño anfibio vive en el Río San Antonio de los Cobres, en la provincia de Salta, a casi 4000 metros de altura. La principal causa de su peligro de extinción es la introducción
+                de peces exóticos en su hábitat -que depredaron la especie-, y la contaminación del agua por la actividad minera. Según algunos científicos, esta ranita ya está extinta.
+            </p>
+            <br class="clear">
+
+            <a name="Ranita">
+                <h3>Ranita de Laguna Blanca (Atelognathus patagonicus)</h3>
+            </a>
+            <p class="animal-description">
+                <img src="../assets/img/rana-de-laguna-blanca.jpg"> Su situación es similar a la rana telmatobius atacamensis, pero su facilidad de adaptación está permitiendo que sobrevivan como especie. Por este motivo fue migrada a otras fuentes de
+                agua cercanas en las que logró desarrollar su ciclo vital sin problemas. Habita en una pequeña laguna en Copahue, en otra en Batea Mahuida, y en siete lagunas del Parque Nacional Laguna Blanca, en la provincia del Neuquén.
+            </p>
+        </div>
+    </div>
+
+    <!-- copyright -->
+    <footer>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <p><b>Copyright &copy; 2021 - Graff Rocio -</b></p>
+        <br class="clear" />
+    </footer>
+</body>
+
 </html>
