@@ -1,14 +1,14 @@
 /*Contenido principal*/
 
-.main-content {
+.contenido-contacto {
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 3%;
 }
 
 .texto {
     margin: 0 auto;
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .texto h2 {
@@ -19,4 +19,33 @@
 
 .texto p {
     padding-left: 5%;
+    padding-top: 2%;
+}
+
+.contenedor-formulario {}
+
+.formulario {
+    box-shadow: 1px solid black;
+}
+
+
+/*Para ocultar el campo correspondiente*/
+
+.hidden {
+    display: none;
+}
+
+
+/*Para mostrar el campo correspondiente*/
+
+.shown {
+    display: block;
+}
+
+
+/*Footer*/
+
+#contacto {
+    margin-top: 100px;
+    position: absolute;
 }

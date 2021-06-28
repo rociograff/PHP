@@ -1,59 +1,86 @@
-.options {
+.opciones {
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 /*------VOLUNTARIADO------*/
+
 .voluntariado {
     width: 100%;
+    margin-top: 3%;
 }
 
+
 /*Se voluntario*/
+
 .voluntariado h2 {
     color: #961607;
     font-size: 50px;
     margin-left: 5%;
 }
 
+
 /*Condicion para ser voluntario*/
+
 .voluntariado p {
     width: 50%;
     text-align: justify;
     line-height: 25px;
     font-size: 16px;
     margin-left: 5%;
+    padding-top: 2%;
 }
 
+
 /*¿En que pueden ayudar las voluntarias y voluntarios?*/
+
 .voluntariado h3 {
-    color:darkslategray;
+    color: darkslategray;
     font-size: 30px;
     text-align: left;
     margin-left: 5%;
+    padding-top: 3%;
 }
 
+
 /*Opciones voluntariado de la izquierda*/
+
 .bloque1 {
     width: 49%;
     float: left;
+    padding-left: 5%;
+    padding-top: 3%;
 }
 
+
 /*Opciones voluntariado de la derecha*/
+
 .bloque2 {
     width: 49%;
     float: left;
+    padding-top: 3%;
 }
 
+
 /*Titulos de las opciones para ser voluntario*/
+
 .voluntariado h4 {
     font-size: 20px;
     text-align: left;
     margin-left: 50px;
-    color:#bb4a3d;
+    color: #bb4a3d;
+    padding-top: 2%;
 }
 
+
 /*Opciones voluntariado*/
-.opcion1, .opcion2, .opcion3, .opcion4, .opcion5 {
+
+.opcion1,
+.opcion2,
+.opcion3,
+.opcion4,
+.opcion5 {
     width: 100%;
     line-height: 30px;
     text-align: justify;
@@ -61,53 +88,57 @@
     margin-left: 5%;
 }
 
+
 /*----Bullets opciones----*/
+
 .opcion1 {
     margin: 0;
-	list-style: none;
-	background-image: url("../img/transporte.png");
-	background-repeat: no-repeat;
-	background-position: top left;
-	background-size: 40px;
+    list-style: none;
+    background-image: url("../img/transporte.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 40px;
 }
 
 .opcion2 {
     margin: 0;
-	list-style: none;
-	background-image: url("../img/veterinaria.png");
-	background-repeat: no-repeat;
-	background-position: top left;
-	background-size: 40px;
+    list-style: none;
+    background-image: url("../img/veterinaria.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 40px;
 }
 
 .opcion3 {
     margin: 0;
-	list-style: none;
-	background-image: url("../img/marketing.png");
-	background-repeat: no-repeat;
-	background-position: top left;
-	background-size: 40px;
+    list-style: none;
+    background-image: url("../img/marketing.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 40px;
 }
 
 .opcion4 {
     margin: 0;
-	list-style: none;
-	background-image: url("../img/asistencia-en-jornadas.png");
-	background-repeat: no-repeat;
-	background-position: top left;
-	background-size: 40px;
+    list-style: none;
+    background-image: url("../img/asistencia-en-jornadas.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 40px;
 }
 
 .opcion5 {
     margin: 0;
-	list-style: none;
-	background-image: url("../img/recaudacion.png");
-	background-repeat: no-repeat;
-	background-position: top left;
-	background-size: 40px;
+    list-style: none;
+    background-image: url("../img/recaudacion.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 40px;
 }
 
+
 /*----BOTON A FORMULARIO DE VOLUNTARIADO----*/
+
 .frase-boton {
     width: 33%;
     height: 75px;
@@ -126,49 +157,68 @@
     font-weight: bold;
 }
 
+
 /*Efecto para el boton cuando se le pasa el mouse*/
+
 #boton-voluntariado:hover {
     color: rgba(255, 255, 255, 1) !important;
-    box-shadow: 0 4px 16px rgb(37, 151, 37);  /*Efecto resplandor*/
+    box-shadow: 0 4px 16px rgb(37, 151, 37);
+    /*Efecto resplandor*/
     transition: all 0.2s ease;
 }
 
+
 /*------DONACIONES------*/
+
 .donaciones {
     width: 100%;
+    margin-top: 3%;
+    padding-top: 3%;
 }
 
+
 /*Descripcion de la donación*/
+
 .descripcion {
     width: 40%;
     float: left;
     margin-left: 5%;
 }
 
+
 /*Texto descripcion*/
+
 .descripcion p {
     text-align: justify;
     line-height: 25px;
     font-size: 16px;
     margin-left: 5%;
+    padding-top: 3%;
 }
 
+
 /*Hacé una donación*/
+
 .descripcion h2 {
     color: #961607;
     font-size: 50px;
     margin-left: 5%;
 }
 
+
 /*Ayúdanos a ayudar*/
+
 .descripcion h3 {
-    color:darkslategray;
+    color: darkslategray;
     font-size: 30px;
     text-align: left;
     margin-left: 5%;
+    padding-top: 3%;
 }
 
+
 /*Cartelito*/
+
 .cartel-donacion {
     width: 24%;
     border: 1px double black;
@@ -179,25 +229,32 @@
     text-align: center;
     background-color: #bb4a3d;
     /*Sombreado*/
-    box-shadow: 10px 10px 16px 2px rgba(0,0,0,0.55);
-    -webkit-box-shadow: 10px 10px 16px 2px rgba(0,0,0,0.55);
-    -moz-box-shadow: 10px 10px 16px 2px rgba(0,0,0,0.55);
+    box-shadow: 10px 10px 16px 2px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: 10px 10px 16px 2px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 10px 10px 16px 2px rgba(0, 0, 0, 0.55);
 }
 
+
 /*Tu aporte nos ayuda mucho*/
+
 .cartel-donacion h4 {
     font-size: 25px;
     color: beige;
 }
 
+
 /*Texto del cartel*/
+
 .cartel-donacion p {
     color: beige;
     font-size: 14px;
     line-height: 20px;
+    padding-top: 3%;
 }
 
+
 /*----BOTONES A FORMULARIOS DE DONACIONES----*/
+
 .boton-donacion1 {
     width: 25%;
     height: 75px;
@@ -208,7 +265,9 @@
     float: left;
 }
 
+
 /*Donar ahora ---- Color del boton, color del texto y tamaño de la letra*/
+
 #boton1 {
     width: 100%;
     height: 100%;
@@ -217,10 +276,20 @@
     font-size: 30px;
 }
 
+
 /*Efecto para el boton cuando se le pasa el mouse*/
+
 .boton-donacion1:hover {
     color: rgba(255, 255, 255, 1) !important;
-    box-shadow: 0 4px 16px #0471a6;  /*Efecto resplandor*/
+    box-shadow: 0 4px 16px #0471a6;
+    /*Efecto resplandor*/
     transition: all 0.2s ease;
 }
 
+
+/*Footer*/
+
+#colaboracion {
+    margin-top: 120px;
+    position: absolute;
+}

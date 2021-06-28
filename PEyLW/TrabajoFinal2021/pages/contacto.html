@@ -44,7 +44,7 @@
         </div>
     </header>
 
-    <div class="main-content">
+    <div class="contenido-contacto">
         <div class="texto">
             <h2>Ponte en contacto con nosotros</h2>
             <p>
@@ -52,11 +52,91 @@
             </p>
         </div>
 
-        <div class="formulario"></div>
+        <div class="contenedor-formulario">
+            <div class="formulario">
+                <form id="form">
+                    <p>
+                        <label>Nombre</label>
+                        <input type="text" name="nombre" id="nombre" />
+                    </p>
+
+                    <p>
+                        <label>Apellido</label>
+                        <input type="text" name="apellido" id="apellido" />
+                    </p>
+
+                    <p>
+                        <label>Asunto:
+                            <select id="seleccion-asunto" required onchange="verificarCampo()">
+                                <option value="" disabled selected></option>
+                                <option value="donar">Quiero ser donante</option>
+                                <option value="voluntario">Quiero ser voluntario</option>
+                                <option value="otro">Quiero mas información</option>
+                            </select>
+                        </label>
+                    </p>
+
+                    <p class="hidden" id="tarjeta">
+                        <label>Número de tarjeta</label>
+                        <input type="text" name="numeroTarjeta" id="numeroTarjeta" />
+                    </p>
+
+                    <p class="hidden" id="codigoTarjeta">
+                        <label>Código de seguridad</label>
+                        <input type="text" name="codigoSeguridad" id="codigoSeguridad" />
+                    </p>
+
+                    <p class="hidden" id="vencimiento">
+                        <label>Fecha de vencimiento</label>
+                        <select id="mesVencimiento" required ondblclick="mostrarMesNumero()">
+                            <option value="" disabled selected></option>
+                        </select>
+                        <select id="anioVencimiento" required ondblclick="mostrarAnio('anioVencimiento')">
+                            <option value="" disabled selected></option>
+                        </select>
+                    </p>
+
+                    <p class="hidden" id="dni">
+                        <label>Documento</label>
+                        <input type="text" name="documento" id="documento" />
+                    </p>
+
+                    <p class="hidden" id="nacimiento">
+                        <label>Año de nacimiento</label>
+                        <select id="anioNacimiento" required ondblclick="mostrarAnio('anioNacimiento')">
+                            <option>Año</option>
+                        </select>
+                        <select id="mesNacimiento" required ondblclick="mostrarMes('mesNacimiento')">
+                            <option>Mes</option>
+                        </select>
+                        <select id="diaNacimiento" required ondblclick="mostrarDia()">
+                            <option>Dia</option>
+                        </select>
+                    </p>
+
+                    <p class="hidden" id="email">
+                        <label>Email</label>
+                        <input type="text" name="mail" id="mail" />
+                    </p>
+
+                    <p class="hidden" id="mensaje">
+                        <label>Mensaje</label>
+                        <textarea name="msj" id="msj" rows="3" required></textarea>
+                    </p>
+
+                    <p class="block">
+                        <button type="submit" id="submitButton" onclick="verificarFormulario()">
+                            Enviar
+                        </button>
+                    </p>
+                </form>
+                <script type="text/javascript" src="../assets/js/contacto.js"></script>
+            </div>
+        </div>
     </div>
 
     <!-- copyright -->
-    <footer>
+    <footer id="contacto">
         <i class="fab fa-facebook-f"></i>
         <i class="fab fa-twitter"></i>
         <i class="fab fa-instagram"></i>

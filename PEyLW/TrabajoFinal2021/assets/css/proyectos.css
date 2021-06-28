@@ -1,0 +1,10 @@
+.contenedor-proyectos {
+    width: 100%;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.campañas img {
+    width: 50%;
+    height: 100%;
+}
