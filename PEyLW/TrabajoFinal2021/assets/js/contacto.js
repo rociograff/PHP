@@ -1,14 +1,22 @@
 /**Muestra los años */
-function mostrarAnio(id) {
-    var campo = document.getElementById(id);
+function mostrarAnio() {
+    var campo = document.getElementById("anioNacimiento");
     for (let index = 2003; index >= 1950; index--) {
         campo.innerHTML += "<option>" + index + "</option>";
     }
 }
 
+/**Muestro los años para la tarjeta de credito */
+function mostrarAnioVencimiento() {
+    var campo = document.getElementById("anioVencimiento");
+    for (let index = 2040; index >= 2021; index--) {
+        campo.innerHTML += "<option>" + index + "</option>";
+    }
+}
+
 /**Muestra los meses */
-function mostrarMes(id) {
-    var campo = document.getElementById(id);
+function mostrarMes() {
+    var campo = document.getElementById("mesNacimiento");
     var meses = [
         "Enero",
         "Febrero",
@@ -25,6 +33,20 @@ function mostrarMes(id) {
     ];
     for (let index = 0; index < meses.length; index++) {
         campo.innerHTML += "<option>" + meses[index] + "</option>";
+    }
+}
+
+/**Muestro los meses en numeros */
+function mostrarMesNumero() {
+    var campo = document.getElementById("mesVencimiento");
+    for (let index = 1; index < 13; index++) {
+        var cadena;
+        if (index <= 9) {
+            cadena = "0" + index;
+        } else {
+            cadena = index;
+        }
+        campo.innerHTML += "<option>" + cadena + "</option>";
     }
 }
 
@@ -79,66 +101,37 @@ function mostrarDia() {
     }
 }
 
-/**Muestro los meses en numeros */
-function mostrarMesNumero() {
-    var campo = document.getElementById("mesVencimiento");
-    for (let index = 1; index < 13; index++) {
-        var cadena;
-        if (index <= 9) {
-            cadena = "0" + index;
-        } else {
-            cadena = index;
-        }
-        campo.innerHTML += "<option>" + cadena + "</option>";
-    }
-}
-
 /**Verifico los campos del formulario para que se muestren o se oculten */
 function verificarCampo() {
     var campo = document.getElementById("seleccion-asunto");
-    var tarjeta = document.getElementById("tarjeta");
-    var codigo = document.getElementById("codigoTarjeta");
-    var vencimiento = document.getElementById("vencimiento");
-    var dni = document.getElementById("dni");
-    var nacimiento = document.getElementById("nacimiento");
-    var email = document.getElementById("email");
-    var mensaje = document.getElementById("mensaje");
+    var asunto;
 
     switch (campo.value) {
-        case "donar":
+        case "Quiero ser donante":
+            asunto = document.getElementById("asuntoDonar");
             //Para cambiar a la clase que muestra los campos
-            tarjeta.className = "shown";
-            codigo.className = "shown";
-            vencimiento.className = "shown";
-            dni.className = "shown";
-            //Ocultar en caso de que hayan sido mostradas
-            nacimiento.className = "hidden";
-            email.className = "hidden";
-            mensaje.className = "hidden";
+            asunto.className = "shown"
+                //Ocultar en caso de que hayan sido mostradas
+            document.getElementById("asuntoVoluntario").className = "hidden";
+            document.getElementById("asuntoOtro").className = "hidden";
             marcarCorrecto(campo);
             break;
-        case "voluntario":
-            //Ocultar en caso de que hayan sido mostradas
-            tarjeta.className = "hidden";
-            codigo.className = "hidden";
-            vencimiento.className = "hidden";
-            dni.className = "hidden";
-            mensaje.className = "hidden";
+        case "Quiero ser voluntario":
+            asunto = document.getElementById("asuntoVoluntario");
             //Para cambiar a la clase que muestra los campos
-            nacimiento.className = "shown";
-            email.className = "shown";
+            asunto.className = "shown";
+            //Ocultar en caso de que hayan sido mostradas
+            document.getElementById("asuntoDonar").className = "hidden";
+            document.getElementById("asuntoOtro").className = "hidden";
             marcarCorrecto(campo);
             break;
-        case "otro":
-            //Ocultar en caso de que hayan sido mostradas
-            mensaje.className = "shown";
+        case "Quiero más información":
+            asunto = document.getElementById("asuntoOtro");
             //Para cambiar a la clase que muestra los campos
-            tarjeta.className = "hidden";
-            codigo.className = "hidden";
-            vencimiento.className = "hidden";
-            dni.className = "hidden";
-            nacimiento.className = "hidden";
-            email.className = "hidden";
+            asunto.className = "shown";
+            //Ocultar en caso de que hayan sido mostradas
+            document.getElementById("asuntoDonar").className = "hidden";
+            document.getElementById("asuntoVoluntario").className = "hidden";
             marcarCorrecto(campo);
             break;
     }
@@ -170,89 +163,14 @@ function verificarFormulario() {
         case "":
             marcarIncorrecto(campo);
             break;
-        case "donar":
-            campo = document.getElementById("numeroTarjeta");
-            if (campo.value.match(/[A-Za-z]/) || campo.value.length != 16) {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
-
-            campo = document.getElementById("codigoSeguridad");
-            if (campo.value.match(/[A-Za-z]/) || campo.value.length != 3) {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
-
-            campo = document.getElementById("mesVencimiento");
-            if (campo.value == "") {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
-
-            campo = document.getElementById("anioVencimiento");
-            if (campo.value == "") {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
-
-            campo = document.getElementById("documento");
-            if (campo.value.match(/[A-Za-z]/) || campo.value.length < 7) {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
+        case "Quiero ser donante":
+            validarDonar();
             break;
-        case "voluntario":
-            campo = document.getElementById("anioNacimiento");
-            if (campo.value == "Año") {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
-
-            campo = document.getElementById("mesNacimiento");
-            if (campo.value == "Mes") {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
-
-            campo = document.getElementById("diaNacimiento");
-            if (campo.value == "Dia") {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
-
-            campo = document.getElementById("mail");
-            var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-            if (!emailRegex.test(campo.value)) {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
+        case "Quiero ser voluntario":
+            validarVoluntario();
             break;
-        case "otro":
-            campo = document.getElementById("msj");
-            if (campo.value == "" || campo.value.length < 100) {
-                valido = false;
-                marcarIncorrecto(campo);
-            } else {
-                marcarCorrecto(campo);
-            }
+        case "Quiero más información":
+            validarOtro();
             break;
     }
 
@@ -261,6 +179,114 @@ function verificarFormulario() {
         alert("Datos Correctos");
         location.replace("../pages/contacto.html");
     }
+}
+
+/**Valido los campos de la opcion para donar */
+function validarDonar() {
+    valido = true;
+    campo = document.getElementById("numeroTarjeta");
+    if (campo.value.match(/[A-Za-z]/) || campo.value.length != 16) {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    campo = document.getElementById("codigoSeguridad");
+    if (campo.value.match(/[A-Za-z]/) || campo.value.length != 3) {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    campo = document.getElementById("mesVencimiento");
+    if (campo.value == "Mes") {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    campo = document.getElementById("anioVencimiento");
+    if (campo.value == "Año") {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    campo = document.getElementById("documento");
+    if (campo.value.match(/[A-Za-z]/) || campo.value.length < 7) {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    return valido;
+}
+
+/**Valido los campos para la opcion de ser voluntario */
+function validarVoluntario() {
+    valido = true;
+    campo = document.getElementById("anioNacimiento");
+    if (campo.value == "Año") {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    campo = document.getElementById("mesNacimiento");
+    if (campo.value == "Mes") {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    campo = document.getElementById("diaNacimiento");
+    if (campo.value == "Dia") {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    campo = document.getElementById("mailVoluntario");
+    var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    if (!emailRegex.test(campo.value)) {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    return valido;
+}
+
+/**Valido los campos para la opcion de recibir mas informacion */
+function validarOtro() {
+    valido = true;
+    campo = document.getElementById("mailOtro");
+    var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    if (!emailRegex.test(campo.value)) {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    campo = document.getElementById("msj");
+    if (campo.value == "" || campo.value.length < 100) {
+        valido = false;
+        marcarIncorrecto(campo);
+    } else {
+        marcarCorrecto(campo);
+    }
+
+    return valido;
 }
 
 /**Cambio el color del borde a rojo cuando los datos son incorrectos o vacios */

@@ -12,7 +12,7 @@
 
 .main-content h2 {
     width: 50%;
-    color: #961607;
+    color: #a53e33;
     margin-left: 3%;
     font-size: 35px;
 }
@@ -34,8 +34,13 @@
 /*Titulo "Lista de animales"*/
 
 .indice h4 {
+    font-size: 20px;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 4%;
+}
+
+.indice li {
+    padding-top: 1.5%;
 }
 
 
@@ -106,6 +111,43 @@
     line-height: 25px;
     font-size: 16px;
     padding-top: 2%;
+}
+
+
+/*Boton "ir-arriba"*/
+
+#scroll {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #259725;
+    text-indent: -9999px;
+    display: none;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px
+}
+
+#scroll span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -12px;
+    height: 0;
+    width: 0;
+    border: 8px solid transparent;
+    border-bottom-color: #ffffff;
+}
+
+#scroll:hover {
+    background-color: #47d447;
+    opacity: 1;
+    filter: "alpha(opacity=100)";
+    -ms-filter: "alpha(opacity=100)";
 }
 
 

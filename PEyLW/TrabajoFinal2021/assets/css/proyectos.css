@@ -1,10 +1,106 @@
+/*Contenido principal de las campañas*/
+
 .contenedor-proyectos {
     width: 100%;
     height: auto;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.campañas img {
+
+/*Alineacion del texto en las campañas*/
+
+.campaña {
+    text-align: center;
+}
+
+
+/*Posicionamiento de las imagenes de las campañas, con un borde y tamaños*/
+
+.campaña img {
+    position: relative;
+    z-index: 1;
     width: 50%;
     height: 100%;
+    float: left;
+    border: 1px solid black;
+    /*background-color: rgba(0, 0, 0, 0, 0);
+    filter: brightness(0.9)*/
+}
+
+
+/*Posicionamiento de los titulos de las campañas, color de fuente y tamaño*/
+
+.posicion-texto1 {
+    position: absolute;
+    bottom: 150px;
+    left: 16px;
+    color: yellow;
+    font-size: 22px;
+    z-index: 2;
+}
+
+.posicion-texto2 {
+    position: absolute;
+    bottom: 150px;
+    right: 16px;
+    color: yellow;
+    font-size: 22px;
+    z-index: 2;
+}
+
+.posicion-texto3 {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color: yellow;
+    font-size: 22px;
+    z-index: 2;
+}
+
+.posicion-texto4 {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    color: yellow;
+    font-size: 22px;
+    z-index: 2;
+}
+
+
+/*Color del link para "Leer mas..."*/
+
+.posicion-texto1 a:link,
+.posicion-texto1 a:visited,
+.posicion-texto1 a:hover,
+.posicion-texto1 a:active {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.posicion-texto2 a:link,
+.posicion-texto2 a:visited,
+.posicion-texto2 a:hover,
+.posicion-texto2 a:active {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.posicion-texto3 a:link,
+.posicion-texto3 a:visited,
+.posicion-texto3 a:hover,
+.posicion-texto3 a:active {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.posicion-texto4 a:link,
+.posicion-texto4 a:visited,
+.posicion-texto4 a:hover,
+.posicion-texto4 a:active {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }

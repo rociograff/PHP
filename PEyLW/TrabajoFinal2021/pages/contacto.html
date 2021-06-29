@@ -15,7 +15,7 @@
 <body>
     <header class="page-name">
         <div class="titulo">
-            <a href="../index.html"><img src="../assets/img/logo-vida-animal.png" /></a>
+            <a href="../index.html"><img src="../assets/img/logo-vida-animal.png" alt="logo" /></a>
         </div>
 
         <div class="bar-nav">
@@ -54,76 +54,91 @@
 
         <div class="contenedor-formulario">
             <div class="formulario">
+                <h2><i class="fas fa-envelope"></i> Formulario de contacto</h2>
                 <form id="form">
                     <p>
                         <label>Nombre</label>
-                        <input type="text" name="nombre" id="nombre" />
+                        <input type="text" name="nombre" id="nombre" placeholder="Alan" />
                     </p>
 
                     <p>
                         <label>Apellido</label>
-                        <input type="text" name="apellido" id="apellido" />
+                        <input type="text" name="apellido" id="apellido" placeholder="Turing" />
                     </p>
 
                     <p>
-                        <label>Asunto:
-                            <select id="seleccion-asunto" required onchange="verificarCampo()">
-                                <option value="" disabled selected></option>
-                                <option value="donar">Quiero ser donante</option>
-                                <option value="voluntario">Quiero ser voluntario</option>
-                                <option value="otro">Quiero mas información</option>
-                            </select>
-                        </label>
-                    </p>
-
-                    <p class="hidden" id="tarjeta">
-                        <label>Número de tarjeta</label>
-                        <input type="text" name="numeroTarjeta" id="numeroTarjeta" />
-                    </p>
-
-                    <p class="hidden" id="codigoTarjeta">
-                        <label>Código de seguridad</label>
-                        <input type="text" name="codigoSeguridad" id="codigoSeguridad" />
-                    </p>
-
-                    <p class="hidden" id="vencimiento">
-                        <label>Fecha de vencimiento</label>
-                        <select id="mesVencimiento" required ondblclick="mostrarMesNumero()">
-                            <option value="" disabled selected></option>
-                        </select>
-                        <select id="anioVencimiento" required ondblclick="mostrarAnio('anioVencimiento')">
-                            <option value="" disabled selected></option>
+                        <label>Asunto:</label>
+                        <select id="seleccion-asunto" required onchange="verificarCampo()">
+                            <option id="elija1"></option>
+                            <option>Quiero ser donante</option>
+                            <option>Quiero ser voluntario</option>
+                            <option>Quiero más información</option>
                         </select>
                     </p>
+                    <br class="clear">
+                    <div class="contenedor-asuntos">
+                        <div class="hidden" id="asuntoDonar">
+                            <h3 id="tituloTarjeta">Tarjeta de Crédito</h3>
+                            <p id="tarjeta">
+                                <label>Número de tarjeta</label>
+                                <input type="text" name="numeroTarjeta" id="numeroTarjeta" maxlength="16" placeholder="1547823698421574" />
+                            </p>
 
-                    <p class="hidden" id="dni">
-                        <label>Documento</label>
-                        <input type="text" name="documento" id="documento" />
-                    </p>
+                            <p id="codigoTarjeta">
+                                <label>Código de seguridad</label>
+                                <input type="text" name="codigoSeguridad" id="codigoSeguridad" maxlength="3" placeholder="524" />
+                            </p>
 
-                    <p class="hidden" id="nacimiento">
-                        <label>Año de nacimiento</label>
-                        <select id="anioNacimiento" required ondblclick="mostrarAnio('anioNacimiento')">
-                            <option>Año</option>
-                        </select>
-                        <select id="mesNacimiento" required ondblclick="mostrarMes('mesNacimiento')">
-                            <option>Mes</option>
-                        </select>
-                        <select id="diaNacimiento" required ondblclick="mostrarDia()">
-                            <option>Dia</option>
-                        </select>
-                    </p>
+                            <p id="vencimiento">
+                                <label>Fecha de vencimiento</label>
+                                <select id="mesVencimiento" required ondblclick="mostrarMesNumero()">
+                                    <option id="mes1">Mes</option>
+                                </select>
+                                <select id="anioVencimiento" required ondblclick="mostrarAnioVencimiento()">
+                                    <option id="anio1">Año</option>
+                                </select>
+                            </p>
+                            <br class="clear">
+                            <p id="dni">
+                                <label>Documento</label>
+                                <input type="text" name="documento" id="documento" maxlength="8" placeholder="40587156" />
+                            </p>
+                        </div>
 
-                    <p class="hidden" id="email">
-                        <label>Email</label>
-                        <input type="text" name="mail" id="mail" />
-                    </p>
+                        <div class="hidden" id="asuntoVoluntario">
+                            <p id="nacimiento">
+                                <label>Fecha de nacimiento</label>
+                                <select id="anioNacimiento" required ondblclick="mostrarAnio()">
+                                    <option id="anio2">Año</option>
+                                </select>
+                                <select id="mesNacimiento" required ondblclick="mostrarMes()">
+                                    <option id="mes2">Mes</option>
+                                </select>
+                                <select id="diaNacimiento" required ondblclick="mostrarDia()">
+                                    <option id="dia2">Dia</option>
+                                </select>
+                            </p>
 
-                    <p class="hidden" id="mensaje">
-                        <label>Mensaje</label>
-                        <textarea name="msj" id="msj" rows="3" required></textarea>
-                    </p>
+                            <p id="emailVoluntario">
+                                <label>Email</label>
+                                <input type="text" name="mail" id="mailVoluntario" placeholder="voluntario@gmail.com" />
+                            </p>
+                        </div>
 
+                        <div class="hidden" id="asuntoOtro">
+                            <h4 id="textoInformacion">Cuéntenos cuáles son sus dudas y nos comunicaremos con usted:</h4>
+                            <p id="emailOtro">
+                                <label>Email</label>
+                                <input type="text" name="mail" id="mailOtro" placeholder="mensaje@gmail.com" />
+                            </p>
+
+                            <p id="mensaje">
+                                <label>Mensaje</label>
+                                <textarea name="msj" id="msj" rows="3" required placeholder="mensaje..."></textarea>
+                            </p>
+                        </div>
+                    </div>
+                    <br class="clear">
                     <p class="block">
                         <button type="submit" id="submitButton" onclick="verificarFormulario()">
                             Enviar
@@ -132,6 +147,12 @@
                 </form>
                 <script type="text/javascript" src="../assets/js/contacto.js"></script>
             </div>
+        </div>
+
+        <div class="contenedor-redes">
+            <a href="https://www.facebook.com" target="_blank"><img src="../assets/img/facebook.png" alt="logo facebook"></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="../assets/img/twitter.png" alt="logo twitter"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="../assets/img/instagram.png" alt="logo instagram"></a>
         </div>
     </div>
 

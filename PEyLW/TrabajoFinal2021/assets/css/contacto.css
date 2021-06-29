@@ -11,8 +11,11 @@
     width: 100%;
 }
 
+
+/*Ponte en contacto con nosotros*/
+
 .texto h2 {
-    color: #961607;
+    color: #259725;
     font-size: 35px;
     text-align: center;
 }
@@ -22,10 +25,133 @@
     padding-top: 2%;
 }
 
-.contenedor-formulario {}
+
+/*Formulario*/
+
+.contenedor-formulario {
+    margin-top: 3%;
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+}
+
+.contenedor-formulario>* {
+    width: 50%;
+    margin-left: 25%;
+    padding: 1em;
+}
 
 .formulario {
-    box-shadow: 1px solid black;
+    border-radius: 4px 4px 0px 0px;
+    background: #f2f3e9;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.formulario form label {
+    display: block;
+}
+
+.formulario form select {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+}
+
+.formulario select option {
+    font-family: "Poppins", sans-serif;
+}
+
+.formulario form p {
+    margin: 0;
+    padding: 1em;
+}
+
+.formulario form button,
+.formulario form input,
+.formulario form textarea {
+    width: 100%;
+    padding: 0.7em;
+    border: none;
+    border-radius: 4px;
+    background: none;
+    outline: 0;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    color: #1e212d;
+    border-bottom: 1px solid #1e212d;
+}
+
+.formulario form textarea {
+    resize: none;
+}
+
+.formulario form button {
+    background: #259725;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.formulario form button:hover,
+.formulario form button:focus {
+    transition: background-color 1s ease-out;
+    outline: 0;
+    background: #2eb92e;
+    color: #fff;
+}
+
+#tarjeta {
+    width: 35%;
+    float: left;
+}
+
+#codigoTarjeta {
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+
+#vencimiento {
+    width: 35%;
+    float: left;
+}
+
+#dni {
+    width: 35%;
+}
+
+select {
+    height: 30px;
+}
+
+#diaNacimiento,
+#mesNacimiento,
+#anioNacimiento,
+#mesVencimiento,
+#anioVencimiento {
+    width: 75px;
+}
+
+#emailVoluntario {
+    width: 70%;
+}
+
+#emailOtro {
+    width: 70%;
+}
+
+
+/*Contenido de las redes sociales*/
+
+.contenedor-redes {
+    margin-left: 40%;
+    margin-top: 3%;
+    height: 10px;
+}
+
+
+/*Logos de las redes sociales*/
+
+.contenedor-redes img {
+    width: 90px;
+    height: 90px;
 }
 
 
@@ -39,7 +165,11 @@
 /*Para mostrar el campo correspondiente*/
 
 .shown {
+    width: 100%;
     display: block;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 

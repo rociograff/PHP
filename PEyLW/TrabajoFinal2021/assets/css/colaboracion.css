@@ -15,7 +15,7 @@
 /*Se voluntario*/
 
 .voluntariado h2 {
-    color: #961607;
+    color: #259725;
     font-size: 50px;
     margin-left: 5%;
 }
@@ -47,19 +47,33 @@
 /*Opciones voluntariado de la izquierda*/
 
 .bloque1 {
-    width: 49%;
+    width: 48%;
     float: left;
-    padding-left: 5%;
+    padding-left: 3%;
     padding-top: 3%;
+}
+
+.bloque1 img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 25px;
 }
 
 
 /*Opciones voluntariado de la derecha*/
 
 .bloque2 {
-    width: 49%;
+    width: 48%;
     float: left;
     padding-top: 3%;
+}
+
+.bloque2 img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 25px;
 }
 
 
@@ -68,9 +82,30 @@
 .voluntariado h4 {
     font-size: 20px;
     text-align: left;
-    margin-left: 50px;
     color: #bb4a3d;
     padding-top: 2%;
+    margin-left: 30px;
+}
+
+
+/*Texto de los bloques 1 y 2 trabajos con <p>*/
+
+.bloque1 p {
+    width: 65%;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-left: 5%;
+}
+
+.bloque2 p {
+    width: 65%;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-left: 5%;
 }
 
 
@@ -86,54 +121,7 @@
     text-align: justify;
     font-size: 14px;
     margin-left: 5%;
-}
-
-
-/*----Bullets opciones----*/
-
-.opcion1 {
-    margin: 0;
-    list-style: none;
-    background-image: url("../img/transporte.png");
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 40px;
-}
-
-.opcion2 {
-    margin: 0;
-    list-style: none;
-    background-image: url("../img/veterinaria.png");
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 40px;
-}
-
-.opcion3 {
-    margin: 0;
-    list-style: none;
-    background-image: url("../img/marketing.png");
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 40px;
-}
-
-.opcion4 {
-    margin: 0;
-    list-style: none;
-    background-image: url("../img/asistencia-en-jornadas.png");
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 40px;
-}
-
-.opcion5 {
-    margin: 0;
-    list-style: none;
-    background-image: url("../img/recaudacion.png");
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 40px;
+    margin-top: 3%;
 }
 
 
@@ -154,7 +142,6 @@
     background-color: rgb(37, 151, 37);
     color: beige;
     font-size: 30px;
-    font-weight: bold;
 }
 
 
@@ -200,7 +187,7 @@
 /*Hacé una donación*/
 
 .descripcion h2 {
-    color: #961607;
+    color: #259725;
     font-size: 50px;
     margin-left: 5%;
 }
@@ -227,7 +214,7 @@
     margin-left: 200px;
     padding: 10px;
     text-align: center;
-    background-color: #bb4a3d;
+    background-color: #509c91;
     /*Sombreado*/
     box-shadow: 10px 10px 16px 2px rgba(0, 0, 0, 0.55);
     -webkit-box-shadow: 10px 10px 16px 2px rgba(0, 0, 0, 0.55);
